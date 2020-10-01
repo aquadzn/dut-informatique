@@ -17,7 +17,7 @@ public class carreParfait {
         boolean estParfait = false;
         int resultat = 0;
 
-        for (int i = 0; i < nombre; i++) {
+        for (int i = 0; i*i <= nombre; i++) {
             if (i * i == nombre) {
                 estParfait = true;
                 resultat = i;
