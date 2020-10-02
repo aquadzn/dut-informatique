@@ -9,14 +9,14 @@ public class circonferenceAire {
 
         System.out.println("Circonférence et aire de cercles");
 
-        double rayon;
+        System.out.print("rayon: -> ");
+        double rayon = saisie.nextDouble();
 
-        do {
+        while (rayon >= 0) {
+            System.out.println("circonférence: " + 2 * 3.14 * rayon + " ; " + "aire: " + Math.pow(rayon, 2) * 3.14);
             System.out.print("rayon (négatif pour terminer): -> ");
             rayon = saisie.nextDouble();
-            System.out.println("circonférence: " + 2 * Math.PI * rayon + " ; " + "aire: " + Math.pow(rayon, 2) * Math.PI);
         }
-        while (rayon >= 0);
 
         saisie.close();
 
