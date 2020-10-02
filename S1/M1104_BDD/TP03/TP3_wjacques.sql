@@ -153,59 +153,23 @@ SELECT DISTINCT (nom, prenom) FROM etudiant INNER JOIN notes ON etudiant.idetud=
 */
 
 -- 12.
-SELECT DISTINCT nom, prenom, module.intitule FROM etudiant, interro INNER JOIN module ON interro.refmod=module.refmod;
+select nom, prenom, intitule from etudiant e, module m, interro i, notes n where n.idinter = i.idinter and n.idetud = e.idetud and m.refmod = i.refmod;
 /*
-    nom     |  prenom  |             intitule              
-------------+----------+-----------------------------------
- Baggage    | Charles  | Algorithmique avancée
- Baggage    | Charles  | Bases de données avancées
- Baggage    | Charles  | Environnement économique
- Baggage    | Charles  | Introduction aux bases de données
- Baggage    | Charles  | Mathématiques discrètes
- Baggage    | Charles  | Programmation Web côté serveur
- Berner-Lee | Tim      | Algorithmique avancée
- Berner-Lee | Tim      | Bases de données avancées
- Berner-Lee | Tim      | Environnement économique
- Berner-Lee | Tim      | Introduction aux bases de données
- Berner-Lee | Tim      | Mathématiques discrètes
- Berner-Lee | Tim      | Programmation Web côté serveur
- Berry      | Gérard   | Algorithmique avancée
- Berry      | Gérard   | Bases de données avancées
- Berry      | Gérard   | Environnement économique
- Berry      | Gérard   | Introduction aux bases de données
- Berry      | Gérard   | Mathématiques discrètes
- Berry      | Gérard   | Programmation Web côté serveur
- Lovelace   | Ada      | Algorithmique avancée
- Lovelace   | Ada      | Bases de données avancées
- Lovelace   | Ada      | Environnement économique
- Lovelace   | Ada      | Introduction aux bases de données
- Lovelace   | Ada      | Mathématiques discrètes
- Lovelace   | Ada      | Programmation Web côté serveur
- Meyer      | Bertrand | Algorithmique avancée
- Meyer      | Bertrand | Bases de données avancées
- Meyer      | Bertrand | Environnement économique
- Meyer      | Bertrand | Introduction aux bases de données
- Meyer      | Bertrand | Mathématiques discrètes
- Meyer      | Bertrand | Programmation Web côté serveur
- TALON      | Achille  | Algorithmique avancée
- TALON      | Achille  | Bases de données avancées
- TALON      | Achille  | Environnement économique
- TALON      | Achille  | Introduction aux bases de données
- TALON      | Achille  | Mathématiques discrètes
- TALON      | Achille  | Programmation Web côté serveur
- Turing     | Alan     | Algorithmique avancée
- Turing     | Alan     | Bases de données avancées
- Turing     | Alan     | Environnement économique
- Turing     | Alan     | Introduction aux bases de données
- Turing     | Alan     | Mathématiques discrètes
- Turing     | Alan     | Programmation Web côté serveur
- Wirth      | Niklaus  | Algorithmique avancée
- Wirth      | Niklaus  | Bases de données avancées
- Wirth      | Niklaus  | Environnement économique
- Wirth      | Niklaus  | Introduction aux bases de données
- Wirth      | Niklaus  | Mathématiques discrètes
- Wirth      | Niklaus  | Programmation Web côté serveur
-(48 rows)
+   nom    |  prenom  |             intitule              
+----------+----------+-----------------------------------
+ Meyer    | Bertrand | Mathématiques discrètes
+ Wirth    | Niklaus  | Mathématiques discrètes
+ Meyer    | Bertrand | Introduction aux bases de données
+ Wirth    | Niklaus  | Introduction aux bases de données
+ Turing   | Alan     | Environnement économique
+ Lovelace | Ada      | Environnement économique
+ Baggage  | Charles  | Environnement économique
+ Meyer    | Bertrand | Algorithmique avancée
+ Wirth    | Niklaus  | Algorithmique avancée
+ Meyer    | Bertrand | Programmation Web côté serveur
+ Wirth    | Niklaus  | Programmation Web côté serveur
+ Meyer    | Bertrand | Bases de données avancées
+(12 rows)
 */
 -- 13.
 SELECT nom, prenom FROM etudiant INNER JOIN notes ON etudiant.idetud=notes.idetud WHERE notes IS NULL;
@@ -232,7 +196,182 @@ SELECT DISTINCT nom, prenom FROM personnel WHERE (nom, prenom) NOT IN (SELECT no
 (8 rows)
 */
 
+-- 15.
+SELECT * FROM etudiant INNER JOIN enseignant ON (etudiant.nom, etudiant.prenom) = (enseignant.nom, enseignant.prenom);
+-- idetud | nom | prenom | classe | idens | nom | prenom | titulaire | iddept 
+-- --------+-----+--------+--------+-------+-----+--------+-----------+--------
+-- (0 rows)
+
 -- Exercice 2
 
 -- 1.
+\dt entelec.*
+/*
+             List of relations
+ Schema  |     Name      | Type  |  Owner   
+---------+---------------+-------+----------
+ entelec | absence       | table | wjacques
+ entelec | affecter      | table | wjacques
+ entelec | avoirhabilit  | table | wjacques
+ entelec | avoirqualif   | table | wjacques
+ entelec | chantier      | table | wjacques
+ entelec | client        | table | wjacques
+ entelec | contrat       | table | wjacques
+ entelec | habilitation  | table | wjacques
+ entelec | personnel     | table | wjacques
+ entelec | qualification | table | wjacques
+(10 rows)
+*/
 
+-- 2.
+SELECT DISTINCT pays FROM entelec.client;
+/*
+       pays        
+-------------------
+ France
+ kanto
+ equestria
+ systeme Deneb
+ PayDuSoleilLevant
+ PayDuCaillou
+ Beaucoup
+ Lycee
+(8 rows)
+*/
+
+-- 3.
+SELECT * FROM entelect.client WHERE LOWER(rue) LIKE '%rue%';
+/*
+ idclt |     nomclt     |  prenom  |       rue        |  cp   |         ville         |       pays        
+-------+----------------+----------+------------------+-------+-----------------------+-------------------
+     1 | Pokemon        | Pikachu  | rue DuBuisson    |   717 | Bourg Palette         | kanto
+     2 | Transistor     | Mos      | rue DuRadin      |     0 | STI2D                 | Lycee
+     3 | Silver         | Surfer   | rue Spaceways    | 45689 | acoteDePluton         | systeme Deneb
+     4 | La             | Chose    | rue DuCaillou    | 99999 | ToujoursDansLeCaillou | PayDuCaillou
+     5 | WAS            | JaVoll   | rue Stalingrad   | 66666 | Berlin                | PayDuSoleilLevant
+     6 | Pokemon        | Salamech | rue DuBuisson    |   717 | Bourg Palette         | kanto
+     9 | LePetitBonhome | EnMousse | rue de la mousse | 44444 | CaMousse              | Beaucoup
+    10 | Homps          | Marc     | rue tropbien     | 31415 | Montreuil             | France
+(8 rows)
+*/
+
+-- 4.
+SELECT DISTINCT nom, prenom from entelec.personnel;
+/*
+    nom    |  prenom   
+-----------+-----------
+ Lagaffe   | Gaston
+ James     | Jesse
+ Curie     | Marie
+ Darc      | Jeanne
+ Jane      | Calamity
+ Plombier  | Mario
+ Skywalker | Luke
+ Princesse | Leïa
+ Wookie    | Chewbacca
+ Skywalker | Anakin
+ Flam      | Capitaine
+(11 rows)
+*/
+
+-- 5.
+SELECT * FROM entelec.contrat WHERE duree LIKE 'CDD';
+/*
+ idcontrat |                 libelle                  | duree |  datedeb   |  datefin   
+-----------+------------------------------------------+-------+------------+------------
+         1 | remise aux normes des prises électriques | CDD   | 2002-06-10 | 2008-06-10
+         3 | rénovation du système électrique         | CDD   | 2003-06-10 | 2009-06-10
+         5 | responsable logistique                   | CDD   | 2004-06-10 | 2008-06-10
+         7 | ingénierie électrique                    | CDD   | 2005-06-10 | 2008-06-10
+         9 | installation structure                   | CDD   | 2006-06-10 | 2008-06-10
+(5 rows)
+*/
+
+-- 6.
+SELECT * FROM entelec.personnel WHERE idcontrat IS NULL;
+/*
+ idpers |    nom    |  prenom   | salaire | idcontrat 
+--------+-----------+-----------+---------+-----------
+      6 | Princesse | Leïa      |    1300 |          
+      7 | Darc      | Jeanne    |    2000 |          
+      8 | Flam      | Capitaine |    1200 |          
+      9 | Curie     | Marie     |    2000 |          
+(4 rows)
+*/
+
+-- 7.
+SELECT nomclt FROM entelec.client WHERE ville LIKE 'ponyville';
+/*
+ nomclt 
+--------
+ Hooves
+(1 row)
+*/
+
+-- 8.
+SELECT * FROM entelec.chantier WHERE datefin < '2011-01-01';
+/*
+ idcht |   intitule   | description |  datedeb   |  datefin   | dureeprevu |     rue     |  cp   | ville  |    pays    | idclt 
+-------+--------------+-------------+------------+------------+------------+-------------+-------+--------+------------+-------
+     2 | Château Fort | solide      | 1200-02-02 | 1250-02-02 | 30 ans     | rue MonFort | 45455 |  Lyon  | France     |     9
+     4 | Pont         | utile       | 1995-02-05 | 2000-09-09 | 2 ans      | rue Hoche   | 95310 | Paris  | France     |     1
+     6 | Parc         | lol         | 1452-02-03 | 1520-12-13 | 50 ans     | rue LOL     | 78954 | TROLOL | PatDuTroll |     6
+(3 rows)
+*/
+
+-- 9.
+SELECT * FROM entelec.chantier WHERE datedeb >= '2000-01-01' and datefin < '2011-01-01';
+/*
+ idcht | intitule | description | datedeb | datefin | dureeprevu | rue | cp | ville | pays | idclt 
+-------+----------+-------------+---------+---------+------------+-----+----+-------+------+-------
+(0 rows)
+*/
+
+-- 10.
+SELECT * from entelec.chantier WHERE datefin < datedeb;
+/*
+ idcht | intitule | description | datedeb | datefin | dureeprevu | rue | cp | ville | pays | idclt 
+-------+----------+-------------+---------+---------+------------+-----+----+-------+------+-------
+(0 rows)
+*/
+
+-- 11.
+SELECT intitule, couthoraire FROM entelec.qualification;
+/*
+                               intitule                                | couthoraire 
+-----------------------------------------------------------------------+-------------
+ Classif-Qualif Bâtiment / Ouvrier Exécution niv. I pos. 1 coef 150    |         8.3
+ Classif-Qualif Bâtiment / Ouvrier Exécution niv. I pos. 2 coef 170    |         8.4
+ Classif-Qualif Bâtiment / Ouvrier Profess. niv.II coef 185            |         9.4
+ Classif-Qualif Bâtiment / Compagnon Profess. niv. III pos. 1 coef 210 |        10.4
+ Classif-Qualif Bâtiment / Compagnon Profess. niv. III pos. 2 coef 230 |       10.85
+ Classif-Qualif Bâtiment / Chef Equipe niv. IV pos. 1 coef 250         |       11.55
+ Classif-Qualif Bâtiment / Chef Equipe niv. IV pos. 2 coef 270         |        12.5
+ Classif-Qualif Bâtiment / ETAM niv. A                                 |       16.45
+ Classif-Qualif Bâtiment / ETAM niv. B                                 |       18.72
+ Classif-Qualif Bâtiment / Ingénieur ou assimilé débutant pos. A       |        10.5
+(10 rows)
+*/
+
+-- 12.
+SELECT DISTINCT nom, prenom FROM entelec.personnel INNER JOIN entelec.absence ON entelec.personnel.idpers = entelec.absence.idpers;
+/*
+    nom    |  prenom   
+-----------+-----------
+ James     | Jesse
+ Darc      | Jeanne
+ Plombier  | Mario
+ Skywalker | Luke
+ Wookie    | Chewbacca
+ Flam      | Capitaine
+ Skywalker | Anakin
+(7 rows)
+*/
+
+-- 13.
+
+
+-- 14.
+
+
+-- 15.
