@@ -1,0 +1,53 @@
+body {
+	margin: auto;
+	width: 100%;
+	background: url("image/body-bg.jpg");
+
+	font-family: Verdana, sans-serif; 
+	color: #6a6969;
+}
+
+header {
+	background-color: #222222;
+	padding: 20px;
+	margin: auto;
+}
+
+header img {
+	width: 230px;
+}
+
+header h1 {
+	text-align: center;
+	color: #fff;
+}
+
+nav {
+	padding: 20px;
+	text-align: center;
+}
+
+nav a {
+	color: #6a6969;
+	text-decoration: none;
+	margin: 15px;
+}
+
+main {
+	background: url("image/main-bg.png");
+	width: 900px;
+	padding: 20px;
+	margin: auto;
+}
+
+main aside {
+	border: 3px #fff dashed;
+}
+
+main img {
+	width: 300px;
+}
+
+footer {
+	text-align: center;
+}
