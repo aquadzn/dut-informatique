@@ -46,18 +46,18 @@ public class forcerUneSaisie {
         while ((a < 0 || b < 0 || c < 0) || (a > b  || b > c));        
 
         // d.
-        int c1, c2, c3;
+        // int c1, c2, c3;
 
-        do {
-            System.out.println("Entez 3 entiers positifs ou nuls tels que (c1 < c2 < c3) ou (c1 > c2 > c3) : -> ");
-            System.out.print("c1: ");
-            c1 = saisie.nextInt();
-            System.out.print("c2: ");
-            c2 = saisie.nextInt();
-            System.out.print("c3: ");
-            c3 = saisie.nextInt();
-        }
-        while ((c1 < 0 || c2 < 0 || c3 < 0) || ((c1 > c2  || c2 > c3) || (c1 < c2  || c2 < c3)));        
+        // do {
+        //     System.out.println("Entez 3 entiers positifs ou nuls tels que (c1 < c2 < c3) ou (c1 > c2 > c3) : -> ");
+        //     System.out.print("c1: ");
+        //     c1 = saisie.nextInt();
+        //     System.out.print("c2: ");
+        //     c2 = saisie.nextInt();
+        //     System.out.print("c3: ");
+        //     c3 = saisie.nextInt();
+        // }
+        // while ((c1 < 0 || c2 < 0 || c3 < 0) || ((c1 < c2 < c3) || (c1 > c2 > c3)));        
 
 
 
