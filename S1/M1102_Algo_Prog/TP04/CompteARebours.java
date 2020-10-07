@@ -12,12 +12,13 @@ public class CompteARebours {
 		
         int alignement = 10 - (depart % 10);
 
+        while (alignement > 1) {
+            System.out.print("\t");
+            alignement--;
+        }
+
 		for (int i = depart ; i >= 0 ; i--) {
 		    
-            while (alignement > 1) {
-                System.out.print("\t");
-                alignement--;
-            }
 
             if (i % 10 == 0) {
                 System.out.print(i + "\t");
