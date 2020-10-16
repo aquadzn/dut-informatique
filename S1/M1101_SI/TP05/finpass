@@ -1,0 +1,10 @@
+smmta:x:128:136:Mail Transfer Agent,,,:/var/lib/sendmail:/bin/false
+smmsp:x:129:137:Mail Submission Program,,,:/var/lib/sendmail:/bin/false
+mysql:x:121:130:MySQL Server,,,:/var/lib/mysql:/bin/bash
+postgres:x:130:138:PostgreSQL administrator,,,:/var/lib/postgresql:/bin/bash
+avahi-autoipd:x:131:139:Avahi autoip daemon,,,:/var/lib/avahi-autoipd:/bin/false
+user01:x:1000:1000:,,,:/home/user01:/bin/bash
+user02:x:1001:1000:,,,:/home/user02:/bin/bash
+libvirt-qemu:x:64055:128:Libvirt Qemu,,,:/var/lib/libvirt:/bin/false
+libvirt-dnsmasq:x:132:30012:Libvirt Dnsmasq,,,:/var/lib/libvirt/dnsmasq:/bin/false
+wjacques:x:3044:6001:William JACQUES:/home/etudiants/info/wjacques:/bin/bash
