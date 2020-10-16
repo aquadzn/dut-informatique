@@ -26,5 +26,5 @@ Commande | Description | Exemple
 
 Commande | Description | Exemple
 --- | --- | ---
-**>** | écrase et envoie l'output d'une commande vers un fichier | echo "Bonjour" **>** mon_fichier
-**>>** | ajoute l'output d'une commande à la fin d'un fichier | echo "Bonjour" **>>** mon_fichier
+**>** | écrase et envoie l'output d'une commande vers un fichier | <ul><li>**echo** "Bonjour" **>** *mon_fichier*</li></ul>
+**>>** | ajoute l'output d'une commande à la fin d'un fichier | <ul><li>**echo** "Bonjour" **>>** *mon_fichier*</li></ul>
