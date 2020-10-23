@@ -19,6 +19,9 @@ Commande | Description | Exemple
 **tail** | affiche la dernière partie d'un fichier (10 lignes par défaut) | <ul><li>**tail** -n 5 *mon_fichier*: affiche les 5 dernières lignes d'une fichier</li></ul>
 **cat** | affiche tout le contenu d'un fichier | <ul><li>**cat** *mon_fichier*</li></ul>
 **echo** | affiche une ligne dans le terminal | <ul><li>**echo** "Bonjour!"</li></ul>
+**ln** | créer un lien qui redirige un fichier vers un autre | <ul><li>**ln** *source* *lien_mat*: créer un lien matériel</li><li>**ln** -s *source* *lien_sym*: créer un lien symbolique</li></ul>
+**chmod** | Gérer les droits d'accès des fichiers et répertoires | <ul><li>**chmod** [0-7][0-7][0-7] *fichier_ou_dossier*: attribue les droits d'accès dans l'ordre propriétaire - groupe - autres</li><li>**chmod** 644 *monfichier*: attribue rw-r--r-- à *monfichier*</li></ul>
+**umask** | Définit les permissions par défaut lorsqu'un fichier ou dossier est crée | <ul><li>**umask** [0-7][0-7][0-7][0-7]</li><li>**umask** 022: accorde les permissions par défaut 666-022: 644 rw-r--r--</li></ul>
 
 
 ## Autres
