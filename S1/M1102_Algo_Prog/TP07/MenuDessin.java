@@ -52,7 +52,7 @@ public class MenuDessin {
 				break;
 
 			default:
-				System.out.print("Au revoir!");
+				System.out.println("Au revoir!");
 				break;
 		}
 	}

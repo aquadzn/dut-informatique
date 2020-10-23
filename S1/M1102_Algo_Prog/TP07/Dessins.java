@@ -1,4 +1,3 @@
-﻿
 /*
  * Dessins.java
  * Diverses méthodes statiques permettant de réaliser des dessins sur la console (en utilisant des print).
