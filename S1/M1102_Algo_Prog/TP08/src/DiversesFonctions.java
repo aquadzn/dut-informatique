@@ -29,13 +29,6 @@ public class DiversesFonctions {
     }
 
     /*
-     * Retourne le carré d'un entier
-     */
-    public static int carreEntier(int nombre) {
-        return (int) Math.pow(nombre, 2);
-    }
-
-    /*
      * Retourne le signe d'un nombre
      */
     public static int signe(int a) {
@@ -75,11 +68,17 @@ public class DiversesFonctions {
      * Retourne
      */
     public static boolean nombreBinaire(String s) {
-        for(int i = 0; i < s.length(); i++) {
+        int longueur = s.length();
+        if (longueur < 1) {
+            return false;
+        }
+
+        for(int i = 0; i < longueur; i++) {
             if (s.charAt(i) != '0' && s.charAt(i) != '1') {
                 return false;
             }
         }
+
         return true;
     }
 
@@ -117,6 +116,20 @@ public class DiversesFonctions {
         }
         return abs_a;
     }
+
+    /*
+     * Retourne
+     */
+//    public static String ecritureEnBase2NonSigne(int a) {
+//        return ;
+//    }
+
+    /*
+     * Retourne
+     */
+//    public static String ecritureEnBase2Signe(int a) {
+//        return ;
+//    }
 
 
 
