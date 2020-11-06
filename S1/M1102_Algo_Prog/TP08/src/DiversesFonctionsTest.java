@@ -93,15 +93,28 @@ class DiversesFonctionsTest {
 
     @Test
     final void testValeurNombreBinaire() {
-        assertEquals(6, DiversesFonctions.valeurNombreBinaire("0110"), "Cas positif");
 
-        assertEquals(1073741823, DiversesFonctions.valeurNombreBinaire("111111111111111111111111111111"), "Cas max");
+        // Méthode rapide
+        assertEquals(6, DiversesFonctions.valeurNombreBinaire("0110", true), "Cas positif");
 
-        assertEquals(-1, DiversesFonctions.valeurNombreBinaire("1111111111111111111111111111111"), "Cas négatif");
+        assertEquals(1073741823, DiversesFonctions.valeurNombreBinaire("111111111111111111111111111111", true), "Cas max");
 
-        assertEquals(-1, DiversesFonctions.valeurNombreBinaire(""), "Cas négatif");
+        assertEquals(-1, DiversesFonctions.valeurNombreBinaire("1111111111111111111111111111111", true), "Cas négatif");
 
-        assertEquals(-1, DiversesFonctions.valeurNombreBinaire("01AB"), "Cas négatif");
+        assertEquals(-1, DiversesFonctions.valeurNombreBinaire("", true), "Cas négatif");
+
+        assertEquals(-1, DiversesFonctions.valeurNombreBinaire("01AB", true), "Cas négatif");
+
+        // Méthode plus lente
+        assertEquals(6, DiversesFonctions.valeurNombreBinaire("0110", false), "Cas positif");
+
+        assertEquals(1073741823, DiversesFonctions.valeurNombreBinaire("111111111111111111111111111111", false), "Cas max");
+
+        assertEquals(-1, DiversesFonctions.valeurNombreBinaire("1111111111111111111111111111111", false), "Cas négatif");
+
+        assertEquals(-1, DiversesFonctions.valeurNombreBinaire("", false), "Cas négatif");
+
+        assertEquals(-1, DiversesFonctions.valeurNombreBinaire("01AB", false), "Cas négatif");
     }
 
     @Test
@@ -111,5 +124,18 @@ class DiversesFonctionsTest {
         assertEquals(3, DiversesFonctions.pgcd(-21, -15), "Cas positif");
 
         assertEquals(0, DiversesFonctions.pgcd(0, 0), "Cas nul");
+    }
+
+    @Test
+    final void testEcritureEnBase2NonSigne() {
+        assertEquals("110", DiversesFonctions.ecritureEnBase2NonSigne(6, true), "Cas positif");
+
+        assertEquals("Erreur, nombre trop grand ou négatif", DiversesFonctions.ecritureEnBase2NonSigne(257, true), "Cas négatif");
+
+        assertEquals("Erreur, nombre trop grand ou négatif", DiversesFonctions.ecritureEnBase2NonSigne(-1, false), "Cas négatif");
+
+        assertEquals("11111111", DiversesFonctions.ecritureEnBase2NonSigne(255, false), "Cas positif");
+
+        assertEquals("0", DiversesFonctions.ecritureEnBase2NonSigne(0, false), "Cas positif");
     }
 }

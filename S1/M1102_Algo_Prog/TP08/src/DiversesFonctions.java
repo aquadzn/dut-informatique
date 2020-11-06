@@ -1,3 +1,8 @@
+/*
+* William JACQUES
+* B1
+* 12 / 12 tests réussis
+*/
 public class DiversesFonctions {
 
     /*
@@ -29,6 +34,7 @@ public class DiversesFonctions {
     }
 
     /*
+     * c.
      * Retourne le signe d'un nombre
      */
     public static int signe(int a) {
@@ -44,6 +50,7 @@ public class DiversesFonctions {
     }
 
     /*
+     * d.
      * Retourne vrai si un nombre est pair
      */
     public static boolean estPair(int a) {
@@ -51,6 +58,7 @@ public class DiversesFonctions {
     }
 
     /*
+     * e.
      * Retourne la plus grande des valeurs a, b et c
      */
     public static int max(int a, int b, int c) {
@@ -58,14 +66,16 @@ public class DiversesFonctions {
     }
 
     /*
-     * Retourne
+     * f.
+     * Retourne vrai si s contient au moins un caractère (longueur >0)
      */
     public static boolean auMoinsUnCaractere(String s) {
         return s.length() > 0;
     }
 
     /*
-     * Retourne
+     * g.
+     * Retourne vrai si s contient un nombre écrit en base 2 (s est composée des caractères '0' et '1')
      */
     public static boolean nombreBinaire(String s) {
         int longueur = s.length();
@@ -83,34 +93,54 @@ public class DiversesFonctions {
     }
 
     /*
-     * Retourne
+     * h.
+     * Retourne la valeur d'un entier positif reçu en paramètre sous la forme d'un type String représentant
+     * un nombre entier positif de 9 chiffres au maximum
      */
     public static int valeurEntierPositif(String nombreEntierPositif) {
         return (nombreEntierPositif.length() > 9 || nombreEntierPositif.charAt(0) == '-') ? -1 : Integer.parseInt(nombreEntierPositif);
     }
 
     /*
-     * Retourne
+     * i.
+     * Retourne la valeur d'un nombre reçu en paramètre sous la forme d'un type String représentant
+     * un nombre binaire (entier non signé) de 30 bits au maximum.
      */
-    public static int valeurNombreBinaire(String nombreBinaireNonSigne) {
-        if (nombreBinaireNonSigne.length() > 30 || nombreBinaire(nombreBinaireNonSigne) == false) {
+    public static int valeurNombreBinaire(String nombreBinaireNonSigne, boolean rapide) {
+        if (nombreBinaireNonSigne.length() > 30 || !nombreBinaire(nombreBinaireNonSigne)) {
             return -1;
         }
         else {
-            return Integer.parseInt(nombreBinaireNonSigne, 2);
+            if (rapide) {
+                // Méthode avec Integer.parseInt (plus rapide)
+                return Integer.parseInt(nombreBinaireNonSigne, 2);
+            }
+            else {
+                // Méthode hardcodé (plus lent)
+                int resultat = 0;
+                int longueur = nombreBinaireNonSigne.length();
+
+                for(int i = 0; i < longueur; i++) {
+                    if (nombreBinaireNonSigne.charAt(i) == '1') {
+                        resultat += Math.pow(2, (longueur - i - 1));
+                    }
+                }
+
+                return resultat;
+            }
         }
     }
 
     /*
-     * Retourne
+     * j.
+     * Retourne le pgcd de la valeur absolue de a et de la valeur absolue de
      */
     public static int pgcd(int a, int b) {
         int abs_a = valAbs(a);
         int abs_b = valAbs(b);
-        int reste = 0;
 
         while (abs_b != 0) {
-            reste = abs_a % abs_b;
+            int reste = abs_a % abs_b;
             abs_a = abs_b;
             abs_b = reste;
         }
@@ -118,14 +148,43 @@ public class DiversesFonctions {
     }
 
     /*
-     * Retourne
+     * k.
+     * Retourne l'écriture en base 2 de la valeur absolue de a
      */
-//    public static String ecritureEnBase2NonSigne(int a) {
-//        return ;
-//    }
+    public static String ecritureEnBase2NonSigne(int a, boolean rapide) {
+        if (a > 255 || a < 0) {
+            return "Erreur, nombre trop grand ou négatif";
+        }
+        else if (a == 0) {
+            return "0";
+        }
+        else {
+            int abs_a = valAbs(a);
+
+            if (rapide) {
+                // Méthode optimisée
+                return Integer.toBinaryString(abs_a);
+            }
+            else {
+                // Méthode hardcodé (plus lente)
+                StringBuilder resultat = new StringBuilder("        ");
+                int longueur = resultat.length();
+
+                for(int i = longueur - 1; abs_a != 0; i--) {
+                    int reste = abs_a % 2;
+                    abs_a /= 2;
+                    resultat.setCharAt(i, (char) (reste + '0'));
+                }
+
+                // On convertir StringBuilder en String et on enlève tous les espaces blancs
+                return resultat.toString().replaceAll("\\s", "");
+            }
+        }
+    }
 
     /*
-     * Retourne
+     * l.
+     * Retourne l'écriture en base 2 sur 32 bits de l'entier signé a (complément à 2)
      */
 //    public static String ecritureEnBase2Signe(int a) {
 //        return ;
