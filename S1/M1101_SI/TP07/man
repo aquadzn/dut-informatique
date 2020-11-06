@@ -1,0 +1,142 @@
+WC(1)                           User Commands                           WC(1)
+
+NAME
+       wc - print newline, word, and byte counts for each file
+
+SYNOPSIS
+       wc [OPTION]... [FILE]...
+       wc [OPTION]... --files0-from=F
+
+DESCRIPTION
+       Print  newline,  word, and byte counts for each FILE, and a total line
+       if more than one FILE is specified.  A word is a  non-zero-length  se‐
+       quence of characters delimited by white space.
+
+       With no FILE, or when FILE is -, read standard input.
+
+       The  options below may be used to select which counts are printed, al‐
+       ways in the following order: newline, word, character,  byte,  maximum
+       line length.
+
+       -c, --bytes
+              print the byte counts
+
+       -m, --chars
+              print the character counts
+
+       -l, --lines
+              print the newline counts
+
+       --files0-from=F
+              read  input from the files specified by NUL-terminated names in
+              file F; If F is - then read names from standard input
+
+       -L, --max-line-length
+              print the maximum display width
+
+       -w, --words
+              print the word counts
+
+       --help display this help and exit
+
+       --version
+              output version information and exit
+
+AUTHOR
+       Written by Paul Rubin and David MacKenzie.
+
+REPORTING BUGS
+       GNU coreutils online help: <https://www.gnu.org/software/coreutils/>
+       Report wc translation bugs to <https://translationproject.org/team/>
+
+COPYRIGHT
+       Copyright © 2018 Free Software Foundation, Inc.  License  GPLv3+:  GNU
+       GPL version 3 or later <https://gnu.org/licenses/gpl.html>.
+       This  is  free  software:  you are free to change and redistribute it.
+       There is NO WARRANTY, to the extent permitted by law.
+
+SEE ALSO
+       Full documentation at: <https://www.gnu.org/software/coreutils/wc>
+       or available locally via: info '(coreutils) wc invocation'
+
+GNU coreutils 8.30              September 2019                          WC(1)
+CUT(1)                          User Commands                          CUT(1)
+
+NAME
+       cut - remove sections from each line of files
+
+SYNOPSIS
+       cut OPTION... [FILE]...
+
+DESCRIPTION
+       Print selected parts of lines from each FILE to standard output.
+
+       With no FILE, or when FILE is -, read standard input.
+
+       Mandatory  arguments  to  long options are mandatory for short options
+       too.
+
+       -b, --bytes=LIST
+              select only these bytes
+
+       -c, --characters=LIST
+              select only these characters
+
+       -d, --delimiter=DELIM
+              use DELIM instead of TAB for field delimiter
+
+       -f, --fields=LIST
+              select only these fields;  also print any line that contains no
+              delimiter character, unless the -s option is specified
+
+       -n     (ignored)
+
+       --complement
+              complement the set of selected bytes, characters or fields
+
+       -s, --only-delimited
+              do not print lines not containing delimiters
+
+       --output-delimiter=STRING
+              use  STRING  as  the output delimiter the default is to use the
+              input delimiter
+
+       -z, --zero-terminated
+              line delimiter is NUL, not newline
+
+       --help display this help and exit
+
+       --version
+              output version information and exit
+
+       Use one, and only one of -b, -c or -f.  Each LIST is made  up  of  one
+       range,  or many ranges separated by commas.  Selected input is written
+       in the same order that it is read, and is written exactly once.   Each
+       range is one of:
+
+       N      N'th byte, character or field, counted from 1
+
+       N-     from N'th byte, character or field, to end of line
+
+       N-M    from N'th to M'th (included) byte, character or field
+
+       -M     from first to M'th (included) byte, character or field
+
+AUTHOR
+       Written by David M. Ihnat, David MacKenzie, and Jim Meyering.
+
+REPORTING BUGS
+       GNU coreutils online help: <https://www.gnu.org/software/coreutils/>
+       Report cut translation bugs to <https://translationproject.org/team/>
+
+COPYRIGHT
+       Copyright  ©  2018 Free Software Foundation, Inc.  License GPLv3+: GNU
+       GPL version 3 or later <https://gnu.org/licenses/gpl.html>.
+       This is free software: you are free to  change  and  redistribute  it.
+       There is NO WARRANTY, to the extent permitted by law.
+
+SEE ALSO
+       Full documentation at: <https://www.gnu.org/software/coreutils/cut>
+       or available locally via: info '(coreutils) cut invocation'
+
+GNU coreutils 8.30              September 2019                         CUT(1)
