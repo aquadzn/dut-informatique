@@ -12,7 +12,7 @@ select nom, prenom from membre where parrain is not null and adresse like 'Montr
 select nom from equipement where nom like '%Tennis%' ;
 
 -- 3.
-
+select distinct m3.nom from membre m1 inner join membre m2 on m1.idmem = m2.parrain inner join membre m3 on m3.idmem = m2.parrain;
 
 -- 4 .
 select nom from equipement where ideqt not in (select ideqt from reserver);
