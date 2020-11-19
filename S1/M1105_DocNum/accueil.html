@@ -3,99 +3,132 @@
 
 <head>
 	<meta charset="UTF-8">
-	<title>Mon site web</title>
+	<title>Enseignement à distance</title>
 
 	<link href="style.css" rel="stylesheet" type="text/css" />
 </head>
 
-<body>
+<body id="body">
 	<header>
-		<a href="accueil.html">
-			<img src="image/logo.png" alt="Logo de mon site. Enseignement à distance" />
-		</a>
+		<a href="accueil.html"> <img src="image/logo.png" alt="Logo de mon site. Enseignement à distance" /> </a>
 		<h1> Covid-19: quelle place pour l'enseignement?</h1>
 	</header>
-	<nav>
-		<span class="links">
-			<a href="accueil.html"><img src="image/btn-home.png" alt="Icone accueil"></a>
-			<a href="#">RGPD</a>
+	<nav id="menu">
+
+		<nav id="menuSite">
+			<a href="accueil.html"><img src="image/btn-home.png" alt="Image Maison Accueil"></a>
+			<a href="covid.html">COVID-19</a>
 			<a href="galerie.html">Galerie</a>
 			<a href="contact.html">Contact</a>
-		</span>
-		<span class="social">
-			<a href="#"><img src="image/twitt.png" width="15px" alt="Icone Twitter"></a>
-			<a href="#"><img src="image/facebook.png" width="15px" alt="Icone Facebook"></a>
-			<a href="#"><img src="image/gplus1.png" width="15px" alt="Icone G+"></a>
-		</span>
-		<span class="connexion">
-			<a href="#">Connexion</a>
-		</span>
+		</nav>
+		<nav id="menuSocial">
+			<a href="https://twitter.com/" target="_blank"> <img class="socialImg" src="image/twitt.png"
+					alt="Twitter"></a>
+			<a href="https://www.facebook.com/" target="_blank"><img class="socialImg" src="image/facebook.png"
+					alt="Facebook"></a>
+			<a href="https://plus.google.com/" target="_blank"> <img class="socialImg" src="image/gplus1.png"
+					alt="Google Plus"></a>
+		</nav>
+
+		<nav id="menuConnection">
+			<a href="connexion.html" id="connect-me"><img id="avatar" src="image/avatar_default2.png" alt="Avatar">
+				Connexion</a>
+		</nav>
+
 	</nav>
 
-	<main>
+	<main id="accueilMain">
+
 		<section>
-			<div class="left">
-				<h2>
-					Quand l’enseignement à distance aiguise l’appétit des hackers
-				</h2>
 
-				<p>
-					La rentrée universitaire se déroule progressivement durant ce mois de septembre en France et aux
-					Etats-Unis. Des deux côtés, les cours sont perturbés par la pandémie de Coronavirus et la
-					distanciation sociale qu’elle impose. Le recours à l’enseignement à distance s’impose donc comme une
-					solution nécessaire dans de nombreux établissements. Ce phénomène inquiète les spécialistes en
-					cybersécurité outre-atlantique car il augmente la vulnérabilité des universités, des étudiants et du
-					personnel.
-				</p>
+			<div id="left">
 
-				<figure>
-					<img src="https://pic.clubic.com/v1/images/1783116/raw">
-					<figcaption><i>Une conférence Zoom.</i></figcaption>
-				</figure>
+				<article>
+					<h2> Quand l’enseignement à distance aiguise l’appétit des hackers </h2>
 
-				<p>
-					Cité par The Hill, Michael Tran Duff, directeur de la protection de la vie privée et directeur de la
-					sécurité de l’information à l’Université de Stanford précise : « Nous assistons à une augmentation
-					spectaculaire du phishing, c’est tout à fait prévu, nous savions que cela se produirait avec
-					n’importe quelle calamité majeure. » Son campus fait justement face à une recrudescence des attaques
-					cette année. Ces campagnes pernicieuses permettent notamment à des malfaiteurs d’utiliser les
-					e-mails des étudiants pour obtenir des prêts frauduleux.
-				</P>
-				<p>
-					Le Zoombombing, un phénomène qui inquiète. Une autre tendance loin d’être anodine est le Zoombombing
-					où des individus font leur apparition dans des réunions à distance auxquelles ne sont pas invités.
-					En apparence, cela pourrait prêter à sourire et certains de ces canulars sont très bienveillants. Il
-					arrive cependant assez souvent que ces pratiques soient synonymes de harcèlement et des
-					qualificatifs racistes ou homophobes y sont souvent prononcés. Très fréquemment, le rendez-vous
-					virtuel est même tout simplement stoppé car il est impossible de se défaire du troll.
-				</p>
-				<p>
-					Ce problème est désormais très bien connu, mais un expert cité par le média américain affirme être
-					inquiet par ce phénomène qui risque bien de continuer de « terroriser les écoles » dans les mois à
-					venir.Pour rappel, les employés en télétravail sont également régulièrement victimes d’actes
-					malveillants et de cyberattaques. Nous vous parlions par exemple de ces e-mails de phishing qui
-					ciblent spécifiquement les utilisateurs de Zoom, Microsoft Teams et Google Meets.
-				</p>
+					<p>
+						La rentrée universitaire se déroule progressivement durant ce mois de septembre en France et aux
+						Etats-Unis. Des deux côtés, les cours sont perturbés par la pandémie de Coronavirus et la
+						distanciation sociale qu’elle impose. Le recours à l’enseignement à distance s’impose donc comme
+						une solution nécessaire dans de nombreux établissements. Ce phénomène inquiète les spécialistes
+						en cybersécurité outre-atlantique car il augmente la vulnérabilité des universités, des
+						étudiants et du personnel.
+					</p>
+
+
+					<p>
+						Cité par The Hill, Michael Tran Duff, directeur de la protection de la vie privée et directeur
+						de la sécurité de l’information à l’Université de Stanford précise : « Nous assistons à une
+						augmentation spectaculaire du phishing, c’est tout à fait prévu, nous savions que cela se
+						produirait avec n’importe quelle calamité majeure. » Son campus fait justement face à une
+						recrudescence des attaques cette année. Ces campagnes pernicieuses permettent notamment à des
+						malfaiteurs d’utiliser les e-mails des étudiants pour obtenir des prêts frauduleux.
+					</p>
+
+					<figure>
+						<img src="image/img.jpg" alt="Icone pour enseignement à distance" />
+					</figure>
+
+
+
+					<p>
+						Une autre tendance loin d’être anodine est le Zoombombing où des individus font leur apparition
+						dans des réunions à distance auxquelles ne sont pas invités. En apparence, cela pourrait prêter
+						à sourire et certains de ces canulars sont très bienveillants. Il arrive cependant assez souvent
+						que ces pratiques soient synonymes de harcèlement et des qualificatifs racistes ou homophobes y
+						sont souvent prononcés. Très fréquemment, le rendez-vous virtuel est même tout simplement stoppé
+						car il est impossible de se défaire du troll.
+					</p>
+
+					<p>
+						Pour rappel, les employés en télétravail sont également régulièrement victimes d’actes
+						malveillants et de cyberattaques. Nous vous parlions par exemple de ces e-mails de phishing qui
+						ciblent spécifiquement les utilisateurs de Zoom, Microsoft Teams et Google Meets.
+					</p>
+
+				</article>
+
+
+
+				<div id="comments">
+					<h3> Inserez un commentaire</h3>
+
+					<textarea cols=76 rows=20> </textarea>
+				</div>
+
 			</div>
-			<div class="right">
-				<h2>Connexion</h2>
-				<form action="">
-					<label>Nom d'utilisateur:</label>
-					<input type="text" id="nom" name="nom">
-					<label>Mot de passe:</label>
-					<input type="password" id="mdp" name="mdp">
-					<br>
-					<button type="submit">Connexion</button>
-					<input type="checkbox" name="rester">
-					<label>Rester connecté</label>
-				</form>
-				<a href="#">Vous ne pouvez pas accéder à votre compte ?</a>
-			</div>
+
+
+
+			<!-- Formulaire de connexion-->
+			<form id="formConnection" action="">
+
+				<h2 id="titleForm">Connexion </h2>
+
+				<p class="labelinput">Nom d'utilisateur</p>
+				<input class="inputform" type="text" id="user" name="user" />
+
+				<p class="labelinput">E-mail</p>
+				<input class="inputform" type="E-mail" name="mail" placeholder="Inseréz votre adresse mail" />
+
+
+
+				<button id="buttonConnection" name="connect" type="button">Connexion</button>
+				<input id="stayConnected" type="checkbox" name="stayconnected" checked>
+				<p id="stayConnectedTexte">Rester connecté</p>
+
+				<a id="passwdReget" href="getPassword.html">Vous ne pouvez pas accéder à votre compte?</a>
+
+			</form>
+
 		</section>
 	</main>
+
 	<footer>
-		<p>© 2020 William</p>
+		<a href="accueil.html"> <img src="image/logo.png" alt="Logo de mon site. Enseignement à distance" /> </a>
+		<p>Creative commons licence - Site realisé par William Jacques, 2020.</p>
 	</footer>
-</body>
+
+</body id="body">
 
 </html>

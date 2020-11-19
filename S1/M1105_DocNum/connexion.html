@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscription</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body id="bodyConnexion">
+    <header>
+        <a href="accueil.html"> <img src="image/logo.png" alt="Logo de mon site. Enseignement à distance" /> </a>
+        <h1> Covid-19: quelle place pour l'enseignement?</h1>
+    </header>
+    <nav id="menu">
+
+        <nav id="menuSite">
+            <a href="accueil.html"><img src="image/btn-home.png" alt="Image Maison Accueil"></a>
+            <a href="covid.html">COVID-19</a>
+            <a href="galerie.html">Galerie</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+        <nav id="menuSocial">
+            <a href="https://twitter.com/" target="_blank"> <img class="socialImg" src="image/twitt.png"
+                    alt="Twitter"></a>
+            <a href="https://www.facebook.com/" target="_blank"><img class="socialImg" src="image/facebook.png"
+                    alt="Facebook"></a>
+            <a href="https://plus.google.com/" target="_blank"> <img class="socialImg" src="image/gplus1.png"
+                    alt="Google Plus"></a>
+        </nav>
+
+        <nav id="menuConnection">
+            <a href="connexion.html" id="connect-me"><img id="avatar" src="image/avatar_default2.png" alt="Avatar">
+                Connexion</a>
+        </nav>
+
+    </nav>
+
+    <main id="connexionMain">
+
+        <section>
+
+            <div id="top">
+                <h1>Inscription</h1>
+                <p>
+                    Créez votre compte Nouvelles.com vous permet de réagir
+                    aux articles et de poster vos messages sur le forum.
+                    Remplissez le formulaire afin de bénificier de ces privilèges.
+                </p>
+            </div>
+
+            <form action="">
+                <div id="left">
+                    <label for="genre">Civilité</label>
+                    <select name="genre" id="genre">
+                        <option value=""></option>
+                        <option value="">Homme</option>
+                        <option value="">Femme</option>
+                        <option value="">Non binaire</option>
+                    </select>
+
+                    <label for="nom">Nom</label>
+                    <input type="text" name="nom" id="nom">
+
+                    <label for="prenom">Prénom</label>
+                    <input type="text" name="prenom" id="prenom">
+
+                </div>
+
+                <div id="right">
+                    <form id="formConnection" action="">
+
+                        <h2 id="titleForm">Connexion </h2>
+
+                        <p class="labelinput">Nom d'utilisateur</p>
+                        <input class="inputform" type="text" id="user" name="user" />
+
+                        <p class="labelinput">E-mail</p>
+                        <input class="inputform" type="E-mail" name="mail" placeholder="Inseréz votre adresse mail" />
+
+
+
+                        <button id="buttonConnection" name="connect" type="button">Connexion</button>
+                        <input id="stayConnected" type="checkbox" name="stayconnected" checked>
+                        <p id="stayConnectedTexte">Rester connecté</p>
+
+                        <a id="passwdReget" href="getPassword.html">Vous ne pouvez pas accéder à votre compte?</a>
+
+                    </form>
+
+                </div>
+            </form>
+
+        </section>
+    </main>
+
+
+    <footer>
+        <a href="accueil.html"> <img src="image/logo.png" alt="Logo de mon site. Enseignement à distance" /> </a>
+        <i>Mon site de Nouvelles, tous droits réservés.</i>
+    </footer>
+
+</body id="body">
+
+</html>
