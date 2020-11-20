@@ -211,6 +211,17 @@ aside{
 
 
 
+#right-form
+{
+	/* padding-right: 100px; */
+	width: 500px;
+    display:inline-block;
+	text-align:left;
+	float:right;
+
+}
+
+
 
 #titleForm{
 	font-size:20px;

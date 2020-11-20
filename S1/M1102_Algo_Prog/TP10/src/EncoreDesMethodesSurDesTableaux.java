@@ -10,7 +10,8 @@ public class EncoreDesMethodesSurDesTableaux {
         for(double i : tab) {
             sum += i;
         }
-        return sum / tab.length;
+        double res = sum / tab.length;
+        return Double.isNaN(res) ? 0 : res;
     }
 
     public static double plusGrand(double[] tab) {
@@ -49,32 +50,39 @@ public class EncoreDesMethodesSurDesTableaux {
         return tabRes;
     }
 
- /*   public static int[] somme(int[] tabA, int[] tabB) {
+    public static int[] somme(int[] tabA, int[] tabB) {
         int lengthA = tabA.length;
         int lengthB = tabB.length;
-        if (lengthA != lengthB) {
-            return new int[] {-1};
-        }
 
-        int[] tabRes = new int[length];
-        for (int i = 0; i < length; i++) {
-            tabRes[i] = (tabA[i] + tabB[i]);
-        }
-        return tabRes;
-    }*/
+        int[] tabRes = new int[Math.max(lengthA, lengthB)];
 
-    public static int[] positifs(int[] tab) {
-        int zeros = 0;
-        for (int i : tab) {
-            if (i < 0) {
-                zeros++;
+        for (int i = 0; i < tabRes.length; i++) {
+            if (tabA.length > i) {
+                tabRes[i] += tabA[i];
+            }
+            if (tabB.length > i) {
+                tabRes[i] += tabB[i];
             }
         }
 
-        int[] tabRes = new int[tab.length - zeros];
-        for (int j = 0; j < tab.length; j++) {
-            if (tab[j] >= 0) {
-                tabRes[j] = tab[j];
+        return tabRes;
+    }
+
+    public static int[] positifs(int[] tab) {
+        int negatives = 0;
+        for (int t : tab) {
+            if (t <= -1) {
+                negatives++;
+            }
+        }
+
+        int[] tabRes = new int[tab.length  - negatives];
+        int indexTabRes = 0;
+
+        for (int i : tab) {
+            if (i >= 0) {
+                tabRes[indexTabRes] = i;
+                indexTabRes++;
             }
         }
 

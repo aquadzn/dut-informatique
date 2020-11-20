@@ -22,7 +22,7 @@ public class EncoreDesMethodesSurDesTableauxTest {
 	
 	@Test
 	public final void testPlusGrand() {
-				
+
 		double[] maxEnPremier = {22.4,-3.9,-7,13,-22,18.6};
 		assertEquals (22.4, EncoreDesMethodesSurDesTableaux.plusGrand(maxEnPremier),0.0, "cas tableau longueur > 0, maxi en premier");
 
@@ -31,15 +31,15 @@ public class EncoreDesMethodesSurDesTableauxTest {
 
 		double[] maxAuMilieuEtMax0 = {-22.4,-3.9,-7,0.0,-22,-18.6};
 		assertEquals (0.0, EncoreDesMethodesSurDesTableaux.plusGrand(maxAuMilieuEtMax0),0.0, "cas tableau longueur > 0, maxi au milieu");
-		
+
 		double[] maxNégatif = {-5555555.5, -2222222.2, -3333333.9, -7777777.7};
-		assertEquals (-2222222.2, EncoreDesMethodesSurDesTableaux.plusGrand(maxNégatif),0.0, "cas tableau longueur > 0, maxi négatif");		
-		
+		assertEquals (-2222222.2, EncoreDesMethodesSurDesTableaux.plusGrand(maxNégatif),0.0, "cas tableau longueur > 0, maxi négatif");
+
 	}
-	
-	
+
+
 // EGAUX
-	
+
 	@Test
 	public final void testEgaux() {
 		int[] tabLongZero = {};
@@ -49,26 +49,26 @@ public class EncoreDesMethodesSurDesTableauxTest {
 		int[] tabLong5_B = {3, -5, 0, -1, 2};
 		int[] tabLong5_C = {2, 4, -6, 8, 10};
 		int[] tabLong3 = {1,2,3};
-		
+
 		assertTrue(EncoreDesMethodesSurDesTableaux.égaux(tabLongZero,tabLongZero_bis), "cas long=0 long=0");
 
 		assertTrue(EncoreDesMethodesSurDesTableaux.égaux(tabLong5_A,tabLong5_Abis), "cas moyen");
-		
-		assertTrue(EncoreDesMethodesSurDesTableaux.égaux(tabLong5_A,tabLong5_A), "même tableau");
-		
-		assertFalse(EncoreDesMethodesSurDesTableaux.égaux(tabLong5_A, tabLongZero), "cas long!=0 long=0");
-		
-		assertFalse(EncoreDesMethodesSurDesTableaux.égaux(tabLongZero, tabLong5_A), "cas long=0 long!=0");
-		
-		assertFalse(EncoreDesMethodesSurDesTableaux.égaux(tabLong3, tabLong5_A), "cas longueurs différentes");
-		
-		assertFalse(EncoreDesMethodesSurDesTableaux.égaux(tabLong5_A, tabLong5_B), "cas même longueurs mais différents (1)");	
 
-		assertFalse(EncoreDesMethodesSurDesTableaux.égaux(tabLong5_A, tabLong5_C), "cas même longueurs mais différents (2)");	
-		
+		assertTrue(EncoreDesMethodesSurDesTableaux.égaux(tabLong5_A,tabLong5_A), "même tableau");
+
+		assertFalse(EncoreDesMethodesSurDesTableaux.égaux(tabLong5_A, tabLongZero), "cas long!=0 long=0");
+
+		assertFalse(EncoreDesMethodesSurDesTableaux.égaux(tabLongZero, tabLong5_A), "cas long=0 long!=0");
+
+		assertFalse(EncoreDesMethodesSurDesTableaux.égaux(tabLong3, tabLong5_A), "cas longueurs différentes");
+
+		assertFalse(EncoreDesMethodesSurDesTableaux.égaux(tabLong5_A, tabLong5_B), "cas même longueurs mais différents (1)");
+
+		assertFalse(EncoreDesMethodesSurDesTableaux.égaux(tabLong5_A, tabLong5_C), "cas même longueurs mais différents (2)");
+
 	}
 
-// SOMME	
+// SOMME
 
 	@Test
 	public final void testSommeMêmeLongueur() {
@@ -78,14 +78,14 @@ public class EncoreDesMethodesSurDesTableauxTest {
 		int[] tabResultatLongZero = {};
 		assertArrayEquals(tabResultatLongZero, EncoreDesMethodesSurDesTableaux.sommeMêmeLongueur(tabLongZero,tabLongZero_bis), "cas long0 long0");
 
-		
+
 		int[] tabLong5_A = {2, 4, 6, 8, 10};
 		int[] tabLong5_B = {3, -5, 0, -1, 2};
 		int[] tabResultatTestCasMoyen_long5 = {5,-1, 6, 7, 12};
 		assertArrayEquals(tabResultatTestCasMoyen_long5, EncoreDesMethodesSurDesTableaux.sommeMêmeLongueur(tabLong5_A,tabLong5_B), "cas moyen");
 	}
 	
-/*	@Test
+	@Test
 	public final void testSomme() {
 
 		int[] tabLongZero = {};
@@ -109,7 +109,7 @@ public class EncoreDesMethodesSurDesTableauxTest {
 		assertArrayEquals(tabLong3,EncoreDesMethodesSurDesTableaux.somme(tabLong3, tabLongZero), "cas B vide");
 
 		
-	}*/
+	}
 
 
 // POSITIFS
