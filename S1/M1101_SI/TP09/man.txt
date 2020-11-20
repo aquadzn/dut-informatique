@@ -1,0 +1,24 @@
+curl(1)                           Curl Manual                          curl(1)
+
+NAME
+       curl - transfer a URL
+
+SYNOPSIS
+       curl [options / URLs]
+
+HEAD(1)                          User Commands                         HEAD(1)
+
+NAME
+       head - output the first part of files
+
+SYNOPSIS
+       head [OPTION]... [FILE]...
+
+TAIL(1)                          User Commands                         TAIL(1)
+
+NAME
+       tail - output the last part of files
+
+SYNOPSIS
+       tail [OPTION]... [FILE]...
+
