@@ -22,7 +22,7 @@ public class Menu {
             notes[i] = saisie.nextDouble();
         }
 
-        String affichage = "------------------- Menu --------------------\n" +
+        String affichage = "\n------------------- Menu --------------------\n" +
                 "1. Afficher le nombre d'étudiants.\n" +
                 "2. Afficher toutes les notes.\n" +
                 "3. Afficher la moyenne de la promotion.\n" +
@@ -30,7 +30,9 @@ public class Menu {
                 "5. AntiZéro: aucune note égale à 0.\n" +
                 "6. Modifier une note.\n" +
                 "7. Ajouter un bonus à chacune des notes.\n" +
-                "8. Quitter.";
+                "8. Ajuster les notes pour atteindre une moyenne donnée.\n" +
+                "9. Quitter.\n" +
+                "---------------------------------------------\n";
 
         int choix;
         do {
@@ -70,15 +72,21 @@ public class Menu {
                     System.out.print("Valeur du bonus: ");
                     double bonus = saisie.nextDouble();
                     Utils.ajouterBonus(notes, bonus);
+                    System.out.println("Chaque note a été augmentée de " + bonus);
                     break;
                 case 8:
+                    System.out.print("Moyenne attendue: ");
+                    double moyenneAttendue = saisie.nextDouble();
+                    Utils.corrigerMoyenne(notes, moyenneAttendue);
+                    break;
+                case 9:
                     System.out.println("Au revoir!");
                     break;
                 default:
                     System.out.println("Option non valide.");
                     break;
             }
-        } while (choix != 8);
+        } while (choix != 9);
 
         saisie.close();
     }

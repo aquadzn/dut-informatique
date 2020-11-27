@@ -19,6 +19,15 @@ public class Utils {
         System.out.println("Moyenne de la classe: " + (moyenne / notes.length));
     }
 
+    public static double retournerMoyenne(double[] notes) {
+        double moyenne = 0;
+
+        for (double note : notes) {
+            moyenne += note;
+        }
+        return (moyenne / notes.length);
+    }
+
     public static void seuilNotes(double[] notes, double seuil) {
         boolean depasse = false;
 
@@ -52,7 +61,21 @@ public class Utils {
         for (int i = 0; i < notes.length; i++) {
             notes[i] += bonus;
         }
-        System.out.println("Chaque note a été augmentée de " + bonus);
+    }
 
+    public static void corrigerMoyenne(double[] notes, double moyenneAttendue) {
+        double moyenneReelle = retournerMoyenne(notes);
+
+        if (moyenneReelle >= moyenneAttendue) {
+            System.out.println("Moyenne attendue déjà atteinte!");
+        }
+        else {
+            while (moyenneReelle < moyenneAttendue - 0.1) {
+                ajouterBonus(notes, 0.1);
+                moyenneReelle = retournerMoyenne(notes);
+            }
+            System.out.println("Moyenne attendue: " + moyenneAttendue);
+            System.out.println("Moyenne après ajustement: " + moyenneReelle);
+        }
     }
 }
