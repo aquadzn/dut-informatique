@@ -1,59 +1,97 @@
+<!DOCTYPE html>
 
-
-<!DOCTYPE HTML>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>Galerie</title>
-		
-		<link href="style.css" rel="stylesheet" type="text/css"/>
-	</head>
-    <body id="body">
-        <header>
-            <img src="image/logo.png">
-            <h1>Galerie</h1>
-        </header>
-        <nav>
-          <a href="accueil.html">Accueil</a>
-          <a href="galerie.html">Galerie</a>
-          <a href="contact.html">Contact</a>
+
+<head>
+
+    <meta charset="utf-8">
+    <title>Inscription</title>
+    <!-- Styles -->
+    <link href="inscription.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+
+    <!-- /Header avec logo cliquable -->
+    <header>
+        <a href="index.html"> <img src="image/logo.png" alt="Logo de mon site. Enseignement à distance" /> </a>
+        <h1> Covid-19: quelle place pour l'enseignement?</h1>
+    </header>
+
+    <!-- /Menu de navigation, composé par 3 sousmenus -->
+    <nav id="menu">
+        <!-- /Menu 1: menu du site -->
+        <nav id="menuSite">
+            <a href="index.html"><img src="./image/btn-home.png" alt="Accueil"></a>
+            <a href="covid.html">COVID-19</a>
+            <a href="galerie.html">Galerie</a>
+            <a href="contact.html">Contact</a>
         </nav>
-        <main>
 
-            <section>
-				<h2>
-				    A propos de moi
-				</h2>
-                <table >
-                    <thead>
-                        <tr>
-                            <th colspan="5">Quelques passions</th>
-                        </tr>
-                    </thead>
-                    <tbody id="body">
-                        <tr>
-                            <td><img src="image/img1.jpg" alt="description here" width=270 height=180></td>
-                            <td><img src="image/img2.jpg" alt="description here" width=270 height=180></td>
-                            <td><img src="image/img3.jpg" alt="description here" width=270 height=180></td>
-                        </tr>
-                        <tr>
-                            <td><img src="image/img4.jpg" alt="description here" width=270 height=180></td>
-                            <td><img src="image/img5.jpg" alt="description here" width=270 height=180></td>
-                            <td><img src="image/img6.jpg" alt="description here" width=270 height=180></td>
-                        </tr>
-                        <tr>
-                            <td><img src="image/img7.jpg" alt="description here" width=270 height=180></td>
-                            <td><img src="image/img8.jpg" alt="description here" width=270 height=180></td>
-                            <td><img src="image/img9.jpg" alt="description here" width=270 height=180></td>
-                        </tr>
-                    </tbody id="body">
-                </table>
-            </section>
-        </main>
-        <footer>
-            <p>© 2020 William</p>
-        </footer>
-    </body id="body">
+        <!-- /Menu 2: reseaux sociaux -->
+        <nav id="menuSocial">
+            <a href="https://twitter.com/" target="_blank"> <img class="socialImg" src="./image/twitt.png"
+                    alt="Twitter"></a>
+            <a href="https://www.facebook.com/" target="_blank"><img class="socialImg" src="./image/facebook.png"
+                    alt="Facebook"></a>
+            <a href="https://plus.google.com/" target="_blank"> <img class="socialImg" src="./image/gplus1.png"
+                    alt="Google Plus"></a>
+        </nav>
+
+        <!-- /Menu 3: login utilisateur -->
+        <nav id="menuConnection">
+            <a href="connection.html" id="connect-me">
+                <img class="avatar" src="./image/avatar_default2.png" alt="Avatar"> Connexion</a>
+        </nav>
+    </nav>
+
+
+    <main>
+        <!-- /Section principal -->
+        <section id="connection">
+
+            <!-- Div du milieu -->
+            <div>
+                <div id="galerieLeft">
+
+                    <iframe width="560" height="315"
+                        src="https://www.youtube.com/embed/NmQbfWhW8mE" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>
+                    <h1>Coranavirus</h1>
+                    <p>I'll be there for you!</p>
+                </div>
+
+                <div id="galerieRight">
+                    <h1>Coranavirus</h1>
+                    <p>I'll be there for you!</p>
+                    <h1>My Corona!</h1>
+                    <p>Chris Mann revamps The Knack</p>
+                </div>
+            </div>
+
+
+
+            <!--Partie sur les newsletter, info des partenaires et condition d'utilisation du site-->
+            <div>
+            </div>
+    </main>
+
+
+
+    </section>
+
+    <!-- /Footer de la page -->
+    <footer>
+        <a href="index.html"> <img src="./image/logo.png" alt="Logo code"></a>
+        <p>Mon site de Nouvelles, tous droits réservés</p>
+        <!-- /Copyright -->
+    </footer>
+
+
+</body>
+
 </html>
-
-

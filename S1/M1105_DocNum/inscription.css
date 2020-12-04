@@ -1,0 +1,374 @@
+body{
+	font-family:'Open Sans',Arial,sans-serif;
+	font-weight:600;
+	margin:0;
+	padding:0;
+	background:#f1f1f1;
+	width: 1200px;
+    margin: auto;	
+}
+
+/****************************************************/
+/* HEADER */
+/****************************************************/
+
+header{
+	background-color:#222222;
+	padding:20px;
+
+}
+
+
+header img{
+	width: 230px;
+	display:inline-block;
+	
+}
+
+header h1{
+	font-size: 30px;
+	text-align:right;
+	color:white;
+	display:inline-block;
+	float:right;
+	
+}
+
+/*------------NAV---------------
+-------------------------------*/
+
+#menu{
+
+	margin-top:20px;
+	margin-bottom:20px;
+	padding-left:250px;
+	width:100%;
+}
+
+
+
+
+
+#menuSite{
+	display: inline-block;	
+
+}
+
+
+#menuConnection{
+	margin-left:30px;
+	display: inline-block;
+}
+
+#menuSocial{
+		margin-left:30px;
+		display: inline-block;
+}
+
+#menu a{
+	text-decoration:none; 
+	font-family: 'Bree Serif', Georgia, serif;
+	font-size: 20px;
+	color:#6a6969;
+	padding:10px;
+	background-color:#222222;
+	display:inline-block;
+	border-radius:10px;
+	border:1px solid #FFFAFA;
+}
+
+
+
+
+#menuSocial a{
+	text-decoration:none; 
+	color:#6a6969;
+	font-family: 'Bree Serif', Georgia, serif;
+	font-size: 20px;
+	background-color:#222222;
+}
+
+#menuConnection a{
+	color: white;
+	text-decoration:none; 
+}
+
+.avatar{
+		width:16px;
+		height:16px;
+}
+
+
+.socialImg{
+		width:20px;
+		height:20px;
+}
+
+
+
+
+
+
+
+
+/****************************************************/
+/* MAIN */
+/****************************************************/
+
+section{
+	width: 1200px;
+	margin-top:20px;
+
+	display:inline-block;
+	margin-bottom:20px;
+	padding-bottom:20px;
+		background-color:#222222;	
+	color:white;
+}
+
+
+
+
+
+input{
+	border-radius: 3px;
+	margin-bottom:15px;
+}
+
+
+/****************************************************/
+/* SECTION galerie */
+/****************************************************/
+
+
+
+#galerieLeft{
+
+	margin-top:30px;
+	width:600px;
+	margin-left:30px;
+	display:inline-block;
+	border: 2px solid #f1f1f1;
+	border-radius: 20px;
+	padding: 10px;
+}
+
+#galerieRight{
+	margin-top:100px;
+	display:inline-block;
+	width:300px;
+	margin-right:150px;
+	border: 1px solid #f1f1f1;
+	border-radius: 20px;
+	padding: 10px;
+	text-align: center;
+	font-size: 15px;
+	float:right;
+}
+
+
+
+/****************************************************/
+/* SECTION inscription */
+/****************************************************/
+
+
+
+#formLeft2{
+
+	margin-top:30px;
+	width:600px;
+	height:300px;
+	margin-left:30px;
+	display:inline-block;
+}
+
+#formRight2{
+		margin-top:30px;
+	display:inline-block;
+	width:500px;
+	margin-right:30px;
+	font-size: 15px;
+	float:right;
+}
+
+
+
+#topInscription{
+	margin-left:30px;
+	margin-right:30px;
+}
+
+#topInscription h1{
+	font-size:40px;
+	font-weight:normal;
+}
+
+#civiliteNom{
+	margin-bottom: 15px;
+}
+
+#selectForm{
+	display:inline-block;
+}
+
+#civiliteNom label{
+	display:inline-block;
+
+	font-size:25px;
+}
+
+#prenomlabel{
+	display:block;
+
+	font-size:25px;
+}
+#civilite{
+	margin-right:30px;
+}
+
+#nom{
+	margin-left: 40px;
+}
+
+#photoProfil{
+	margin-top:20px;
+	width:320px;
+	height: 80px;
+	background: rgb(61,69,78);
+	padding-top:20px;
+}
+
+#avatar1{
+	width:50px;
+	height: 50px;
+	opacity:0.6;
+	margin-left:30px;
+	display:inline-block;
+	float: left;
+}
+
+#filePhoto{
+	width:160px;
+	height: 40px;
+	margin-top:10px;
+	margin-left:30px;
+	margin-right:30px;
+	background:rgb(73,81,89);
+	border-radius:3px;
+	border:0;
+}
+
+
+#formRight2 label{
+	display:block;
+	font-size:25px;
+	
+}
+
+#formRight2 input{
+
+	width:300px;
+
+}
+
+#newsletter{
+	margin-top:70px;
+	margin-left:30px;
+	margin-right: 30px;
+	font-size:15px;
+	font-style:italic;
+	display:inline-block;	
+}
+
+#checkboxCondition {
+		margin-top:70px;
+display:inline-block;
+float:right;
+margin-right:320px;
+}
+
+#checkboxCondition {
+display:inline-block;
+width:200px;
+margin-left:30px;
+margin-top:80px;
+}
+
+#checkboxCondition input {
+	display:block;
+}
+
+#checkboxCondition form {
+	margin-left:70px;
+	margin-top:16px;
+}
+
+#checkboxCondition input{
+	display:inline;
+	margin-bottom:20px;
+}
+#explication{
+color:rgb(169,171,135);
+	display:inline-block;
+
+}
+
+
+#buttonCreateAcc1{
+	color:white;
+	margin-top:30px;
+	background: rgb(200,74,74);
+	border-radius: 3px;
+	height:40px;
+	width:250px;
+	border:0;
+}
+
+
+
+#errorMsg{
+	color:red;
+	display:block;
+	margin-top:-10px;
+}
+
+
+
+
+	
+/****************************************************/
+/* FOOTER */
+/****************************************************/
+footer{
+	background-color:#222222;
+	height:60px;
+	margin-top:10px;
+	padding-left:30px;
+	padding-top:15px;
+	
+	
+}
+
+footer a{
+	display:inline-block;
+	
+}
+
+footer p{
+	display:inline-block;
+	width:60%;
+	float:right;
+	color:white;
+	margin-left:180px;
+	vertical-align:middle;
+	font-style:italic;
+}
+
+
+footer a img{
+	width:50x;
+	height:50px;
+}
+
+

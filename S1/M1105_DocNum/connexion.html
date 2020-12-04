@@ -1,102 +1,161 @@
 <!DOCTYPE html>
-<html lang="en">
+
+<html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inscription</title>
-    <link href="style.css" rel="stylesheet" type="text/css" />
+
+	<meta charset="utf-8">
+	<title>Inscription</title>
+	<!-- Styles -->
+	<link href="inscription.css" rel="stylesheet">
+
 </head>
 
-<body id="bodyConnexion">
-    <header>
-        <a href="accueil.html"> <img src="image/logo.png" alt="Logo de mon site. Enseignement à distance" /> </a>
-        <h1> Covid-19: quelle place pour l'enseignement?</h1>
-    </header>
-    <nav id="menu">
-
-        <nav id="menuSite">
-            <a href="accueil.html"><img src="image/btn-home.png" alt="Image Maison Accueil"></a>
-            <a href="covid.html">COVID-19</a>
-            <a href="galerie.html">Galerie</a>
-            <a href="contact.html">Contact</a>
-        </nav>
-        <nav id="menuSocial">
-            <a href="https://twitter.com/" target="_blank"> <img class="socialImg" src="image/twitt.png"
-                    alt="Twitter"></a>
-            <a href="https://www.facebook.com/" target="_blank"><img class="socialImg" src="image/facebook.png"
-                    alt="Facebook"></a>
-            <a href="https://plus.google.com/" target="_blank"> <img class="socialImg" src="image/gplus1.png"
-                    alt="Google Plus"></a>
-        </nav>
-
-        <nav id="menuConnection">
-            <a href="connexion.html" id="connect-me"><img id="avatar" src="image/avatar_default2.png" alt="Avatar">
-                Connexion</a>
-        </nav>
-
-    </nav>
-
-    <main id="connexionMain">
-
-        <section>
-
-            <div id="top">
-                <h1>Inscription</h1>
-                <p>
-                    Créez votre compte Nouvelles.com vous permet de réagir
-                    aux articles et de poster vos messages sur le forum.
-                    Remplissez le formulaire afin de bénificier de ces privilèges.
-                </p>
-            </div>
-
-            <form action="">
-                <div id="left">
-                    <label for="genre">Civilité</label>
-                    <select name="genre" id="genre">
-                        <option value=""></option>
-                        <option value="">Homme</option>
-                        <option value="">Femme</option>
-                        <option value="">Non binaire</option>
-                    </select>
-
-                    <label for="nom">Nom</label>
-                    <input type="text" name="nom" id="nom">
-
-                    <label for="prenom">Prénom</label>
-                    <input type="text" name="prenom" id="prenom">
-
-                    <label for="">Photo de profil</label>
-                    <input type="file" name="" id="">
-
-                    
-                </div>
-                <div id="right-form">
-                    <label for="email">Email</label>
-                    <input type="email" name="email" id="email">
-
-                    <label for="conf-email">Confirmation email</label>
-                    <input type="email" name="conf-email" id="conf-email">
-              
-                    <label for="pseudo">Pseudo</label>
-                    <input type="text" name="pseudo" id="pseudo">
-
-                    <label for="mdp">Mot de passe</label>
-                    <input type="password" name="mdp" id="mdp">
-
-                </div>
-
-            </form>
-
-        </section>
-    </main>
+<body>
 
 
-    <footer>
-        <a href="accueil.html"> <img src="image/logo.png" alt="Logo de mon site. Enseignement à distance" /> </a>
-        <i>Mon site de Nouvelles, tous droits réservés.</i>
-    </footer>
+	<!-- /Header avec logo cliquable -->
+	<header>
+		<a href="index.html"> <img src="image/logo.png" alt="Logo de mon site. Enseignement à distance" /> </a>
+		<h1> Covid-19: quelle place pour l'enseignement?</h1>
+	</header>
 
-</body id="body">
+	<!-- /Menu de navigation, composé par 3 sousmenus -->
+	<nav id="menu">
+		<!-- /Menu 1: menu du site -->
+		<nav id="menuSite">
+			<a href="index.html"><img src="./image/btn-home.png" alt="Accueil"></a>
+			<a href="covid.html">COVID-19</a>
+			<a href="galerie.html">Galerie</a>
+			<a href="contact.html">Contact</a>
+		</nav>
+
+		<!-- /Menu 2: reseaux sociaux -->
+		<nav id="menuSocial">
+			<a href="https://twitter.com/" target="_blank"> <img class="socialImg" src="./image/twitt.png"
+					alt="Twitter"></a>
+			<a href="https://www.facebook.com/" target="_blank"><img class="socialImg" src="./image/facebook.png"
+					alt="Facebook"></a>
+			<a href="https://plus.google.com/" target="_blank"> <img class="socialImg" src="./image/gplus1.png"
+					alt="Google Plus"></a>
+		</nav>
+
+		<!-- /Menu 3: login utilisateur -->
+		<nav id="menuConnection">
+			<a href="connection.html" id="connect-me">
+				<img class="avatar" src="./image/avatar_default2.png" alt="Avatar"> Connexion</a>
+		</nav>
+	</nav>
+
+
+	<main>
+		<!-- /Section principal -->
+		<section id="connection">
+
+			<!-- Div du haut -- Info sur l'inscription et titre -->
+			<div id="topInscription">
+				<h2>Inscription</h2>
+				<p>Créez votre compte Nouvelles.com, vous permet de réagir aux articles et de poster vos messages sur le
+					forum. Remplissez le formulaire suivant afin de profiter de ces privilèges.</p>
+			</div>
+
+			<form>
+				<!-- Div du milieu -->
+				<div>
+					<!--partie à gauche avec nom, civilite, prenom et photo-->
+					<div id="formLeft2">
+
+						<div id="civiliteNom">
+							<label id="civilite" for="civil">Civilité</label>
+							<label for="nom">Nom</label>
+						</div>
+
+						<div>
+							<select name="civilite" size="1" id="civil">
+								<option value="1" label=""></option>
+								<option value="2" label="M"></option>
+								<option value="3" label="Mme"></option>
+								<option value="4" label="Mlle"></option>
+							</select>
+							<input id="nom" type="text" name="nom" size="30" pattern="[A-Z][a-z]*" />
+						</div>
+
+						<label id="prenomlabel" for="prenom">Prenom</label>
+
+						<input id="prenom" type="text" name="prenom" size="49" pattern="[A-Z][a-z]*" />
+						<h3>Photo de Profil</h3>
+						<div id="photoProfil">
+							<img id="avatar1" src="./image/avatar_default2.png" alt="Avatar">
+							<button id="filePhoto" type="button">Importez votre photo</button>
+						</div>
+
+					</div>
+
+					<!--Form à droite avec email, verification email, nom utilisateur, mot de passe-->
+					<div id="formRight2">
+
+						<label for="email">E-mail</label>
+						<input id="email" type="email" name="email" size="47" />
+
+						<label for="email2">Confirmation e-mail</label>
+						<input id="email2" type="email" name="emailConf" class="" size="47" />
+
+						<label for="user">Nom d'utilisateur</label>
+						<input id="user" type="text" name="user" size="47" />
+
+						<label for="passwd">Mot de passe</label>
+						<input id="passwd" type="password" name="passwd" size="47" />
+
+					</div>
+				</div>
+
+
+
+				<!--Partie sur les newsletter, info des partenaires et condition d'utilisation du site-->
+				<div>
+
+					<div id="newsletter">
+						<div id="explication">
+							<p>Je souhaite recevoir les newsletters de Nouvelles.com</p>
+							<p>Je souhaite recevoir les informations des partenaires de Nouvelles.com</p>
+							<p>J'accepte les conditions générales d'utilisation de Nouvelles.com</p>
+
+						</div>
+
+					</div>
+
+
+					<!--Bouton pour créer un compte-->
+					<div id="checkboxCondition">
+
+						<div>
+							<input type="radio" name="news1" id="radio1" /><label for="radio1">Oui</label>
+							<input type="radio" name="news1" id="radio2" /><label for="radio2">Non</label>
+						</div>
+						<div class="radios">
+							<input type="radio" name="info1" id="radio3" /><label for="radio3">Oui</label>
+							<input type="radio" name="info1" id="radio4" /><label for="radio4">Non</label>
+						</div>
+						<input type="checkbox" name="condition3">
+						<button id="buttonCreateAcc1" name="connect" type="button">Je crée mon compte</button>
+
+					</div>
+				</div>
+			</form>
+	</main>
+
+
+
+	</section>
+
+	<!-- /Footer de la page -->
+	<footer>
+		<a href="index.html"> <img src="./image/logo.png" alt="Logo code"></a>
+		<p>Mon site de Nouvelles, tous droits réservés</p>
+		<!-- /Copyright -->
+	</footer>
+
+
+</body>
 
 </html>
