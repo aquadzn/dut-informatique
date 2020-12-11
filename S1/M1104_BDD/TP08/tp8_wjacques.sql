@@ -89,7 +89,7 @@ CREATE TABLE imdb.noter (
     noAbon integer,
     idFilm integer,
     vu boolean DEFAULT false,
-    note smallint NOT NULL,
+    note smallint,
     datNotation timestamp DEFAULT now(),
     constraint pk_noter PRIMARY KEY (noAbon, idFilm),
     constraint fk_noter_noAbon FOREIGN KEY (noAbon) REFERENCES imdb.abonne (noAbon),
@@ -102,6 +102,93 @@ CREATE TABLE imdb.noter (
 DROP SCHEMA IF EXISTS comics CASCADE;
 CREATE SCHEMA IF NOT EXISTS comics;
 
--- CREATE TABLE comics.langue (
+CREATE TABLE comics.langue (
+    lid varchar(16) PRIMARY KEY,
+    nom varchar(64)
+);
 
--- );
+CREATE TABLE comics.collection (
+    cid varchar(8) PRIMARY KEY,
+    cnom varchar(64)
+);
+
+CREATE TABLE comics.editeur (
+    eid integer PRIMARY KEY,
+    enom varchar(64)
+);
+
+CREATE TABLE comics.auteur (
+    idAuth serial PRIMARY KEY,
+    nom varchar(32),
+    prenom varchar(32),
+    pseudo varchar(32)
+);
+
+CREATE TABLE comics.ouvrage (
+    no serial PRIMARY KEY,
+    titre varchar(64),
+    annee integer,
+    cid varchar(8),
+    lid varchar(16),
+    eid integer,
+    constraint fk_comics_cid FOREIGN KEY (cid) REFERENCES comics.collection (cid),
+    constraint fk_comics_lid FOREIGN KEY (lid) REFERENCES comics.langue (lid),
+    constraint fk_comics_eid FOREIGN KEY (eid) REFERENCES comics.editeur (eid)
+);
+
+INSERT INTO comics.langue (lid, nom) VALUES
+    ('en_US', 'américain'),
+    ('fr_FR', 'français'),
+    ('en_GB', 'anglais')
+;
+
+INSERT INTO comics.collection (cid, cnom) VALUES
+    ('C1', 'Astérix'),
+    ('C2', 'Donjon'),
+    ('C3', 'Winch')
+;
+
+INSERT INTO comics.editeur (eid, enom) VALUES
+    (10, 'Dargaud'),
+    (20, 'Delcourt'),
+    (30, 'Casterman')
+;
+
+INSERT INTO comics.ouvrage (titre, annee, cid, lid, eid) VALUES
+    ('Astérix le Gaulois', 1959, 'C1', 'fr_FR', 10),
+    ('Largo Winch', 1977, 'C3', 'fr_FR', 30),
+    ('Donjon Potron-Minet', 1998, 'C2', 'fr_FR', 20)
+;
+
+INSERT INTO comics.auteur (nom, prenom, pseudo) VALUES
+    ('Chabosy', 'Laurent', 'Lewis Trondheim'),
+    ('Sfar', 'Joann', 'Joann Sfar'),
+    ('Goscinny', 'René', 'Agostini'),
+    ('Van Hamme', 'Jean', NULL)
+;
+
+-- Optionnel
+
+-- 1.
+SELECT * FROM comics.langue;
+
+-- 2.
+SELECT DISTINCT cnom FROM comics.collection ORDER BY cnom ASC;
+
+-- 3.
+SELECT nom FROM comics.auteur WHERE prenom LIKE 'J%';
+
+-- 4.
+SELECT COUNT(*) FROM comics.ouvrage;
+
+-- 5.
+SELECT titre, annee FROM comics.ouvrage WHERE annee BETWEEN 1973 AND 1975 ORDER BY titre ASC;
+
+-- 6.
+SELECT no, titre, annee, cid, lid, eid FROM comics.ouvrage NATURAL JOIN comics.editeur WHERE enom LIKE 'Casterman' AND annee >= 1970 ORDER BY annee DESC;
+
+-- 7.
+SELECT * from comics.auteur WHERE pseudo IS NULL;
+
+-- 8.
+SELECT eid, enom FROM comics.editeur NATURAL JOIN comics.ouvrage GROUP BY eid HAVING COUNT(eid) > 1;
