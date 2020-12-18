@@ -56,20 +56,24 @@
             <div>
                 <div id="galerieLeft">
 
-                    <iframe width="560" height="315"
-                        src="https://www.youtube.com/embed/NmQbfWhW8mE" frameborder="0"
+                    <iframe id="video" width="560" height="315" src="https://www.youtube.com/embed/NmQbfWhW8mE"
+                        frameborder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                         allowfullscreen>
                     </iframe>
-                    <h1>Coranavirus</h1>
-                    <p>I'll be there for you!</p>
+                    <h1 id="titreVideo">Coranavirus</h1>
+                    <p id="descVideo">I'll be there for you!</p>
                 </div>
 
                 <div id="galerieRight">
-                    <h1>Coranavirus</h1>
-                    <p>I'll be there for you!</p>
-                    <h1>My Corona!</h1>
-                    <p>Chris Mann revamps The Knack</p>
+                    <div id="videoA" onclick="changerVideo(this.id)">
+                        <h1>Coranavirus</h1>
+                        <p>I'll be there for you!</p>
+                    </div>
+                    <div id="videoB" onclick="changerVideo(this.id)">
+                        <h1>My Corona!</h1>
+                        <p>Chris Mann revamps The Knack</p>
+                    </div>
                 </div>
             </div>
 
@@ -91,7 +95,23 @@
         <!-- /Copyright -->
     </footer>
 
-
+    <script type="text/javascript">
+        function changerVideo(id) {
+            if (id == "videoB") {
+                document.getElementById("video").src = "https://www.youtube.com/embed/ojrtwXqqc6g";
+                document.getElementById("titreVideo").innerHTML = "My Corona!";
+                document.getElementById("descVideo").innerHTML = "Chris Mann revamps The Knack";
+            }
+            else if (id == "videoA") {
+                document.getElementById("video").src = "https://www.youtube.com/embed/NmQbfWhW8mE";
+                document.getElementById("titreVideo").innerHTML = "Coronavirus";
+                document.getElementById("descVideo").innerHTML = "I'll be there for you!";
+            }
+            else {
+                alert("Erreur!");
+            }
+        }
+    </script>
 </body>
 
 </html>

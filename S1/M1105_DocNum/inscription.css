@@ -158,12 +158,19 @@ input{
 	display:inline-block;
 	width:300px;
 	margin-right:150px;
-	border: 1px solid #f1f1f1;
-	border-radius: 20px;
 	padding: 10px;
 	text-align: center;
 	font-size: 15px;
 	float:right;
+}
+
+#galerieRight div {
+	border: 1px solid #f1f1f1;
+	border-radius: 20px;
+}
+
+#galerieRight div:hover {
+	background-color: orangered;
 }
 
 
