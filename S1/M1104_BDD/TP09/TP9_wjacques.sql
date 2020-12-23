@@ -103,7 +103,17 @@ ALTER TABLE bookbay.Collection
     ADD COLUMN codEdition int,
     ALTER COLUMN intitule SET NOT NULL,
     ADD COLUMN theme varchar(32),
-    ADD CONSTRAINT ck_theme CHECK (theme IN ('roman', 'sciences humaines', 'informatique', 'enseignement', 'littérature', 'anticipation', 'essais')),
+    ADD CONSTRAINT ck_theme CHECK (
+        theme IN (
+            'roman',
+            'sciences humaines',
+            'informatique',
+            'enseignement',
+            'littérature',
+            'anticipation',
+            'essais'
+        )
+    ),
     ADD CONSTRAINT fk_codEdition FOREIGN KEY (codEdition) REFERENCES bookbay.Editeur (codeEdition);
 
 ALTER TABLE bookbay.Entrepot
@@ -155,4 +165,3 @@ ALTER TABLE bookbay.Auteur
 
 ALTER TABLE bookbay.Editeur
     ADD CONSTRAINT ck_codePostal CHECK (codePostal BETWEEN 1000 AND 99000);
-
