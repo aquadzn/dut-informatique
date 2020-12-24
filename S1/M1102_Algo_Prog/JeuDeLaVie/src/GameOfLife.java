@@ -4,7 +4,7 @@ import java.io.*;
 public class GameOfLife
 {
     //Set grid size
-    int l=30,b=80;
+    int l=30,b=130;
     public static void main(String[] args)
     {
 
@@ -32,6 +32,8 @@ public class GameOfLife
         }
         while(!ch.equals("x"))
         {
+            System.out.print("\033[H\033[2J");
+            System.out.flush();
 
             mat=transform(mat,l,b);
             display2D(mat);

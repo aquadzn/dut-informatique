@@ -3,10 +3,14 @@ import java.util.Scanner;
 
 public class Jeu {
 
+    public static final String ANSI_RESET = "\u001B[0m";
+    public static final String ANSI_BLACK = "\u001B[30m";
+    public static final String ANSI_WHITE_BACKGROUND = "\u001B[47m";
+
     public static void lancer() {
 
         Scanner saisie = new Scanner(System.in);
-        char[][] tab = new char[Main.HAUTEUR][Main.LONGUEUR];
+        int[][] tab = new int[Main.HAUTEUR][Main.LONGUEUR];
         int niveau = 0;
 
         nettoyerConsole();
@@ -33,7 +37,7 @@ public class Jeu {
         while (true) {
 
             try {
-                Thread.sleep(500);
+                Thread.sleep(100);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -48,39 +52,46 @@ public class Jeu {
     }
 
 
-    public static char[][] evolution(char[][] tab) {
+    public static int calculVoisins(int[][] tab, int ligne, int colonne) {
+        int voisins = 0;
 
-        char[][] nouveau_tab = new char[Main.HAUTEUR][Main.LONGUEUR];
+        for (int x = -1; x <= 1; x++) {
+            for (int y = -1; y <= 1; y++) {
+                if (tab[ligne + x][colonne + y] == Main.VIVANT) {
+                    voisins += 1;
+                }
+            }
+        }
+
+        if (tab[ligne][colonne] == Main.VIVANT) {
+            voisins -= 1;
+        }
+
+        return voisins;
+    }
+
+
+    public static int[][] evolution(int[][] tab) {
+
+        int[][] nouveau_tab = new int[Main.HAUTEUR][Main.LONGUEUR];
 
         // Loop through every cell
         for (int l = 1; l < Main.HAUTEUR - 1; l++) {
             for (int m = 1; m < Main.LONGUEUR - 1; m++) {
-                // finding no Of Neighbours that are alive
-                int aliveNeighbours = 0;
-                for (int i = -1; i <= 1; i++)
-                    for (int j = -1; j <= 1; j++)
-                        if (tab[l + i][m + j] == Main.VIVANT) {
-                            aliveNeighbours += 1;
-                        }
-
-                // The cell needs to be subtracted from
-                // its neighbours as it was counted before
-                if (tab[l][m] == Main.VIVANT) {
-                    aliveNeighbours -= 1;
-                }
+                int voisins = calculVoisins(tab, l, m);
 
                 // Implementing the Rules of Life
 
                 // Cell is lonely and dies
-                if ((tab[l][m] == Main.VIVANT) && (aliveNeighbours < 2))
+                if ((tab[l][m] == Main.VIVANT) && (voisins < 2))
                     nouveau_tab[l][m] = Main.MORT;
 
                     // Cell dies due to over population
-                else if ((tab[l][m] == Main.VIVANT) && (aliveNeighbours > 3))
+                else if ((tab[l][m] == Main.VIVANT) && (voisins > 3))
                     nouveau_tab[l][m] = Main.MORT;
 
                     // A new cell is born
-                else if ((tab[l][m] == Main.MORT) && (aliveNeighbours == 3))
+                else if ((tab[l][m] == Main.MORT) && (voisins == 3))
                     nouveau_tab[l][m] = Main.VIVANT;
 
                     // Remains the same
@@ -96,10 +107,11 @@ public class Jeu {
     public static void nettoyerConsole() {
         System.out.print("\033[H\033[2J");
         System.out.flush();
+        System.out.println();
     }
 
 
-    public static void remplirTableau(char[][] tab, double valeur) {
+    public static void remplirTableau(int[][] tab, double valeur) {
         for (int ligne = 0 ; ligne < tab.length ; ligne++) {
             for (int colonne = 0 ; colonne < tab[ligne].length ; colonne++){
                 if (Math.random() < valeur) {
@@ -113,19 +125,28 @@ public class Jeu {
     }
 
 
-    public static void afficherTableau(char[][] tab, int niveau) {
+    public static void afficherTableau(int[][] tab, int niveau) {
         int population = 0;
         for (int ligne = 0 ; ligne < Main.HAUTEUR ; ligne++) {
             for (int colonne = 0 ; colonne < Main.LONGUEUR ; colonne++){
-                System.out.print(tab[ligne][colonne]);
+                switch (tab[ligne][colonne]) {
+                    case 0:
+                        System.out.print(ANSI_WHITE_BACKGROUND + "⠀" + ANSI_RESET);
+                        break;
+                    case 1:
+                        System.out.print(ANSI_WHITE_BACKGROUND + ANSI_BLACK + "█" + ANSI_RESET);
+                        break;
+                }
                 if (tab[ligne][colonne] == Main.VIVANT) {
                     population++;
                 }
             }
             System.out.println();
         }
+        System.out.println();
         System.out.println("Evolution niveau: " + niveau);
         System.out.println("Population: " + population);
+        System.out.println();
     }
 
 }
