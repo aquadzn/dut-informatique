@@ -49,6 +49,7 @@ public class Jeu {
 
         for (int niveau = 0; niveau < niveauMax; niveau++) {
 
+            // équivalent de time.sleep() en Python
             try {
                 Thread.sleep(100);
             } catch (InterruptedException e) {

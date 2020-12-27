@@ -4,7 +4,7 @@ import java.util.Scanner;
 public class Menu {
 
     /**
-     *
+     * Lance le menu en affichant les différents scénarios possibles.
      */
     public static void lancer() {
         Scanner saisie = new Scanner(System.in);
@@ -110,6 +110,10 @@ public class Menu {
         return erreur;
     }
 
+    /**
+     * Crée le scénario du planeur.
+     * @return tableau 2D
+     */
     public static int[][] creerPlaneur() {
         int[][] planeur = new int[20][60];
         planeur[1][3] = 1;
@@ -121,6 +125,10 @@ public class Menu {
         return planeur;
     }
 
+    /**
+     * Crée le scénario du vaisseau.
+     * @return tableau 2D
+     */
     public static int[][] creerVaisseau() {
         int[][] vaisseau = new int[5][60];
         vaisseau[1][1] = 1;
@@ -136,6 +144,10 @@ public class Menu {
         return vaisseau;
     }
 
+    /**
+     * Crée le scénario du canon.
+     * @return tableau 2D
+     */
     public static int[][] creerCanon() {
         return new int[][] {
             {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},

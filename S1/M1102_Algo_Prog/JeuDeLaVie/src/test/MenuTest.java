@@ -34,4 +34,25 @@ class MenuTest {
         assertTrue(Menu.verifierValeurs(longueurMauvaise, hauteurBonne, aleatoireBon, niveauMauvais));
 
     }
+
+    @Test
+    void creerPlaneur() {
+        int[][] planeur = Menu.creerPlaneur();
+
+        assertTrue(planeur.length == 20 && planeur[0].length == 60);
+    }
+
+    @Test
+    void creerVaisseau() {
+        int[][] vaisseau = Menu.creerVaisseau();
+
+        assertTrue(vaisseau.length == 5 && vaisseau[0].length == 60);
+    }
+
+    @Test
+    void creerCanon() {
+        int[][] canon = Menu.creerCanon();
+
+        assertTrue(canon.length == 20 && canon[0].length == 60);
+    }
 }

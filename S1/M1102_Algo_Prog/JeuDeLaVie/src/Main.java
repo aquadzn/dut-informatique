@@ -5,6 +5,7 @@ public class Main {
     public static int HAUTEUR = 20;
     public static double ALEATOIRE = 0.2;
     public static int NIVEAUX = 500;
+
     // Constantes
     public static final char MORT = '_';
     public static final char VIVANT = '#';
@@ -17,8 +18,6 @@ public class Main {
 
     /**
      * Programme principal du jeu de la vie.
-     * 
-     * @param args arguments CLI
      */
     public static void main(String[] args) {
         Menu.lancer();
