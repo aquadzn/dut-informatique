@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>LBP Montreuil</title>
+    <!-- Bulma CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+    <!-- Polices d'écriture -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Karla:wght@400;700&family=Rubik:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="static/css/style.css">
+    <!-- Pour les icônes -->
+    <script defer src="https://use.fontawesome.com/releases/v5.14.0/js/all.js"></script>
+</head>
+
+<body>
+
+    <!-- A COPIER SUR TOUTES LES PAGES A PARTIR D'ICI -->
+    <section class="section">
+        <nav class="navbar is-spaced is-fixed-top" role="navigation" aria-label="main navigation">
+            <div class="navbar-brand">
+                <a class="navbar-item is-size-4" href="index.html">
+                    LBP Montreuil
+                </a>
+
+                <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false"
+                    data-target="navbarBasicExample">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </a>
+            </div>
+
+            <div id="navbarBasicExample" class="navbar-menu">
+
+                <div class="navbar-end">
+
+                    <a class="navbar-item is-active" href="bons-plans.html">
+                        Bons plans
+                    </a>
+                    <a href="index.html#carte" class="navbar-item">
+                        Carte
+                    </a>
+
+                    <div class="navbar-item has-dropdown is-hoverable">
+                        <a href="iut.html" class="navbar-link">
+                            L'IUT
+                        </a>
+
+                        <div class="navbar-dropdown">
+                            <a href="iut.html#about" class="navbar-item">
+                                A propos
+                            </a>
+                            <a href="iut.html#filieres" class="navbar-item">
+                                Les filières
+                            </a>
+                            <hr class="navbar-divider">
+                            <a href="iut.html#contact" class="navbar-item">
+                                Contact
+                            </a>
+                        </div>
+                    </div>
+
+                    <a href="index.html#about" class="navbar-item">
+                        A propos
+                    </a>
+
+
+                    <a href="index.html#contact" class="navbar-item">
+                        Contact
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </section>
+
+    <!-- HERO: contenu qui prend tout l'écran d'affichage -->
+    <section class="section">
+        <div class="container">
+            <div class="tabs is-centered is-boxed">
+                <ul>
+                    <li class="tab is-active" onclick="afficherCategorie(event, 'important')">
+                        <a>
+                            <span class="icon is-small"><i class="fas fa-exclamation" aria-hidden="true"></i></span>
+                            <span>Important</span>
+                        </a>
+                    </li>
+                    <li class="tab" onclick="afficherCategorie(event, 'logements')">
+                        <a>
+                            <span class="icon is-small"><i class="fas fa-home" aria-hidden="true"></i></span>
+                            <span>Logements</span>
+                        </a>
+                    </li>
+                    <li class="tab" onclick="afficherCategorie(event, 'restauration')">
+                        <a>
+                            <span class="icon is-small"><i class="fas fa-utensils" aria-hidden="true"></i></span>
+                            <span>Restauration</span>
+                        </a>
+                    </li>
+                    <li class="tab" onclick="afficherCategorie(event, 'commerces')">
+                        <a>
+                            <span class="icon is-small"><i class="fas fa-shopping-basket" aria-hidden="true"></i></span>
+                            <span>Commerces</span>
+                        </a>
+                    </li>
+                    <li class="tab" onclick="afficherCategorie(event, 'sport')">
+                        <a>
+                            <span class="icon is-small"><i class="far fa-futbol" aria-hidden="true"></i></span>
+                            <span>Sport</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div id="important" class="categorie">
+                <div class="tile is-ancestor">
+                    <div class="tile is-vertical is-8">
+                        <div class="tile">
+                            <div class="tile is-parent is-vertical">
+                                <article class="tile is-child notification is-danger">
+                                    <p class="title">IUT de Montreuil</p>
+                                    <p class="subtitle">140 Rue de la Nouvelle France, 93100 Montreuil</p>
+                                </article>
+                                <article class="tile is-child notification is-danger">
+                                    <p class="title">Mairie de Montreuil</p>
+                                    <p class="subtitle">Place Jean Jaurès, 93100 Montreuil</p>
+                                </article>
+                            </div>
+                            <div class="tile is-parent">
+                                <article class="tile is-child notification is-danger">
+                                    <p class="title">Crous de Paris</p>
+                                    <p class="subtitle">39 Avenue Georges Bernanos, 75005 Paris</p>
+                                    <figure class="image is-4by3">
+                                        <img
+                                            src="https://www.silicon.fr/wp-content/uploads/2018/02/CROUS-Paris-chantiers-DSI-stockage-1280x720.jpg">
+                                    </figure>
+                                </article>
+                            </div>
+                        </div>
+                        <div class="tile is-parent">
+                            <article class="tile is-child notification is-danger">
+                                <p class="title">Comissariat de police</p>
+                                <p class="subtitle">20 Boulevard Paul Vaillant Couturier, 93100 Montreuil</p>
+                            </article>
+                        </div>
+                    </div>
+                    <div class="tile is-parent">
+                        <article class="tile is-child notification is-danger">
+                            <div class="content">
+                                <p class="title">Hôpital André Grégoire</p>
+                                <p class="subtitle">56 Boulevard de la Boissière, 93100 Montreuil</p>
+                                <figure class="image is-3by2">
+                                    <img
+                                        src="https://www.montreuil.fr/fileadmin/_processed_/a/6/csm_hopital-andre-gregoire_1f83bf067c.jpg">
+                                </figure>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+
+            <div id="logements" class="categorie" style="display: none;">
+                <div class="tile is-ancestor">
+                    <div class="tile is-vertical is-8">
+                        <div class="tile">
+                            <div class="tile is-parent is-vertical">
+                                <article class="tile is-child notification is-info">
+                                    <p class="title">Résidence étudiante Palladium Paris - Cardinal Campus</p>
+                                    <p class="subtitle">9 Rue Marcel Sembat, 93100 Montreuil</p>
+                                </article>
+                                <article class="tile is-child notification is-info">
+                                    <p class="title">Résidence ARPEJ "Wangari Maathai" pour étudiants et jeunes actifs
+                                    </p>
+                                    <p class="subtitle">62 Rue Edouard Vaillant, 93100 Montreuil</p>
+                                </article>
+                            </div>
+                            <div class="tile is-parent">
+                                <article class="tile is-child notification is-info">
+                                    <p class="title">Résidence ARPEJ Univercity "Le Rodrigue"</p>
+                                    <p class="subtitle">71 Rue de la République 69bis, 93100 Montreuil</p>
+                                    <figure class="image is-4by3">
+                                        <img
+                                            src="https://www.arpej.fr/app/uploads/2020/09/le-rodrigue-residence-1000x0-c-default.jpg">
+                                    </figure>
+                                </article>
+                            </div>
+                        </div>
+                        <div class="tile is-parent">
+                            <article class="tile is-child notification is-info">
+                                <p class="title">Résidence étudiante Montreuil St Mandé Les Estudines</p>
+                                <p class="subtitle">Résidence Étudiante, 72 Rue Claude Erignac, 93100 Montreuil</p>
+                            </article>
+                        </div>
+                    </div>
+                    <div class="tile is-parent">
+                        <article class="tile is-child notification is-info">
+                            <div class="content">
+                                <p class="title">Résidence étudiante Studéa Bagnolet Gallieni</p>
+                                <p class="subtitle">80 Rue Robespierre, 93170 Bagnolet</p>
+                                <figure class="image is-3by2">
+                                    <img
+                                        src="https://www.adele.org/assets-cache/full/files_residence_photo/2/2/0/220a7f49d42406598587a66f02584ac3/eb63ed242e4c30b371d34d9396af7a8e.webp">
+                                </figure>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+
+            <div id="restauration" class="categorie" style="display: none;">
+                <div class="tile is-ancestor">
+                    <div class="tile is-vertical is-8">
+                        <div class="tile">
+                            <div class="tile is-parent is-vertical">
+                                <article class="tile is-child notification is-success">
+                                    <p class="title">L'Allocodrome d'Abidjan</p>
+                                    <p class="subtitle">97 Rue Pierre de Montreuil, 93100 Montreuil</p>
+                                </article>
+                                <article class="tile is-child notification is-success">
+                                    <p class="title">Boulangerie Da Silva Maria</p>
+                                    <p class="subtitle">192 Boulevard Théophile Sueur, 93100 Montreuil</p>
+                                </article>
+                            </div>
+                            <div class="tile is-parent">
+                                <article class="tile is-child notification is-success">
+                                    <p class="title">He pate moi</p>
+                                    <p class="subtitle">122 Boulevard Théophile Sueur, 93100 Montreuil</p>
+                                    <figure class="image is-4by3">
+                                        <img
+                                            src="https://cdn.eat-list.fr/establishment/menu/gallery_menu/93100-montreuil/he-pates-moi_27650_03e.jpg">
+                                    </figure>
+                                </article>
+                            </div>
+                        </div>
+                        <div class="tile is-parent">
+                            <article class="tile is-child notification is-success">
+                                <p class="title">Bleu Turquoise</p>
+                                <p class="subtitle">268 Boulevard Théophile Sueur, 93100 Montreuil</p>
+                            </article>
+                        </div>
+                    </div>
+                    <div class="tile is-parent">
+                        <article class="tile is-child notification is-success">
+                            <div class="content">
+                                <p class="title">OTHENTIK CREPERIE</p>
+                                <p class="subtitle">254 Boulevard Théophile Sueur, 93100 Montreuil</p>
+                                <figure class="image is-3by2">
+                                    <img
+                                        src="https://d1ralsognjng37.cloudfront.net/d0feb744-7e2a-4f24-8a9a-d76e8d3c4c32.jpeg">
+                                </figure>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+
+            <div id="commerces" class="categorie" style="display: none;">
+                <div class="tile is-ancestor">
+                    <div class="tile is-vertical is-8">
+                        <div class="tile">
+                            <div class="tile is-parent is-vertical">
+                                <article class="tile is-child notification is-warning">
+                                    <p class="title">Super U et Drive</p>
+                                    <p class="subtitle">170-174 Rue de la Nouvelle France, 93100 Montreuil</p>
+                                </article>
+                                <article class="tile is-child notification is-warning">
+                                    <p class="title">Boucherie Oumma Salam</p>
+                                    <p class="subtitle">19 Rue Emile Zola, 94120 Fontenay-sous-Bois</p>
+                                </article>
+                            </div>
+                            <div class="tile is-parent">
+                                <article class="tile is-child notification is-warning">
+                                    <p class="title">Franprix</p>
+                                    <p class="subtitle">55 Rue Lenain de Tillemont, 93100 Montreuil</p>
+                                    <figure class="image is-4by3">
+                                        <img
+                                            src="https://maps.googleapis.com/maps/api/place/js/PhotoService.GetPhoto?1sATtYBwJ26tDVLcQHsw7PlWq7SCCOyza6dBOcDvXf58SNpKk4uNzIVJim2ew3nJ3a2iLBHMzSp3FQs1dOKIdbIOrcx1QrFJFyNtlTCZbzmNocTuvytx7VH47PXGxxq3ijdhzsyD2u2OlyKKeGWOG-E-4yiMxww68tsk4ZUDoNs06zw-qkXo2f&4u16383&5m1&2e1&callback=none&client=google-maps-pro&token=114663">
+                                    </figure>
+                                </article>
+                            </div>
+                        </div>
+                        <div class="tile is-parent">
+                            <article class="tile is-child notification is-warning">
+                                <p class="title">Supermarché Diagonal</p>
+                                <p class="subtitle">268 Boulevard Théophile Sueur, 93100 Montreuil</p>
+                            </article>
+                        </div>
+                    </div>
+                    <div class="tile is-parent">
+                        <article class="tile is-child notification is-warning">
+                            <div class="content">
+                                <p class="title">EDA MARKET</p>
+                                <p class="subtitle">109 B Rue la Fontaine, 94120 Fontenay-sous-Bois</p>
+                                <figure class="image is-3by2">
+                                    <img
+                                        src="https://maps.googleapis.com/maps/api/place/js/PhotoService.GetPhoto?1sATtYBwJ3NCZFa1lhUB2adH2WQLlOn7uDJoDQl3H9aXyBOVqaBmEz5hLLDJpL5HNo1k6lpZkMLipb3xWXJB045EfSaYetp5KLLwDHSQ01CG3cBucK8d0KR7lB-O0wDNvYkbQP2BQ2csCT_hNpFWpcjZ3-UjC6XTlEzMse6CCO2YqTwCnlD00x&4u16383&5m1&2e1&callback=none&client=google-maps-pro&token=49352">
+                                </figure>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+
+            <div id="sport" class="categorie" style="display: none;">
+                <div class="tile is-ancestor">
+                    <div class="tile is-vertical is-8">
+                        <div class="tile">
+                            <div class="tile is-parent is-vertical">
+                                <article class="tile is-child notification is-primary">
+                                    <p class="title">Centre Sportif Arthur Ashe</p>
+                                    <p class="subtitle">156 Rue de la Nouvelle France, 93100 Montreuil</p>
+                                </article>
+                                <article class="tile is-child notification is-primary">
+                                    <p class="title">Gymnase Henri Wallon</p>
+                                    <p class="subtitle">5 Rue Henri Wallon, 93100 Montreuil</p>
+                                </article>
+                            </div>
+                            <div class="tile is-parent">
+                                <article class="tile is-child notification is-primary">
+                                    <p class="title">Piscine des Murs à pêches</p>
+                                    <p class="subtitle">9 Rue Maurice Bouchor, 93100 Montreuil</p>
+                                    <figure class="image is-4by3">
+                                        <img
+                                            src="https://www.guide-piscine.fr/medias/image/piscine-ecologique-des-murs-a-peches-de-montreuil-23237-1200-630.jpg">
+                                    </figure>
+                                </article>
+                            </div>
+                        </div>
+                        <div class="tile is-parent">
+                            <article class="tile is-child notification is-primary">
+                                <p class="title">Street Workout Beaumont</p>
+                                <p class="subtitle">Parc des Beaumonts, 93100 Montreuil</p>
+                            </article>
+                        </div>
+                    </div>
+                    <div class="tile is-parent">
+                        <article class="tile is-child notification is-primary">
+                            <div class="content">
+                                <p class="title">Fitness Park Montreuil</p>
+                                <p class="subtitle">13 bis Rue du Colonel Raynal, 93100 Montreuil</p>
+                                <figure class="image is-3by2">
+                                    <img
+                                        src="https://datas.masalledesport.com/prod/place/7596/place/1552052373661.jpeg">
+                                </figure>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="p-6">
+        <div class="container">
+            <div class="content has-text-centered">
+                <p>
+                    Site réalisé par <strong>William</strong>, <strong>Lotfi</strong> et <strong>Aymane</strong>.
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+<script src="/static/js/main.js"></script>
+
+</html>

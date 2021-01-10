@@ -31,7 +31,7 @@ CREATE TYPE coordType AS (
 CREATE TABLE bookbay.Auteur (
     idAuteur serial PRIMARY KEY,
     nomAuteur varchar(32),
-    prenomnomAuteur varchar(32),
+    prenomAuteur varchar(32),
     nationalite varchar(32),
     dateNais date NOT NULL,
     dateDeces date,
@@ -66,13 +66,14 @@ CREATE TABLE bookbay.Editeur (
 );
 
 CREATE TABLE bookbay.Livre (
-    isbn varchar(13) PRIMARY KEY,
+    isbn varchar(17) PRIMARY KEY,
     titre varchar(64),
     prix int,
     depotlegal boolean,
     datImpression date,
     langue varchar(16),
-    annee int
+    annee int,
+    traduction varchar(32)
 );
 
 CREATE TABLE bookbay.Collection (
@@ -82,6 +83,8 @@ CREATE TABLE bookbay.Collection (
 
 CREATE TABLE bookbay.Entrepot (
     codEntrepot int PRIMARY KEY,
+    adresse varchar(64),
+    codPost varchar(5),
     villeEntrep varchar(32),
     responsable varchar(64)
 );
@@ -111,7 +114,8 @@ ALTER TABLE bookbay.Collection
             'enseignement',
             'littérature',
             'anticipation',
-            'essais'
+            'essais',
+            'beaux livres'
         )
     ),
     ADD CONSTRAINT fk_codEdition FOREIGN KEY (codEdition) REFERENCES bookbay.Editeur (codeEdition);
@@ -123,13 +127,13 @@ ALTER TABLE bookbay.Entrepot
 
 ALTER TABLE bookbay.Ecrire
     ADD COLUMN idAuteur int,
-    ADD COLUMN isbn varchar(13),
+    ADD COLUMN isbn varchar(17),
     ADD CONSTRAINT fk_idAuteur FOREIGN KEY (idAuteur) REFERENCES bookbay.Auteur (idAuteur),
     ADD CONSTRAINT fk_isbn FOREIGN KEY (isbn) REFERENCES bookbay.Livre (isbn),
     ADD PRIMARY KEY (idAuteur, isbn);
 
 ALTER TABLE bookbay.Obtenir
-    ADD COLUMN isbn varchar(13),
+    ADD COLUMN isbn varchar(17),
     ADD COLUMN titreDistinction varchar(64),
     ADD COLUMN datePrixObtenu date,
     ADD CONSTRAINT fk_isbn FOREIGN KEY (isbn) REFERENCES bookbay.Livre (isbn),
@@ -137,14 +141,14 @@ ALTER TABLE bookbay.Obtenir
     ADD PRIMARY KEY (isbn, titreDistinction);
 
 ALTER TABLE bookbay.Appartenir
-    ADD COLUMN isbn varchar(13),
+    ADD COLUMN isbn varchar(17),
     ADD COLUMN codeCollection int,
     ADD CONSTRAINT fk_isbn FOREIGN KEY (isbn) REFERENCES bookbay.Livre (isbn),
     ADD CONSTRAINT fk_codeCollection FOREIGN KEY (codeCollection) REFERENCES bookbay.Collection (codeCollection),
     ADD PRIMARY KEY (isbn, codeCollection);
 
 ALTER TABLE bookbay.Stocker
-    ADD COLUMN isbn varchar(13),
+    ADD COLUMN isbn varchar(17),
     ADD COLUMN codEntrepot int,
     ADD COLUMN quantiteEnStock int,
     ADD COLUMN dateModifStock date,
@@ -165,3 +169,10 @@ ALTER TABLE bookbay.Auteur
 
 ALTER TABLE bookbay.Editeur
     ADD CONSTRAINT ck_codePostal CHECK (codePostal BETWEEN 1000 AND 99000);
+
+-- INSERT ...
+insert into bookbay.auteur (nomAuteur, prenomAuteur, nationalite, dateNais, dateDeces, lieuNais) values ('Snow', 'John', 'FR', '08-03-2000', '07-01-2020', 'Paris');
+insert into bookbay.livre values ('0101010101010', 'ahhahah', 20, true, '10-12-2020', 'FR', 2021);
+insert into bookbay.ecrire values (1, '0101010101010');
+
+SELECT a.nomAuteur, l.titre FROM bookbay.Livre l JOIN bookbay.Ecrire e ON l.isbn = e.isbn JOIN bookbay.Auteur a ON e.idAuteur = a.idAuteur GROUP BY a.nomAuteur, l.titre;

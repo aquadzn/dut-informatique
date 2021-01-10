@@ -57,7 +57,6 @@ public class Jeu {
             }
 
             tab = evolution(tab, Main.HAUTEUR, Main.LONGUEUR);
-            niveau++;
 
             Menu.nettoyerConsole();
             afficherTableau(scenario, tab, niveau);
@@ -81,7 +80,8 @@ public class Jeu {
         // On vérifie en partant de la cellule centrale
         // si elle a des cellules voisines vivantes en
         // tenant compte des bordures avec une exception
-        // qui ne fait rien (bad practice mais ça marche)
+        // qui ne fait rien (bad practice mais ça marche).
+        // Possible d'utiliser une boucle for aussi.
         //
         // 0 0 0
         // 0 1 0

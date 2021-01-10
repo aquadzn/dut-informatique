@@ -5,91 +5,271 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>LBP Montreuil</title>
+    <!-- Bulma CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+    <!-- Polices d'écriture -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Karla:wght@400;700&family=Rubik:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="static/css/style.css">
+    <!-- Pour les icônes -->
+    <script defer src="https://use.fontawesome.com/releases/v5.14.0/js/all.js"></script>
 </head>
 
 <body>
-    <style>
-        .has-bg-img {
-            background: url('https://www.themagnificentmile.com/assets/Uploads/_resampled/ScaleWidthWzEyMDBd/Online-Shopping-stock-image3.jpg') center center;
-            background-size: cover;
-        }
 
-        .has-text-dark-blue {
-            color: #28323c;
-        }
-    </style>
+    <!-- A COPIER SUR TOUTES LES PAGES A PARTIR D'ICI -->
 
-    <section class="hero is-medium">
-        <!-- Hero head: will stick at the top -->
+    <!-- HERO: contenu qui prend tout l'écran d'affichage -->
+    <section class="hero is-fullheight">
+
+        <!-- HERO HEAD: tout ce qu'il y a en haut -->
         <div class="hero-head">
-            <header class="navbar">
-                <div class="container">
-                    <div class="navbar-brand">
-                        <a class="navbar-item">
-                            LBP Montreuil
+            <nav class="navbar is-spaced is-fixed-top" role="navigation" aria-label="main navigation">
+                <div class="navbar-brand">
+                    <a class="navbar-item is-size-4" href="index.html">
+                        LBP Montreuil
+                    </a>
+
+                    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false"
+                        data-target="navbarBasicExample">
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                    </a>
+                </div>
+
+                <div id="navbarBasicExample" class="navbar-menu">
+
+                    <div class="navbar-end">
+
+                        <a class="navbar-item" href="bons-plans.html">
+                            Bons plans
                         </a>
-                        <span class="navbar-burger" data-target="navbarMenuHeroC">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </span>
-                    </div>
+                        <a href="#carte" class="navbar-item">
+                            Carte
+                        </a>
 
-                    <div id="navbarMenuHeroC" class="navbar-menu">
-                        <div class="navbar-end">
-                            <a class="navbar-item is-active">
-                                Les bons plans
+                        <div class="navbar-item has-dropdown is-hoverable">
+                            <a href="iut.html" class="navbar-link">
+                                L'IUT
                             </a>
-                            <div class="navbar-item has-dropdown is-hoverable">
-                                <a class="navbar-link">
-                                    L'IUT
-                                </a>
 
-                                <div class="navbar-dropdown">
-                                    <a class="navbar-item">
-                                        A propos
-                                    </a>
-                                    <a class="navbar-item">
-                                        Les formations
-                                    </a>
-                                    <a class="navbar-item">
-                                        Plan
-                                    </a>
+                            <div class="navbar-dropdown">
+                                <a href="iut.html#about" class="navbar-item">
+                                    A propos
+                                </a>
+                                <a href="iut.html#filieres" class="navbar-item">
+                                    Les filières
+                                </a>
+                                <hr class="navbar-divider">
+                                <a href="iut.html#contact" class="navbar-item">
+                                    Contact
+                                </a>
+                            </div>
+                        </div>
+
+                        <a href="#about" class="navbar-item">
+                            A propos
+                        </a>
+
+
+                        <a href="#contact" class="navbar-item">
+                            Contact
+                        </a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        </div>
+
+        <!-- JUSQU'A ICI -->
+
+
+        <!-- HERO BODY: tout ce qu'il y a au milieu, contenu -->
+        <div class="hero-body has-bg-img">
+            <div class="container has-text-centered">
+                <h1 class="title is-1 is-spaced has-text-dark-blue">
+                    Vous êtes étudiant à l'IUT de Montreuil ?
+                </h1>
+                <h2 class="subtitle is-3 has-text-dark-blue">
+                    Retrouvez ici tous les bons plans aux alentours de l'IUT de Montreuil.
+                </h2>
+                <div class="mt-6">
+                    <div class="buttons are-medium is-centered">
+                        <a href="bons-plans.html" class="button is-dark">
+                            <span class="icon is-small">
+                                <i class="fas fa-list"></i>
+                            </span>
+                            <span>
+                                Liste des bons plans
+                            </span>
+                        </a>
+                        <a href="#carte" class="button is-dark">
+                            <span class="icon is-small">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </span>
+                            <span>
+                                Carte des bons plans
+                            </span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION partie carte des bons plans -->
+    <section id="carte" class="section has-background-light">
+        <div class="container">
+            <div class="columns is-centered has-text-centered has-text-black">
+                <div class="column is-half">
+                    <h1 class="title is-spaced">La carte des bons plans</h1>
+                    <p class="subtitle">Activez la légende en appuyant sur le bouton en haut à gauche de la carte.</p>
+                    <div class="mt-6">
+                        <iframe width="100%" height="600" frameborder="0" scrolling="no" marginheight="0"
+                            marginwidth="0"
+                            src="https://www.google.com/maps/d/embed?mid=1Rx47wglHViD6kPpVOzUi4Ts4B4HL-53C">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <!-- SECTION partie carte à propos -->
+    <section id="about" class="section">
+        <div class="container mb-6">
+            <h1 class="title is-spaced has-text-centered">A propos</h1>
+            <h2 class="subtitle has-text-centered">
+                Nous sommes tous les trois arrivées en première année de DUT
+                informatique à l'IUT cette année.
+                <br>
+                Nous sommes heureux d'avoir pu participer à ce projet et d'avoir pu vous présenter notre premier site
+                internet codé ensemble.
+            </h2>
+            <div class="columns is-centered mt-4">
+                <div class="column">
+                    <div class="card has-background-info has-text-light">
+                        <div class="card-content">
+                            <div class="media">
+                                <div class="media-content">
+                                    <p class="title is-4 has-text-white">Aymane</p>
+                                    <p class="subtitle is-6 has-text-white">18 ans</p>
                                 </div>
                             </div>
 
-                            <a class="navbar-item">
-                                A propos
-                            </a>
-                            <a class="navbar-item">
-                                Contact
-                            </a>
+                            <div class="content">
+                                Aymane a aussi obtenu son baccalauréat Scientifique en juin dernier mais à Lyon. </div>
                         </div>
                     </div>
                 </div>
-            </header>
-        </div>
+                <div class="column">
+                    <div class="card">
+                        <div class="card-content">
+                            <div class="media">
+                                <div class="media-content">
+                                    <p class="title is-4">Lotfi</p>
+                                    <p class="subtitle is-6">18 ans</p>
+                                </div>
+                            </div>
 
-        <!-- Hero content: will be in the middle -->
-        <div class="hero-body has-bg-img">
-            <div class="container has-text-centered">
-                <h1 class="title has-text-dark-blue">
-                    Vous êtes étudiant à l'IUT de Montreuil ?
-                </h1>
-                <h2 class="subtitle has-text-dark-blue">
-                    Retrouvez ici tous les bons plans
-                </h2>
-                <span>
-                    <div class="buttons is-centered">
-                        <button class="button is-primary">Primary</button>
-                        <button class="button is-link">Link</button>
+                            <div class="content">
+                                Lotfi a passé un bac STI2D à Paris qu'il a obtenu en juin dernier.
+                            </div>
+                        </div>
                     </div>
-                </span>
+                </div>
+                <div class="column">
+                    <div class="card has-background-info has-text-light">
+                        <div class="card-content">
+                            <div class="media">
+                                <div class="media-content">
+                                    <p class="title is-4 has-text-white">William</p>
+                                    <p class="subtitle is-6 has-text-light">20 ans</p>
+                                </div>
+                            </div>
+
+                            <div class="content">
+                                William lui a obtenu son baccalauréat il y a deux ans. Après une premiere année en
+                                licence, il a suivi une formation en informatique avant d'entrer en DUT. </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-
     </section>
+
+    <!-- SECTION partie contact -->
+    <section id="contact" class="section has-background-light">
+        <div class="container">
+            <div class="columns is-centered">
+                <div class="column is-half">
+                    <h1 class="title is-spaced has-text-centered">Nous contacter</h1>
+                    <h2 class="subtitle has-text-centered">
+                        Une question, une suggestion ?
+                        <br>
+                        Remplissez ce formulaire et nous vous répondrons.
+                    </h2>
+
+                    <div class="field">
+                        <label class="label">Votre nom</label>
+                        <div class="control">
+                            <input class="input" type="text">
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label class="label">Votre email</label>
+                        <div class="control has-icons-left has-icons-right">
+                            <input class="input" type="email">
+                            <span class="icon is-small is-left">
+                                <i class="fas fa-envelope"></i>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label class="label">Sujet</label>
+                        <div class="control">
+                            <div class="select">
+                                <select>
+                                    <option>Sélectionnez</option>
+                                    <option>Question</option>
+                                    <option>Suggestion</option>
+                                    <option>Problème</option>
+                                    <option>Autre</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label class="label">Votre message</label>
+                        <div class="control">
+                            <textarea class="textarea" placeholder="Bonjour ..."></textarea>
+                        </div>
+                    </div>
+
+                    <div class="field is-grouped">
+                        <div class="control">
+                            <button class="button is-info">Envoyez</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="p-6">
+        <div class="container">
+            <div class="content has-text-centered">
+                <p>
+                    Site réalisé par <strong>William</strong>, <strong>Lotfi</strong> et <strong>Aymane</strong>.
+                </p>
+            </div>
+        </div>
+    </footer>
 </body>
 
 </html>
