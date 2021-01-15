@@ -66,7 +66,7 @@ CREATE TABLE bookbay.Editeur (
 );
 
 CREATE TABLE bookbay.Livre (
-    isbn varchar(17) PRIMARY KEY,
+    isbn varchar(18) PRIMARY KEY,
     titre varchar(64),
     prix int,
     depotlegal boolean,
@@ -103,7 +103,7 @@ ALTER TABLE bookbay.Livre
     ADD CONSTRAINT fk_codeCollection FOREIGN KEY (codeCollection) REFERENCES bookbay.Collection (codeCollection);
 
 ALTER TABLE bookbay.Collection
-    ADD COLUMN codEdition int,
+    ADD COLUMN codeEdition int,
     ALTER COLUMN intitule SET NOT NULL,
     ADD COLUMN theme varchar(32),
     ADD CONSTRAINT ck_theme CHECK (
@@ -118,11 +118,11 @@ ALTER TABLE bookbay.Collection
             'beaux livres'
         )
     ),
-    ADD CONSTRAINT fk_codEdition FOREIGN KEY (codEdition) REFERENCES bookbay.Editeur (codeEdition);
+    ADD CONSTRAINT fk_codeEdition FOREIGN KEY (codeEdition) REFERENCES bookbay.Editeur (codeEdition);
 
 ALTER TABLE bookbay.Entrepot
-    ADD COLUMN codEdition int,
-    ADD CONSTRAINT fk_codEdition FOREIGN KEY (codEdition) REFERENCES bookbay.Editeur (codeEdition);
+    ADD COLUMN codeEdition int,
+    ADD CONSTRAINT fk_codeEdition FOREIGN KEY (codeEdition) REFERENCES bookbay.Editeur (codeEdition);
 
 
 ALTER TABLE bookbay.Ecrire

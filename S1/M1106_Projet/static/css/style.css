@@ -21,7 +21,7 @@ a {
 }
 
 .has-bg-img {
-    background: url('/static/img/background.png') center center;
+    background: url("https://i.ibb.co/8PNpRgv/background.png") center center;
     background-size: cover;
     background-attachment: fixed;
 }
