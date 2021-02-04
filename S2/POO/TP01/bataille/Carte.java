@@ -41,6 +41,7 @@ public class Carte {
 		return valeurAffichable + " de " + this.couleur;
 	}
 
+
 	public int compareTo(Carte c) {
 		return Integer.compare(this.valeur, c.valeur);
 	}

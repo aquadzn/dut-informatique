@@ -1,4 +1,6 @@
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 
 /* 
  * La classe Joueur modélise les joueurs du jeu de bataille. 
@@ -40,7 +42,11 @@ public class Joueur {
 	public String getNom () {
 		return this.nom;
 	}
-	
+
+	public int getNbCartes() {
+		return this.cartes.size();
+	}
+
 	public void ramasserUneCarte(Carte c) {
 		this.cartes.add(c);
 	}
@@ -49,11 +55,41 @@ public class Joueur {
 		if (!this.resteCarte()) throw new Error ("pas de carte");
 		return this.cartes.remove(0);
 	}
-	
+
 	public boolean resteCarte () {
 		return ! this.cartes.isEmpty();
 	}
-	
+
+	public Carte tricher1() {
+		Carte carteMax = this.cartes.get(0);
+		for (int i = 0; i < this.cartes.size() - 1; i++) {
+			if (this.cartes.get(i + 1).supérieureA(carteMax)) {
+				carteMax= this.cartes.get(i + 1);
+			}
+		}
+		this.cartes.remove(carteMax);
+		return carteMax;
+	}
+
+	public Carte tricher2(Carte carteAdverse) {
+		Carte carteMinPlusGrand = this.cartes.get(0);
+		// Carte cartePlusFaible = this.cartes.get(0);
+
+		for (int i = 0; i < this.cartes.size() - 1; i++) {
+			if (this.cartes.get(i + 1).supérieureA(carteAdverse) && ! this.cartes.get(i + 1).supérieureA(carteMinPlusGrand)) {
+				carteMinPlusGrand = this.cartes.get(i + 1);
+			}
+
+			// if (cartePlusFaible.supérieureA(this.cartes.get(i + 1))) {
+			// cartePlusFaible = this.cartes.get(i + 1);
+			// }
+		}
+		// if (carteAdverse.supérieureA(carteMinPlusGrand)) {
+		// 	return cartePlusFaible;
+		// }
+		return carteMinPlusGrand;
+	}
+
 	public String toString() {
 		return this.nom + " : " + this.cartes.toString();
 	}

@@ -41,9 +41,11 @@ public class Partie {
 		while (this.joueur1.resteCarte() && this.joueur2.resteCarte()) {
 			compteurDeTours++;
 			System.out.println("tour n°" + compteurDeTours);
-			this.faireUnTourDeJeu();
+			this.faireUnTourDeJeu(compteurDeTours);
 			System.out.println(this.joueur1.toString());
+			System.out.println("Nombre cartes joueur 1: " + this.joueur1.getNbCartes());
 			System.out.println(this.joueur2.toString());
+			System.out.println("Nombre cartes joueur 2: " + this.joueur2.getNbCartes());
 			System.out.println();
 		}
 
@@ -58,11 +60,18 @@ public class Partie {
 	
 	// dans cette version très simplifiée on ne traite pas la bataille : en cas de bataille on tire au sort.
 	// TODO : implanter la bataille...
-	private void faireUnTourDeJeu() {
+	private void faireUnTourDeJeu(int tour) {
 		Carte cartePoséeJoueur1, cartePoséeJoueur2;
-		
-		// chaque joueur pose une carte sur le tapis de jeu
-		cartePoséeJoueur1 = this.joueur1.poserUneCarte(); 
+
+		if (tour % 3 == 0) {
+			// le joueur 1 triche tous les trois tours
+			cartePoséeJoueur1 = this.joueur1.tricher1();
+			System.out.println("Triche!");
+		}
+		else {
+			// chaque joueur pose une carte sur le tapis de jeu
+			cartePoséeJoueur1 = this.joueur1.poserUneCarte();
+		}
 		System.out.println(this.joueur1.getNom() + " pose le " + cartePoséeJoueur1.toString());
 		cartePoséeJoueur2 = this.joueur2.poserUneCarte();
 		System.out.println(this.joueur2.getNom() + " pose le " + cartePoséeJoueur2.toString());

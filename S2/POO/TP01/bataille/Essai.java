@@ -57,6 +57,16 @@ public class Essai {
         System.out.println(joueurUn.toString());
         System.out.println(joueurDeux.toString());
 
+        System.out.println("Valet plus grand que cinq: " + valetCarreau.compareTo(cinqTrefle));
+        System.out.println("Valet égal valet: " + valetCarreau.compareTo(valetCarreau));
+        System.out.println("Cinq pas plus que valet: " + cinqTrefle.compareTo(valetCarreau));
+
+        System.out.println("Nombre cartes J1: " + joueurUn.getNbCartes());
+        System.out.println("Nombre cartes J2: " + joueurDeux.getNbCartes());
+
+        System.out.println(cinqTrefle.toString() + " - " + joueurDeux.tricher2(cinqTrefle));
+        System.out.println(valetCarreau.toString() + " - " + joueurDeux.tricher2(valetCarreau));
+
     }
 
     private static void carteRestante(Joueur joueur) {
