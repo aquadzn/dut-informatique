@@ -1,23 +1,19 @@
 #include <stdio.h>
 
+void print_bits(unsigned int nb) {
+    for (int i = 0; i < sizeof(nb) * 8; i++) {
+        printf("%i", nb & 0x01);
+        nb = nb >> 1;
+    }
+    printf("\n");
+}
+
 int main() {
-    unsigned int a;
-    int compteur=0;
-    printf("Saisir un entier non signé :");
-    scanf("%d",&a);
+    unsigned int nb;
+    printf("Saisir un entier non signé: ");
+    scanf("%d",&nb);
     
-    while (a!=0){
-        a=a<<1;
-        compteur++;
-    }
-    int b=a;
-    
-    for (int i=0;i<compteur;i++) {
-        a=a<<i;
-        a=a>>compteur-1;
-        printf("%d",a);
-        a=b;
-    }
+    print_bits(nb);
 
     return 0;
 }
