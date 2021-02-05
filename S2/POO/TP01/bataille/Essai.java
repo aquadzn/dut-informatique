@@ -12,12 +12,12 @@ public class Essai {
         ArrayList<Carte> cartesTriees = FabriqueDeJeuxDe32Cartes.créerJeu32DansOrdre();
         ArrayList<Carte> cartesBattues = FabriqueDeJeuxDe32Cartes.créerJeu32Battu();
 
-        for(Carte c : cartesTriees) {
-            System.out.println(c.toString());
-        }
-        for (Carte c : cartesBattues) {
-            System.out.println(c.toString());
-        }
+        // for(Carte c : cartesTriees) {
+        //     System.out.println(c.toString());
+        // }
+        // for (Carte c : cartesBattues) {
+        //     System.out.println(c.toString());
+        // }
 
         if (cartesBattues.get(0) == cartesBattues.get(1)) {
             System.out.println("cartes égales");

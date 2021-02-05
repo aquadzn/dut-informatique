@@ -60,17 +60,22 @@ public class Joueur {
 		return ! this.cartes.isEmpty();
 	}
 
+	public void viderCartes() {
+		this.cartes.clear();
+	}
+
 	public Carte tricher1() {
 		Carte carteMax = this.cartes.get(0);
 		for (int i = 0; i < this.cartes.size() - 1; i++) {
 			if (this.cartes.get(i + 1).supérieureA(carteMax)) {
-				carteMax= this.cartes.get(i + 1);
+				carteMax = this.cartes.get(i + 1);
 			}
 		}
 		this.cartes.remove(carteMax);
 		return carteMax;
 	}
 
+	// Méthode pas complète
 	public Carte tricher2(Carte carteAdverse) {
 		Carte carteMinPlusGrand = this.cartes.get(0);
 		// Carte cartePlusFaible = this.cartes.get(0);
