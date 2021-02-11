@@ -2,12 +2,15 @@ public class Compte {
 
     private Client titulaire;
     private int numeroCompte;
-    private double solde;
+    private long solde;
 
-    public Compte(Client titulaire, int numeroCompte) {
+    // et si plusieurs comptes sont crées au même moment?
+    private static int compteur = 0;
+
+    public Compte(Client titulaire) {
         this.titulaire = titulaire;
-        this.numeroCompte = numeroCompte;
-        this.solde= 0;
+        this.numeroCompte = ++compteur;
+        this.solde = 0;
     }
 
     public String getTitulaireNom() {
@@ -18,17 +21,21 @@ public class Compte {
         return this.numeroCompte;
     }
 
-    public double getBalance() {
+    public long getSolde() {
         return this.solde;
     }
 
-    public void crediterSolde(double montant) {
-        this.solde += montant;
-        System.out.println("Solde actuel: " + this.solde);
+    public void afficherSolde() {
+        int euros = (int) Math.floorDiv(this.solde, 100);
+        int centimes = Math.abs((int) (this.solde % 100));
+        System.out.println("Solde actuel: " + euros + "." + centimes + " euros");
     }
 
-    public void debiterSolde(double montant) {
+    public void crediterSolde(long montant) {
+        this.solde += montant;
+    }
+
+    public void debiterSolde(long montant) {
         this.solde -= montant;
-        System.out.println("Solde actuel: " + this.solde);
     }
 }

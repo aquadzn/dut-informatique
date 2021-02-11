@@ -5,19 +5,23 @@ public class Essai {
         jean.setAdresse("Lyon");
         System.out.println(jean.getNom() + jean.getAdresse());
 
-        Compte compteJean = new Compte(jean, 1234);
+        Compte compteJean = new Compte(jean);
         System.out.println(compteJean.getTitulaireNom());
         System.out.println(compteJean.getNumeroCompte());
-        System.out.println(compteJean.getBalance());
+        compteJean.afficherSolde();
 
         Client paul = new Client("Paul", "Marseille");
-        Compte comptePaul = new Compte(paul, 5678);
-        comptePaul.crediterSolde(200);
-        comptePaul.debiterSolde(50);
-        System.out.println(comptePaul.getBalance());
+        Compte comptePaul = new Compte(paul);
+        comptePaul.crediterSolde(25185); // 251.85
+        comptePaul.debiterSolde(5033); // 50.33
+        comptePaul.afficherSolde();
 
         Client john = new Client("John", "Bordeaux");
-        Compte compteJohn = new Compte(john, 9101112);
+        Compte compteJohn = new Compte(john);
+
+        System.out.println(compteJean.getNumeroCompte());
+        System.out.println(comptePaul.getNumeroCompte());
+        System.out.println(compteJohn.getNumeroCompte());
 
         // Banque
 
@@ -35,12 +39,16 @@ public class Essai {
         LCM.afficherClients();
         LCM.afficherComptes();
 
-        LCM.afficherCompte(1234);
+        LCM.afficherCompte(1);
 
         LCM.setClientAdresse("John", "Nantes");
 
-        LCM.crediterCompte(9101112, 50);
-        LCM.debiterCompte(5678, 300);
+        LCM.debiterCompte(1, 50057);
+        LCM.crediterCompte(2, 5000);
+        LCM.afficherCompte(2);
+        LCM.crediterCompte(3, 45767);
+        LCM.debiterCompte(3, 30050);
+        LCM.afficherCompte(3);
 
         LCM.afficherComptesDecouvert();
     }

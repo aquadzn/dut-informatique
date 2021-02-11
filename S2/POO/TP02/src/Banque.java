@@ -8,8 +8,8 @@ public class Banque {
 
     public Banque(String nom) {
         this.nom = nom;
-        this.clients = new ArrayList<Client>();
-        this.comptes = new ArrayList<Compte>();
+        this.clients = new ArrayList<>();
+        this.comptes = new ArrayList<>();
     }
 
     public String getNom() {
@@ -42,22 +42,20 @@ public class Banque {
         this.comptes.add(compte);
     }
 
-    public void crediterCompte(int numeroCompte, double montant) {
+    public void crediterCompte(int numeroCompte, long montant) {
         for(Compte c : this.comptes) {
             if (c.getNumeroCompte() == numeroCompte) {
                 c.crediterSolde(montant);
-                System.out.println("Solde actuel compte " + c.getNumeroCompte() + ": " + c.getBalance());
                 break;
             }
         }
         System.out.println();
     }
 
-    public void debiterCompte(int numeroCompte, double montant) {
+    public void debiterCompte(int numeroCompte, long montant) {
         for(Compte c : this.comptes) {
             if (c.getNumeroCompte() == numeroCompte) {
                 c.debiterSolde(montant);
-                System.out.println("Solde actuel compte " + c.getNumeroCompte() + ": " + c.getBalance());
                 break;
             }
         }
@@ -83,7 +81,7 @@ public class Banque {
             if (c.getNumeroCompte() == numeroCompte) {
                 System.out.println(c.getTitulaireNom());
                 System.out.println(c.getNumeroCompte());
-                System.out.println(c.getBalance());
+                c.afficherSolde();
                 break;
             }
         }
@@ -92,8 +90,9 @@ public class Banque {
     public void afficherComptesDecouvert() {
         System.out.println("Comptes à découvert:");
         for (Compte c : this.comptes) {
-            if (c.getBalance() < 0) {
-                System.out.println(c.getNumeroCompte() + ": " + c.getBalance());
+            if (c.getSolde() < 0) {
+                System.out.println(c.getNumeroCompte());
+                c.afficherSolde();
             }
         }
     }

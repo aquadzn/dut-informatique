@@ -16,7 +16,6 @@ public class Client {
     }
 
     public void setAdresse(String nouvelleAdresse) {
-        System.out.println(this.adresse + " -> " + nouvelleAdresse);
         this.adresse = nouvelleAdresse;
     }
 }
