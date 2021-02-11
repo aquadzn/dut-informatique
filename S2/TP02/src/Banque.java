@@ -87,6 +87,14 @@ public class Banque {
                 break;
             }
         }
-        System.out.println();
+    }
+
+    public void afficherComptesDecouvert() {
+        System.out.println("Comptes à découvert:");
+        for (Compte c : this.comptes) {
+            if (c.getBalance() < 0) {
+                System.out.println(c.getNumeroCompte() + ": " + c.getBalance());
+            }
+        }
     }
 }

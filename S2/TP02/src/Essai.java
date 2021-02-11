@@ -40,6 +40,8 @@ public class Essai {
         LCM.setClientAdresse("John", "Nantes");
 
         LCM.crediterCompte(9101112, 50);
-        LCM.debiterCompte(5678, 100);
+        LCM.debiterCompte(5678, 300);
+
+        LCM.afficherComptesDecouvert();
     }
 }
