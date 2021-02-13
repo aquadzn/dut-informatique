@@ -129,3 +129,4 @@ INSERT INTO notes VALUES (1, 12, 13);
 INSERT INTO notes VALUES (2, 12, 10);
 
 SELECT delEtud('Gates', 'S1');
+SELECT delEtud('Doe', '');
