@@ -2,7 +2,10 @@
 #include "fonctions.h"
 
 void afficheChaineT(char string[]) {
-    printf("%s\n", string);
+    for (int i = 0; string[i] != '\0'; i++) {
+        printf("%c", string[i]);
+    }
+    printf("\n");
 }
 
 void afficheChaineP(char *string) {
