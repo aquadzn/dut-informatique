@@ -9,6 +9,14 @@ void afficheChaineT(char string[]) {
 }
 
 void afficheChaineP(char *string) {
+
+    /* autre méthode
+    while (*string) {
+        printf("%c", *string);
+        string++;
+    }
+    */ 
+
     for(int i = 0; *(string + i) != '\0'; i++) {
         printf("%c", *(string + i));
     }
