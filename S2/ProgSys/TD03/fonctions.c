@@ -63,15 +63,24 @@ int squeeze(char string[], char c) {
         taille++;
     }
 
-    int i, nouveau;
-    for (i = nouveau = 0; i < taille; i++) {
+    int i, rempl;
+    for (i = rempl = 0; i < taille; i++) {
         if (string[i] != c) {
-            // string[nouveau++] = string[i];
-            string[nouveau] = string[i];
-            nouveau++;
+            // string[rempl++] = string[i];
+            string[rempl] = string[i];
+            rempl++;
         }
     }
-    string[nouveau] = '\0';
+    string[rempl] = '\0';
 
-    return taille - nouveau;
+    // squeeze("abc", b);
+    // >>>
+    // condition i < taille = 3
+    // i = 0, rempl = 0, "abc" -> "abc"
+    // i = 1, rempl = 1, "abc" -> "abc"
+    // i = 2, rempl = 1, "abc" -> "acc"
+    // fin boucle
+    // i = 3, rempl = 2, "acc" -> "ac\0"
+
+    return taille - rempl;
 }
