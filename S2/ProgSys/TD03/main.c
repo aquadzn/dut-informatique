@@ -4,7 +4,7 @@
 int main() {
 
     afficheChaineT("Salut");
-    afficheChaineT("Pointeur");
+    afficheChaineP("Pointeur");
 
     int tableau[] = {3, 4, 1, 8, 6, 2};
     printf("Max tableau: %d\n", max(tableau, 6));

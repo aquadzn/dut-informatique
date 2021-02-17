@@ -6,7 +6,7 @@ void afficheChaineT(char string[]) {
 }
 
 void afficheChaineP(char *string) {
-    for(int i = 0; *string != '\0'; i++) {
+    for(int i = 0; *(string + i) != '\0'; i++) {
         printf("%c", *(string + i));
     }
     printf("\n");
