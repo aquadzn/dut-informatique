@@ -73,7 +73,7 @@ int squeeze(char string[], char c) {
     }
     string[rempl] = '\0';
 
-    // squeeze("abc", b);
+    // squeeze("abc", 'b');
     // >>>
     // condition i < taille = 3
     // i = 0, rempl = 0, "abc" -> "abc"

@@ -16,43 +16,56 @@ public class Banque {
 	
 	public Banque (String nomBanque) {
 		this.nomBanque = nomBanque;
-		this.comptes = new ArrayList<Compte>();
-		this.clients = new ArrayList<Client>();
+		this.comptes = new ArrayList<>();
+		this.clients = new ArrayList<>();
 		this.numéroCompteMax = 0;
 	}
 
 	public String getNomBanque() {
 		return this.nomBanque;
 	}
-	
-	
-//	 En l'absence d'exceptions, il a été décidé pour la méthode ci-dessous (et pour d'autres méthodes plus loin) de retourner un booléen. 
-//	 Ce booléen permet de savoir si l'opération s'est déroulée correctement. 
-//	 Avec des exceptions, il peut être préférable de propager ou lancer une exception.
-	 
-	public boolean créerCompte (String nomClient, int decouvertMax) {
+
+	public void créerCompte (String nomClient, int decouvertMax) {
 		Client client = this.trouverClient(nomClient);
-		if (client == null) return false;
+		if (client == null) {
+			return;
+		}
 		
 		this.numéroCompteMax++;
-		this.comptes.add(new Compte(this.numéroCompteMax, client, decouvertMax));
-		return true;
+
+		try {
+			this.comptes.add(new Compte(this.numéroCompteMax, client, decouvertMax));
+		}
+		catch (CompteException e) {
+			e.printStackTrace();
+		}
 	}
 	
 
-	public boolean ajouterClient (String nom, String adresse) {
+	public void ajouterClient (String nom, String adresse) {
 		if (this.trouverClient(nom) != null)
-			return false;
+			return;
 		this.clients.add(new Client(nom, adresse));
-		return true;
 	}
 	
-	public boolean modifierAdresseClient (String nom, String nouvelleAdresse) {
+	public void modifierAdresseClient (String nom, String nouvelleAdresse) {
 		Client client = this.trouverClient(nom);
 		if (client == null)
-			return false;
+			return;
 		client.setAdresse(nouvelleAdresse);
-		return true;
+	}
+
+	public void modifierDecouvertMax(int numeroCompte, int nouveauDecouvertMax) {
+		Compte compte = this.trouverCompte(numeroCompte);
+		if (compte == null) {
+			return;
+		}
+
+		try {
+			compte.setDecouvertMax(nouveauDecouvertMax);
+		} catch (CompteException e) {
+			e.printStackTrace();
+		}
 	}
 	
 	public String listerComptes() {
@@ -80,25 +93,34 @@ public class Banque {
 	}
 	
 
-	public boolean créditer (int numéroCompte, long montant) {
+	public void créditer (int numéroCompte, long montant) {
 		Compte compteACréditer = this.trouverCompte(numéroCompte);
 
 		if (compteACréditer == null)
-			return false;
+			return;
 		
-		compteACréditer.créditer(montant);
-		return true;
+		try {
+			compteACréditer.créditer(montant);
+		}
+		catch (CompteException e) {
+			e.printStackTrace();
+		}
 	}
 	
 
-	public boolean débiter (int numéroCompte, long montant) {
+	public void débiter (int numéroCompte, long montant) {
 		Compte compteADébiter = this.trouverCompte(numéroCompte);
 
 		if (compteADébiter == null)
-			return false;
-		
-		compteADébiter.débiter(montant);
-		return true;
+			return;
+
+		try {
+			compteADébiter.débiter(montant);
+		}
+		catch (CompteException e) {
+			e.printStackTrace();
+		}
+
 	}
 	
 	public String comptesADécouvert() {
@@ -126,7 +148,7 @@ public class Banque {
 	}
 	
 	private ArrayList<Compte> listeComptesADécouvert() {
-		ArrayList<Compte> comptesADécouvert = new ArrayList<Compte>();
+		ArrayList<Compte> comptesADécouvert = new ArrayList<>();
 		for (Compte c : this.comptes)
 			if (c.estADécouvert())
 				comptesADécouvert.add(c);

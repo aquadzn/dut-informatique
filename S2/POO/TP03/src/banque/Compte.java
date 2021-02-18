@@ -25,13 +25,16 @@ public class Compte {
 		this.titulaire = client;
 		this.solde = solde;
 		this.decouvertMax = decouvertMax;
+
+		if (this.numéro < 1) {
+			throw new CompteException("Numéro de compte nul ou négatif");
+		}
 		if (this.decouvertMax < 0) {
 			throw new CompteException("decouvertMax < 0");
 		}
 		if (this.solde < -(this.decouvertMax)) {
-			throw new CompteException("Solde + decouvertMax < 0");
+			throw new CompteException("Solde < decouvertMax");
 		}
-
 	}
 
 	public Compte(int numéro, Client client, int decouvertMax) throws CompteException {
@@ -49,22 +52,41 @@ public class Compte {
 	public int getNuméro() {
 		return this.numéro;
 	}
+
+	public void setDecouvertMax(int decouvertMax) throws CompteException {
+		if (this.decouvertMax < 0) {
+			throw new CompteException("decouvertMax < 0");
+		}
+		else {
+			this.decouvertMax = decouvertMax;
+		}
+	}
 	
 	// Attention : cette version ne vérifie pas le signe du montant crédité ni le dépassement de la capacité de gestion du type long.
-	public void créditer(long montant) {
-		this.solde += montant;
+	public void créditer(long montant) throws CompteException {
+		if (montant <= 0) {
+			throw new CompteException("Montant négatif");
+		}
+		else if (this.solde >= Long.MAX_VALUE) {
+			throw new CompteException("Solde maximal atteint, impossible de créditer");
+		}
+		else {
+			this.solde += montant;
+		}
 	}
 
 	// Attention : cette version ne vérifie pas le signe du montant débité.
 	// Exception decouvertMax
 	public void débiter(long montant) throws CompteException {
-		if (decouvertMax < 0) {
-			throw new CompteException("decouvertMax < 0");
+		if (montant > this.solde + this.decouvertMax) {
+			throw new CompteException("Montant trop élevé");
 		}
-		if (this.solde < -(this.decouvertMax)) {
-			throw new CompteException("Solde < decouvertMax");
+		else if (montant <= 0) {
+			throw new CompteException("Montant négatif");
 		}
-		this.solde -= montant;
+		else {
+			this.solde -= montant;
+		}
 	}
 
 	public boolean estADécouvert() {
@@ -72,6 +94,7 @@ public class Compte {
 	}
 
 	public void virer(Compte destinataire, long montant) throws CompteException {
+
 		débiter(montant);
 		destinataire.créditer(montant);
 	}
