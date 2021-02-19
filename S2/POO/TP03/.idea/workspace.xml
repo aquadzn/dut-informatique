@@ -3,17 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="099a495d-cdeb-473a-9528-918db16aa32d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TP03.iml" beforeDir="false" afterPath="$PROJECT_DIR$/TP03.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TP03/META-INF/TP03.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TP03/banque/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TP03/banque/Client.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/TP03/banque/Compte.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TP03/banque/Compte.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TP03/banque/CompteException.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TP03/banque/CompteException.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TP03/banque/Essai.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TP03/banque/Essai.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/banque/Banque.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/banque/Banque.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/banque/Compte.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/banque/Compte.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/banque/CompteTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/banque/CompteTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/banque/Essai.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/banque/Essai.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../ProgSys/TD03/fonctions.c" beforeDir="false" afterPath="$PROJECT_DIR$/../../ProgSys/TD03/fonctions.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/banque/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/banque/Menu.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -155,17 +148,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="All in TP03" type="JUnit" factoryName="JUnit" nameIsGenerated="true">
       <module name="TP03" />
       <option name="PACKAGE_NAME" value="" />
@@ -245,6 +227,7 @@
       <option name="presentableId" value="Default" />
       <updated>1613641218421</updated>
       <workItem from="1613679256300" duration="6488000" />
+      <workItem from="1613733857788" duration="2148000" />
     </task>
     <servers />
   </component>

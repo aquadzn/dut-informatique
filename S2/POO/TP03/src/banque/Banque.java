@@ -122,6 +122,21 @@ public class Banque {
 		}
 
 	}
+
+	public void virer(int numCompteEnvoi, int numCompteBeneficiaire, long montant) {
+		Compte compteEnvoi = this.trouverCompte(numCompteEnvoi);
+		Compte compteBeneficiaire = this.trouverCompte(numCompteBeneficiaire);
+
+		if (compteEnvoi == null || compteBeneficiaire == null) {
+			return;
+		}
+
+		try {
+			compteEnvoi.virer(compteBeneficiaire, montant);
+		} catch (CompteException e) {
+			e.printStackTrace();
+		}
+	}
 	
 	public String comptesADécouvert() {
 		return this.listeComptesADécouvert().toString();

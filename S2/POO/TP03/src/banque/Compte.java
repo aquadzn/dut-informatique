@@ -94,7 +94,6 @@ public class Compte {
 	}
 
 	public void virer(Compte destinataire, long montant) throws CompteException {
-
 		débiter(montant);
 		destinataire.créditer(montant);
 	}
