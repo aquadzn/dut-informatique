@@ -1,7 +1,7 @@
 -- Exercice 0
 
 -- 1.
--- Vrai
+-- Faux, avec différents arguments
 
 -- 2.
 -- Une fonction VOLATILE peut tout faire, y compris modifier la base de données
@@ -12,13 +12,14 @@
 -- C'est pour informer l'optimiseur sur le comportement de la fonction
 
 -- 4.
--- Vrai
+-- Vrai avec raise notice, ou pour lever des erreurs
 
 -- 5.
 -- e)
 
 -- 6.
--- Next retourne le prochain et query l'ensemble
+-- Next retourne un SET OF.
+-- Query est suivi d'une requete SQL et retourne cette dernière
 
 
 -- Exercice 1
