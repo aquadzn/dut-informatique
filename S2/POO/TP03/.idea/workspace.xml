@@ -8,6 +8,8 @@
       <change beforePath="$PROJECT_DIR$/src/banque/Compte.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/banque/Compte.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/banque/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/banque/Menu.java" afterDir="false" />
     </list>
+    <ignored path="$PROJECT_DIR$/out/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -59,7 +61,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="4">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="y" value="27" />
     <option name="width" value="960" />
     <option name="height" value="1053" />
@@ -72,32 +74,7 @@
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="TP03" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TP03" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TP03" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TP03" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TP03" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TP03" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="banque" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
-    </panes>
+    <panes />
   </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -113,6 +90,18 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
   </component>
   <component name="RunManager" selected="Application.Menu">
     <configuration name="Essai" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -243,8 +232,7 @@
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="27" width="960" height="1053" extended-state="4" />
-    <editor active="true" />
+    <frame x="0" y="26" width="1920" height="1054" extended-state="6" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.25273523" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
