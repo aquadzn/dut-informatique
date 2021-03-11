@@ -3,10 +3,6 @@
 #include <string.h>
 #include "fonctions.h"
 
-void afficher_point2D(Point2D p) {
-    printf("Point2D x: %f - y: %f\n", p.x, p.y);
-}
-
 Element_Point2D *nouvelle_liste(Point2D p) {
     Element_Point2D *head = malloc(sizeof(*head));
     if (head == NULL) {
@@ -20,16 +16,14 @@ Element_Point2D *nouvelle_liste(Point2D p) {
 }
 
 Element_Point2D *inserer(Element_Point2D *l, Point2D p) {
-    Element_Point2D *new_head = malloc(sizeof(*new_head));
+    Element_Point2D *new_head = nouvelle_liste(p);
     if (l == NULL || new_head == NULL) {
         exit(1);
     }
 
-    new_head->p = p;
-    new_head->suivant = l->suivant;
-    l->suivant = new_head;
+    new_head->suivant = l;
 
-    return l;
+    return new_head;
 }
 
 Element_Point2D *supprimer_premier(Element_Point2D *l) {
@@ -51,7 +45,7 @@ void parcourir(Element_Point2D *l) {
         exit(1);
     }
 
-    Element_Point2D *e = l->suivant;
+    Element_Point2D *e = l;
     while(e != NULL) {
         printf("Point2D x: %.2f - y: %.2f\n", e->p.x, e->p.y);
         e = e->suivant;
@@ -60,37 +54,37 @@ void parcourir(Element_Point2D *l) {
 }
 
 int *rechercher(Element_Point2D *l, Point2D p) {
-    // res[0] = taille du tableau
-    int *res = malloc(sizeof(int));
-    if (l == NULL || res == NULL) {
+    // res[0] = nombre de points égaux trouvés
+    int *res = (int *) malloc(sizeof(int));
+    if (res == NULL) {
         exit(1);
     }
 
-    Element_Point2D *e = l->suivant;
+    Element_Point2D *e = l;
     int i = 0;
-    int count = 0;
+    int i_element = 0;
     res[0] = i;
 
     while(e != NULL) {
         if (e->p.x == p.x && e->p.y == p.y) {
-            res = realloc(res, (i + 2) * sizeof(int));
+            i++;
+            res = realloc(res, (i + 1) * sizeof(int));
             if (res == NULL) {
                 exit(2);
             }
 
-            // maj taille
-            res[0] = i + 1;
+            // maj nombre de points égaux
+            res[0] = i;
             // maj indices Point2D
-            res[i + 1] = count;
-            i++;
-            
+            res[i] = i_element;
         }
-        count++;
+        i_element++;
         e = e->suivant;
     }
 
-    // taille res[0]
-    // indices res[1:taille]
+    // Ex: != == == !=
+    // Ret: [2, 1, 2]
+
     return res;
 }
 
@@ -137,7 +131,6 @@ void afficher_notes_etudiants(Element_Etudiant *l, char **rech, int taille_rech)
             e = e->suivant;
         }
     }
-
 }
 
 Element_Etudiant *filtre(Element_Etudiant *l, float seuil) {
@@ -179,6 +172,7 @@ Element_Etudiant *nouvelle_liste_etudiants(char *nom, float sem1, float sem2) {
     head->suivant = NULL;
 
     return head;
+
 }
 
 Element_Etudiant *inserer_etudiant(Element_Etudiant *l, char *nom, float sem1, float sem2) {
@@ -195,4 +189,18 @@ Element_Etudiant *inserer_etudiant(Element_Etudiant *l, char *nom, float sem1, f
     l->suivant = new_head;
 
     return l;
+}
+
+void afficher_etudiants(Element_Etudiant *l) {
+    if (l == NULL) {
+        exit(1);
+    }
+    printf("\nEtudiants:\n");
+
+    Element_Etudiant *e = l->suivant;
+    while(e != NULL) {
+        printf("%s\n", e->nom);
+        e = e->suivant;
+    }
+    printf("NULL\n\n");
 }

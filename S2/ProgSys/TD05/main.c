@@ -9,7 +9,6 @@ int main() {
         1.0,
         2.0
     };
-    // afficher_point2D(p);
 
     Element_Point2D *l = nouvelle_liste(p);
     l = inserer(l, (Point2D){3.0, 4.0});
@@ -19,7 +18,6 @@ int main() {
     l = inserer(l, (Point2D){9.0, 10.0});
     l = inserer(l, (Point2D){11.0, 12.0});
     l = inserer(l, (Point2D){5.0, 6.0});
-    l = inserer(l, (Point2D){13.0, 14.0});
 
     parcourir(l);
 
@@ -39,13 +37,14 @@ int main() {
     free(l);
 
     // Exercice 2
-    printf("\n");
+    printf("\n-----------");
 
     Element_Etudiant *l_e = nouvelle_liste_etudiants("William", 14., 12.);
     l_e = inserer_etudiant(l_e, "Jean", 11., 8.);
     l_e = inserer_etudiant(l_e, "Pierre", 16.5, 13.);
     l_e = inserer_etudiant(l_e, "Paul", 12.5, 9.);
-
+    afficher_etudiants(l_e);
+    
     calcul_moyenne(l_e);
     afficher_notes_etudiant(l_e, "Jean");
     

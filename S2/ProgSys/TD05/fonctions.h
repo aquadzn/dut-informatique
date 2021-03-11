@@ -3,8 +3,6 @@ typedef struct point2D {
     float y;
 } Point2D;
 
-void afficher_point2D(Point2D p);
-
 // Exercice 1
 
 typedef struct element_point2D {
@@ -35,3 +33,4 @@ Element_Etudiant *filtre(Element_Etudiant *l, float seuil);
 
 Element_Etudiant *nouvelle_liste_etudiants(char *nom, float sem1, float sem2);
 Element_Etudiant *inserer_etudiant(Element_Etudiant *l, char *nom, float sem1, float sem2);
+void afficher_etudiants(Element_Etudiant *l);
