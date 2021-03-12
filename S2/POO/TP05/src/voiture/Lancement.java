@@ -12,30 +12,22 @@ public class Lancement {
         Critere cPrix = new CriterePrix(40);
         ArrayList<Voiture> voituresCritere = agence.selection(cPrix);
         System.out.println("Critère prix:");
-        if (voituresCritere.isEmpty()) {
-            System.out.println("Rien trouvé");
-        }
-        else {
-            for (Voiture v : voituresCritere) {
-                System.out.println(v.toString());
-            }
+        for (Voiture v : voituresCritere) {
+            System.out.println(v.toString());
         }
         voituresCritere.clear();
 
         ArrayList<Critere> criteres = new ArrayList<>();
         Critere cMarque = new CritereMarque("Ford");
+        Critere cKm = new CritereKm(10000);
         criteres.add(cPrix);
         criteres.add(cMarque);
+        criteres.add(cKm);
 
         voituresCritere = agence.selection(new InterCritere(criteres));
         System.out.println("Inter critère:");
-        if (voituresCritere.isEmpty()) {
-            System.out.println("Rien trouvé");
-        }
-        else {
-            for (Voiture v : voituresCritere) {
-                System.out.println(v.toString());
-            }
+        for (Voiture v : voituresCritere) {
+            System.out.println(v.toString());
         }
         voituresCritere.clear();
     }

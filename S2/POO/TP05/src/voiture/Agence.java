@@ -3,7 +3,7 @@ package voiture;
 import java.util.ArrayList;
 
 public class Agence {
-    private ArrayList<Voiture> voitures;
+    public ArrayList<Voiture> voitures;
 
     public Agence() {
         this.voitures = new ArrayList<>();
