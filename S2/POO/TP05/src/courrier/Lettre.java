@@ -1,3 +1,5 @@
+package courrier;
+
 public class Lettre implements Courrier {
 
     private final String destinataire;

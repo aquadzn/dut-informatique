@@ -1,3 +1,5 @@
+package courrier;
+
 public class Colis implements Courrier {
     private String destinataire;
     private String expediteur;

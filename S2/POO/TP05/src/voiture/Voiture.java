@@ -1,3 +1,5 @@
+package voiture;
+
 public class Voiture {
 
     private final String marque;
@@ -13,7 +15,7 @@ public class Voiture {
     }
 
     public String toString() {
-        return marque + " " + modele + " - " + km + " - " + prixJournee;
+        return marque + " " + modele + " - " + km + " km - " + prixJournee + " euro / jour";
     }
 
     public String getMarque() {

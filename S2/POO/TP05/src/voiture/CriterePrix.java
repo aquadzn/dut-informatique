@@ -1,3 +1,5 @@
+package voiture;
+
 public class CriterePrix implements Critere {
 
     private int prix;

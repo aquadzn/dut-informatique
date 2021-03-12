@@ -1,3 +1,5 @@
+package voiture;
+
 public class CritereMarque implements Critere {
 
     private String marque;
