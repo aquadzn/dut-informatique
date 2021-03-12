@@ -49,20 +49,30 @@ SELECT decodeTitre(), decodeTitre(2), decodeTitre(NULL, 'mle');
 
 -- 1.
 CREATE OR REPLACE FUNCTION total_responsabilite(nomArg varchar(32) default '', prenomArg varchar(32) default '')
-RETURNS int AS $$
+RETURNS text AS $$
 DECLARE
     nb_modules int = 0;
+    enseignant_row enseignant%rowtype;
 begin
-    select count(*) into nb_modules from module m
-    inner join enseignant e on m.idens = e.idens
-    where nom LIKE nomArg AND prenom LIKE prenomArg;
-    return nb_modules;
+    select * from enseignant into enseignant_row
+    where nom like nomArg and prenom like prenomArg;
+
+    if not found then
+        return 'Le prof n existe pas 0';
+    else
+        select count(*) into nb_modules
+        from module natural join enseignant
+        where nom like nomArg and prenom like prenomArg;
+        return upper(nomArg) || ' ' || prenomArg || ' ' || nb_modules;
+    end if;
 end
 $$
 LANGUAGE plpgsql;
 
 -- 2.
-SELECT total_responsabilite('Toto'), total_responsabilite('Dubrulle', 'Philippe'), total_responsabilite('Lamolle', 'Myriam');
+SELECT total_responsabilite('Toto');
+SELECT total_responsabilite('Dubrulle', 'Philippe');
+SELECT total_responsabilite('Lamolle', 'Myriam');
 
 -- Exercice 4
 
@@ -72,7 +82,13 @@ RETURNS SETOF text AS $$
 begin
     return query
         select upper(nom) || ' ' || prenom || ' ' || count(*) from enseignant e
+        inner join module m on e.idens = m.idens
+        group by (prenom, nom)
+        order by nom asc;
+    return query
+        select upper(nom) || ' ' || prenom || ' ' || count(*) - 1 from enseignant e
         left join module m on e.idens = m.idens
+        where m.idens is null
         group by (prenom, nom)
         order by nom asc;
 end
