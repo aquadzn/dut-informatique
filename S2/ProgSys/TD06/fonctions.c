@@ -51,7 +51,7 @@ char **litFichier(char *chemin, int *nbLignes) {
 
     while (! feof(fp)) {
         (*nbLignes)++;
-        tab = realloc(tab, *nbLignes * sizeof(char));
+        tab = realloc(tab, *nbLignes * sizeof(char *));
         tab[*nbLignes - 1] = litLigne(fp);
     }
 
