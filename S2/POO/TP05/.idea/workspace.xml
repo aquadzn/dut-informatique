@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9803df90-e72a-42d3-8c3c-ba53a94f4c7d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TP05/voiture/Lancement.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TP05/voiture/Lancement.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/voiture/Agence.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/voiture/Agence.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/voiture/Lancement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/voiture/Lancement.java" afterDir="false" />
-    </list>
+    <list default="true" id="9803df90-e72a-42d3-8c3c-ba53a94f4c7d" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -22,8 +17,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/voiture/Lancement.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="618">
-              <caret line="32" column="5" lean-forward="true" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
+            <state relative-caret-position="736">
+              <caret line="32" column="5" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -40,14 +35,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/voiture/VueAgence.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="276">
+            <state relative-caret-position="230">
               <caret line="12" column="16" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="16" />
-              <folding>
-                <element signature="e#111#112#0" expanded="true" />
-                <element signature="e#146#147#0" expanded="true" />
-                <element signature="e#249#250#0" expanded="true" />
-                <element signature="e#270#271#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -88,7 +77,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="4">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="y" value="27" />
     <option name="width" value="960" />
     <option name="height" value="1053" />
@@ -101,7 +90,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -125,6 +113,7 @@
         </subPane>
       </pane>
       <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -179,15 +168,14 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="27" width="960" height="1053" extended-state="4" />
-    <editor active="true" />
+    <frame x="0" y="26" width="1920" height="1054" extended-state="6" />
     <layout>
       <window_info id="Designer" order="0" />
       <window_info id="UI Designer" order="1" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info id="Image Layers" order="4" />
-      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.24835886" />
+      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.12379936" />
       <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="0" />
       <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" />
@@ -316,13 +304,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/voiture/Lancement.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="618">
-          <caret line="32" column="5" lean-forward="true" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/voiture/CriterePrix.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="161">
@@ -331,6 +312,13 @@
             <element signature="e#202#203#0" expanded="true" />
             <element signature="e#257#258#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/voiture/Lancement.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="736">
+          <caret line="32" column="5" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -343,14 +331,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/voiture/VueAgence.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
+        <state relative-caret-position="230">
           <caret line="12" column="16" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="16" />
-          <folding>
-            <element signature="e#111#112#0" expanded="true" />
-            <element signature="e#146#147#0" expanded="true" />
-            <element signature="e#249#250#0" expanded="true" />
-            <element signature="e#270#271#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>

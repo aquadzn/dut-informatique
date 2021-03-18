@@ -1,9 +1,9 @@
 package armee;
 
-public class Cavalier extends Soldat {
+public class Cavalier extends Porteur {
 
-    public Cavalier(String nom, int poids, int charge) {
-        super(nom, poids, 150, charge);
+    public Cavalier(String nom, int poids) {
+        super(nom, poids, 150);
     }
 
     public double vitesseMax() {
@@ -21,13 +21,5 @@ public class Cavalier extends Soldat {
         else {
             return 8.;
         }
-    }
-
-    public void charger(int poidsCharge) {
-        setCharge(this.getCharge() + poidsCharge);
-    }
-
-    public void decharger(int poidsCharge) {
-        setCharge(this.getCharge() - poidsCharge);
     }
 }

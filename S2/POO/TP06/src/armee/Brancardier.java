@@ -1,9 +1,9 @@
 package armee;
 
-public class Brancardier extends Soldat {
+public class Brancardier extends Porteur {
 
-    public Brancardier(String nom, int poids, int charge) {
-        super(nom, poids, 60, charge);
+    public Brancardier(String nom, int poids) {
+        super(nom, poids, 60);
     }
 
     public double vitesseMax() {
@@ -23,13 +23,5 @@ public class Brancardier extends Soldat {
         else {
             return 4.;
         }
-    }
-
-    public void charger(int poidsCharge) {
-        setCharge(this.getCharge() + poidsCharge);
-    }
-
-    public void decharger(int poidsCharge) {
-        setCharge(this.getCharge() - poidsCharge);
     }
 }

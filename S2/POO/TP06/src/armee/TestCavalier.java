@@ -7,7 +7,7 @@ public class TestCavalier {
 
     @Test
     final public void testVitesseMax() {
-        Cavalier c = new Cavalier("Jean", 80, 0);
+        Cavalier c = new Cavalier("Jean", 80);
         Assertions.assertEquals(15., c.vitesseMax(), "0kg");
 
         c.charger(25);
