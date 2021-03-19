@@ -4,20 +4,22 @@
 
 int main() {
 
-    int code = afficheFichier("hello.txt");
-    printf("%d\n", code);
-    code = afficheFichier("AHHH.txt");
-    printf("%d\n\n", code);
+    afficheFichier("hello.txt");
 
-    FILE *fp = fopen("hello.txt", "r");
-    char *str = litLigne(fp);
-    printf("%s\n", str);
+    // FILE *fp = fopen("hello.txt", "r");
+    // char *str = litLigne(fp);
+    // printf("%s\n", str);
 
-    free(str);
+    // free(str);
 
-    int ligne = 1;
-    litFichier("hello.txt", &ligne);
-    printf("lignes: %d\n", ligne);
+    // int ligne;
+    // char **tab = litFichier("hello.txt", &ligne);
+    // printf("lignes: %d\n", ligne);
+
+
+    // ecritFichier("new.txt", tab, 3);
+
+    // free(tab);
 
     return 0;
 }

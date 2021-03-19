@@ -29,6 +29,7 @@ char *litLigne(FILE *fp) {
 
     do {
         fread(&c, sizeof(char), 1, fp);
+        printf("%c", c);
         str[++i] = c;
         str = realloc(str, (i + 2) * sizeof(char));
     } while (c != '\n');
@@ -37,9 +38,9 @@ char *litLigne(FILE *fp) {
     return str;
 }
 
-// Pas correct
+// Erreur!
 char **litFichier(char *chemin, int *nbLignes) {
-    char **tab = malloc(sizeof(**tab));
+    char **tab = malloc(sizeof(char *));
     if (tab == NULL) {
         exit(1);
     }
@@ -49,6 +50,7 @@ char **litFichier(char *chemin, int *nbLignes) {
         exit(1);
     }
 
+    *nbLignes = 0;
     while (! feof(fp)) {
         (*nbLignes)++;
         tab = realloc(tab, *nbLignes * sizeof(char *));
@@ -60,8 +62,48 @@ char **litFichier(char *chemin, int *nbLignes) {
     return tab;
 }
 
-// Pas faite
-int ecritFichier(char *chemin, char **contenu, int nbLignes) {}
+// Ecrit dans un fichier donné
+int ecritFichier(char *chemin, char **contenu, int nbLignes) {
+    FILE *fp = fopen(chemin, "w");
+    if (fp == NULL) {
+        return -1;
+    }
+    
+    for (int i = 0; i < nbLignes; i++) {
+        fwrite(contenu[i], sizeof(contenu[i]), 1, fp);
+        fwrite("\n", sizeof(char), 1, fp);
+    }
 
-// Pas faite
-void libereTab(char **tab, int nbLignes) {}
+    return 0;
+}
+
+// Libère la mémoire de chaque *tab dans **tab
+void libereTab(char **tab, int nbLignes) {
+    for (int i = 0; i < nbLignes; i++) {
+        free(tab[i]);
+    }
+}
+
+int stocke(char *chemin, Element_Point2D *l) {
+    FILE *fp = fopen(chemin, "r");
+    if (fp == NULL) {
+        exit(1);
+    }
+
+    if (l == NULL) {
+        exit(1);
+    }
+
+    int i = 0;
+    Element_Point2D *e = l;
+    while(e != NULL) {
+        fwrite((char *) e->p.x, sizeof(char *), 1, fp);
+        fwrite("\n", sizeof(char), 1, fp);
+        e = e->suivant;
+        i++;
+    }
+}
+
+int charge(char *chemin, Element_Point2D *l) {
+
+}
