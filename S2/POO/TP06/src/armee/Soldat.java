@@ -15,8 +15,8 @@ public class Soldat {
     }
 
     public String toString() {
-        String str = "Soldat " + this.nom + "\nPoids: " + this.poids + " kg\nVitesse max: "
-                + this.vitesseMax() + " km/h\n";
+        String str = "Soldat " + this.nom + "\nPoids: " + this.poids +
+                " kg\nVitesse max: " + this.vitesseMax() + " km/h\n";
 
         return str;
     }

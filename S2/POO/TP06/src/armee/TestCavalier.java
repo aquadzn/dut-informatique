@@ -19,5 +19,4 @@ public class TestCavalier {
         c.charger(50);
         Assertions.assertEquals(8, c.vitesseMax(), "125kg");
     }
-
 }

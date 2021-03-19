@@ -1,4 +1,5 @@
 package jeu;
+import jeu.armes.Arme;
 
 public abstract class Guerrier {
 
@@ -9,18 +10,21 @@ public abstract class Guerrier {
     private Arme arme;
     private boolean estArme;
     private int kills;
+    private int santeMax;
 
-    public Guerrier(String nom, int pV, int pA, int pD, Arme arme) {
+    protected Guerrier(String nom, int pV, int pA, int pD, Arme arme) {
         this.nom = nom;
         this.pointsVie = pV;
         this.pointsAttaque = pA;
         this.pointsDefense = pD;
         this.arme = arme;
+
         this.estArme = true;
         this.kills = 0;
+        this.santeMax = pV;
     }
 
-    public int getPointsVie() {
+    private int getPointsVie() {
         return this.pointsVie;
     }
 
@@ -28,7 +32,7 @@ public abstract class Guerrier {
         return this.pointsDefense;
     }
 
-    public int getKills() {
+    protected int getKills() {
         return this.kills;
     }
 
@@ -36,25 +40,29 @@ public abstract class Guerrier {
         this.pointsVie = pointsVie;
     }
 
-    public void perdreArme() {
+    protected void perdreArme() {
         this.arme = null;
         this.estArme = false;
     }
 
-    public void attaquer(Guerrier g) {
-        if (this.estArme) {
-            g.setPointsVie(g.getPointsVie() - (this.pointsAttaque + this.arme.getPointsAttaque()) + g.getPointsDefense());
-        }
-        else {
-            g.setPointsVie(g.getPointsVie() - this.pointsAttaque + g.getPointsDefense());
-        }
+    public String toString() {
+        return this.nom + "[" + this.pointsVie + "/" + this.santeMax + " PV]";
+    }
 
+    protected void attaquer(Guerrier g) throws Exception {
         if (g.getPointsVie() == 0) {
             this.kills++;
+            throw new Exception("Le guerrier attaqué n'a plus de PV");
         }
+
+        int attaque = this.pointsAttaque - g.getPointsDefense();
+        if (this.estArme) {
+            attaque += this.arme.getPointsAttaque();
+        }
+
+        System.out.println(this.toString() + " INFLIGE -" + attaque + " PV à " + g.toString());
+        g.setPointsVie(g.getPointsVie() - attaque);
     }
 
-    protected void crier() {
-
-    }
+    protected abstract void crier();
 }

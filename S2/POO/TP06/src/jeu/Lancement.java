@@ -6,17 +6,26 @@ public class Lancement {
         Archer a = new Archer("archer");
         Magicien m = new Magicien("magicien");
 
-        System.out.println(a.getPointsVie());
-        System.out.println(m.getPointsVie());
+        try {
+            a.attaquer(m);
+            a.crier();
 
-        a.attaquer(m);
-        a.crier();
-        System.out.println(m.getPointsVie());
+            m.perdreArme();
 
-        m.perdreArme();
+            m.attaquer(a);
+            m.crier();
 
-        m.attaquer(a);
-        m.crier();
-        System.out.println(a.getPointsVie());
+            a.attaquer(m);
+            a.crier();
+            m.attaquer(a);
+            m.crier();
+
+            a.attaquer(m);
+            a.crier();
+            m.attaquer(a);
+            m.crier();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
