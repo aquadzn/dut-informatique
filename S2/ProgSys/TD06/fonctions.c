@@ -85,23 +85,26 @@ void libereTab(char **tab, int nbLignes) {
 }
 
 int stocke(char *chemin, Element_Point2D *l) {
-    FILE *fp = fopen(chemin, "r");
+    FILE *fp = fopen(chemin, "w");
     if (fp == NULL) {
-        exit(1);
+        return -1;
     }
 
     if (l == NULL) {
-        exit(1);
+        return -1;
     }
 
     int i = 0;
     Element_Point2D *e = l;
     while(e != NULL) {
-        fwrite((char *) e->p.x, sizeof(char *), 1, fp);
+        fwrite(&(e->p), sizeof(Point2D), 1, fp);
         fwrite("\n", sizeof(char), 1, fp);
         e = e->suivant;
         i++;
     }
+
+    fclose(fp);
+    return 0;
 }
 
 int charge(char *chemin, Element_Point2D *l) {
