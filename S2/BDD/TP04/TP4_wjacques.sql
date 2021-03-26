@@ -62,9 +62,9 @@ BEGIN
         group by titre order by tpstotal asc;
 
     fetch first from ref into rec;
-    raise info '%', rec;
+    raise info 'Titre: % - Temps: %', rec.titre, rec.tpstotal;
     fetch last from ref into rec;
-    raise info '%', rec;
+    raise info 'Titre: % - Temps: %', rec.titre, rec.tpstotal;
 
     return ref;
 END;
