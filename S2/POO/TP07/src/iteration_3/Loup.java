@@ -2,21 +2,22 @@ package iteration_3;
 
 public class Loup extends Acteur {
     public Loup(Environnement env) {
-        super(80, env);
+        super(80, 10, env);
     }
 
     public Loup(int x, int y, Environnement env) {
-        super(x, y, 80, env);
+        super(x, y, 80, 10, env);
     }
 
     public void agit() {
+        this.seDeplace();
+
         Acteur a = captureMouton();
         if (a == null) {
             this.decrementerPv(2);
         }
         else {
             a.meurt();
-            this.getEnv().getActeurs().remove(a);
         }
 
         this.decrementerPv(1);

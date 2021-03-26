@@ -41,13 +41,16 @@ public class Environnement {
     }
 
     public void unTour() {
-        for(int i = this.acteurs.size() - 1; i >= 0; i--) {
-            System.out.println(this.acteurs.get(i).toString());
-            this.acteurs.get(i).agit();
-
-            if (! this.acteurs.get(i).estVivant()) {
-                this.acteurs.get(i).meurt();
-                this.acteurs.remove(i);
+        for(int i=0;i<acteurs.size(); i++){
+            Acteur a = acteurs.get(i);
+            System.out.println(a.toString());
+            a.agit();
+        }
+        for(int i=acteurs.size()-1; i>=0;i--){
+            Acteur a = acteurs.get(i);
+            if(!a.estVivant()){
+                System.out.println("mort de : " + a);
+                acteurs.remove(i);
             }
         }
         System.out.println();

@@ -8,26 +8,47 @@ public abstract class Acteur {
     private int y;
     private int dx;
     private int dy;
+    private int vitesse;
     private static int compteur = 0;
     private final String id;
     private int pv;
 
     private Environnement env;
 
-    protected Acteur(int pv, Environnement env) {
-        this.id = "acteur_" + String.valueOf(++compteur);
+    protected Acteur(int pv, int vitesse, Environnement env) {
+        String str = "";
+        if (this instanceof Mouton) {
+            str += "M";
+        }
+        if (this instanceof Loup) {
+            str += "L";
+        }
+        this.id = str + String.format("%02d", ++compteur);
         this.pv = pv;
+        this.vitesse = vitesse;
         this.env = env;
         this.x = r.nextInt(this.env.getLargeur());
         this.y = r.nextInt(this.env.getHauteur());
+        this.dx = r.nextInt(1-(-1)) + -1;
+        this.dy = r.nextInt(1-(-1)) + -1;
     }
 
-    protected Acteur(int x, int y, int pv, Environnement env) {
-        this.id = "acteur_" + String.valueOf(++compteur);
+    protected Acteur(int x, int y, int pv, int vitesse, Environnement env) {
+        String str = "";
+        if (this instanceof Mouton) {
+            str += "M";
+        }
+        if (this instanceof Loup) {
+            str += "L";
+        }
+        this.id = str + String.format("%02d", ++compteur);
         this.pv = pv;
+        this.vitesse = vitesse;
+        this.env = env;
         this.x = x;
         this.y = y;
-        this.env = env;
+        this.dx = r.nextInt(1-(-1)) + -1;
+        this.dy = r.nextInt(1-(-1)) + -1;
     }
 
     protected String getId() {
@@ -75,12 +96,42 @@ public abstract class Acteur {
     }
 
     protected void seDeplace() {
-        
+
+        while (! this.env.dansTerrain(this.x, this.y)) {
+            this.x += this.dx * vitesse;
+            this.y += this.dy * vitesse;
+
+            if (r.nextDouble() < 0.2) {
+                this.dx = r.nextInt(1-(-1)) + -1;
+                this.dy = r.nextInt(1-(-1)) + -1;
+            }
+        }
     }
 
     abstract protected void agit();
 
     public String toString() {
-        return this.id +  " [" + this.x + "," + this.y + "] : " + this.pv + " pv";
+        String str = this.id +  " [" + this.x + "," + this.y + "][";
+        if (this.dx == -1) {
+            str += "←,";
+        }
+        if (this.dx == 1) {
+            str += "←,";
+        }
+        if (this.dx == 0) {
+            str += "o,";
+        }
+        if (this.dx == -1) {
+            str += "↓]";
+        }
+        if (this.dx == 1) {
+            str += "↑]";
+        }
+        if (this.dx == 0) {
+            str += "o]";
+        }
+
+        str += " : " + this.pv + " pv";
+        return str;
     }
 }
