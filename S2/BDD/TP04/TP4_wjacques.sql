@@ -1,26 +1,26 @@
--- Ex 1
+-- -- Ex 1
 
--- 1.
-select * from enseignant order by nom;
+-- -- 1.
+-- select * from enseignant order by nom;
 
--- 2.
-declare
-    curs cursor with hold for
-        select * from enseignant order by nom asc;
+-- -- 2.
+-- declare
+--     curs cursor with hold for
+--         select * from enseignant order by nom asc;
 
-fetch first curs;
-fetch 2 curs;
-move last curs;
-fetch next curs;
-move first curs;
-fetch 0 curs;
-fetch all curs;
-fetch prior curs;
-move backward 5 curs;
-fetch 0 curs;
-move absolute 1 curs;
-fetch prior curs;
-close curs;
+-- fetch first curs;
+-- fetch 2 curs;
+-- move last curs;
+-- fetch next curs;
+-- move first curs;
+-- fetch 0 curs;
+-- fetch all curs;
+-- fetch prior curs;
+-- move backward 5 curs;
+-- fetch 0 curs;
+-- move absolute 1 curs;
+-- fetch prior curs;
+-- close curs;
 
 -- Ex 2
 set search_path to rec;
@@ -53,10 +53,20 @@ CREATE OR REPLACE FUNCTION fonctCurseurTempsRecette()
 RETURNS refcursor AS
 $$
 declare
-    res refcursor;
+    ref refcursor;
+    rec record;
 BEGIN
-    fetch all from cursRecette into res;
-    return res;
+    open ref for
+        select titre, max(convertMinut2Int(tpsprepa) + convertMinut2Int(tpscuisson)) as tpsTotal
+        from recette where tpsprepa is not null
+        group by titre order by tpstotal asc;
+
+    fetch first from ref into rec;
+    raise info '%', rec;
+    fetch last from ref into rec;
+    raise info '%', rec;
+
+    return ref;
 END;
 $$ LANGUAGE plpgsql;
 
