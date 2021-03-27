@@ -3,13 +3,37 @@
   <component name="ChangeListManager">
     <list default="true" id="f9e2a7bc-1290-4d48-a17f-10c324fae43f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TP07/META-INF/TP07.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TP07/iteration_1/Acteur.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TP07/iteration_1/Acteur.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TP07/iteration_1/Environnement.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TP07/iteration_1/Environnement.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TP07/iteration_1/Lancement.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TP07/iteration_1/Lancement.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TP07/iteration_1/Loup.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TP07/iteration_1/Loup.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TP07/iteration_1/Mouton.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TP07/iteration_1/Mouton.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TP07/iteration_2/Acteur.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TP07/iteration_2/Acteur.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TP07/iteration_2/Environnement.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TP07/iteration_2/Environnement.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TP07/iteration_2/Lancement2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TP07/iteration_2/Lancement2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TP07/iteration_2/Loup.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TP07/iteration_2/Loup.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TP07/iteration_2/Mouton.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TP07/iteration_2/Mouton.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TP07/iteration_2/SaisieEntierException.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TP07/iteration_2/SaisieEntierException.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TP07/iteration_2/UtilSaisie.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TP07/iteration_2/UtilSaisie.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TP07/iteration_2/VueConsole.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TP07/iteration_2/VueConsole.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TP07/iteration_3/Acteur.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TP07/iteration_3/Acteur.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TP07/iteration_3/Environnement.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TP07/iteration_3/Environnement.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TP07/iteration_3/Lancement3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TP07/iteration_3/Lancement3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TP07/iteration_3/Loup.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TP07/iteration_3/Loup.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TP07/iteration_3/Mouton.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TP07/iteration_3/Mouton.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TP07/iteration_3/SaisieEntierException.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TP07/iteration_3/SaisieEntierException.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TP07/iteration_3/UtilSaisie.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TP07/iteration_3/UtilSaisie.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TP07/iteration_3/VueConsole.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TP07/iteration_3/VueConsole.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TP07/iteration_4/Lancement.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/iteration_3/Acteur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/iteration_3/Acteur.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/iteration_3/Environnement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/iteration_3/Environnement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/iteration_3/Lancement3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/iteration_3/Lancement3.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/iteration_3/Loup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/iteration_3/Loup.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/iteration_3/Mouton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/iteration_3/Mouton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/iteration_3/VueConsole.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/iteration_3/VueConsole.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/iteration_4/Lancement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/iteration_4/Lancement4.java" afterDir="false" />
     </list>
-    <ignored path="$PROJECT_DIR$/out/" />
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -17,63 +41,6 @@
   </component>
   <component name="DefaultGradleProjectSettings">
     <option name="isMigrated" value="true" />
-  </component>
-  <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/iteration_3/Lancement3.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="506">
-              <caret line="22" selection-start-line="22" selection-end-line="22" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/iteration_3/Loup.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="278">
-              <caret line="20" selection-start-line="20" selection-end-line="20" />
-              <folding>
-                <element signature="e#92#93#0" expanded="true" />
-                <element signature="e#126#127#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/iteration_3/Mouton.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="17" column="5" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
-              <folding>
-                <element signature="e#96#97#0" expanded="true" />
-                <element signature="e#129#130#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/iteration_3/Acteur.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="44">
-              <caret line="98" selection-start-line="98" selection-end-line="98" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/iteration_3/VueConsole.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="575">
-              <caret line="27" column="46" selection-start-line="27" selection-start-column="46" selection-end-line="27" selection-end-column="46" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -167,39 +134,18 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/iteration_3" />
+    <property name="extract.method.default.visibility" value="private" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/iteration_4" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/iteration_4" />
       <recent name="$PROJECT_DIR$/src/iteration_3" />
       <recent name="$PROJECT_DIR$/src/iteration_2" />
     </key>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
-  <component name="RunManager" selected="Application.Lancement3">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Application.Lancement4">
     <configuration name="Lancement (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="iteration_4.Lancement" />
       <module name="TP07" />
@@ -252,8 +198,33 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Lancement4" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="iteration_4.Lancement4" />
+      <module name="TP07" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="iteration_4.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Lancement4" />
         <item itemvalue="Application.Lancement3" />
         <item itemvalue="Application.Lancement (1)" />
         <item itemvalue="Application.Lancement2" />
@@ -261,7 +232,7 @@
       </list>
     </recent_temporary>
   </component>
-  <component name="SpellCheckerSettings" BundledDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -273,6 +244,8 @@
       <option name="presentableId" value="Default" />
       <updated>1616674553730</updated>
       <workItem from="1616706495416" duration="1551000" />
+      <workItem from="1616773858617" duration="5520000" />
+      <workItem from="1616852324582" duration="6595000" />
     </task>
     <servers />
   </component>

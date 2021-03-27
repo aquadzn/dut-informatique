@@ -1,6 +1,7 @@
 package iteration_3;
 
 public class Mouton extends Acteur {
+
     public Mouton(Environnement env) {
         super(40, 5, env);
     }

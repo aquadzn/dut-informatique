@@ -1,4 +1,4 @@
-package iteration_3;
+package iteration_4;
 
 public class VueConsole {
 
@@ -61,29 +61,31 @@ public class VueConsole {
 		while (encore) {
 			int choix = menuEtSaisie();
 			switch (choix) {
-			case (1): {
+			case 1: {
 				for(int i=0;i<5;i++){
 					this.env.ajouter(new Loup(this.env));
 				}
 				break;
 			}
-			case (2): {
+			case 2: {
 				for(int i=0;i<10;i++){
 					this.env.ajouter(new Mouton(this.env));
 				}
 				break;
 			}
-			case (3): {
+			case 3: {
 				this.env.unTour();
 				afficher(this.tableauEnv());
 				break;
 			}
-			case (4): {
-				System.out.println("not yet implemented !!!");
+			case 4: {
+				for (int i = 0; i < 10; i++) {
+					this.env.unTour();
+					afficher(this.tableauEnv());
+				}
 				break;
-
 			}
-			case (5): {
+			case 5: {
 				System.out.println("au revoir");
 				encore = false;
 				break;
