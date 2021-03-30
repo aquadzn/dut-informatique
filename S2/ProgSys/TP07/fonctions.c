@@ -70,3 +70,97 @@ void afficheGrille(P4 *partie) {
         printf("\n");
     }
 }
+
+int verifieGagne(P4 *partie) {
+    // Lignes
+    for(int i = 0; i < partie->hauteur; i++) {
+        int prev = 0;
+        int consecutive = 1;
+        for(int j = 0; j < partie->largeur; j++) {
+            if(partie->grille[i][j] == prev) {
+                consecutive++;
+                if (consecutive == 4) {
+                    return partie->grille[i][j];
+                }
+            }
+            else {
+                consecutive = 1;
+            }
+            prev = partie->grille[i][j];
+        }
+    }
+
+    // Colonnes
+    for(int i = partie->hauteur - 1; i >= 0; i--) {
+        int prev = 0;
+        int consecutive = 1;
+        for(int j = 0; j < partie->largeur; j++) {
+            if(partie->grille[i][j] == prev) {
+                consecutive++;
+                if (consecutive == 4) {
+                    return partie->grille[i][j];
+                }
+            }
+            else {
+                consecutive = 1;
+            }
+            prev = partie->grille[i][j];
+        }
+    }
+
+    // Diagonale vers droite
+    for(int i = 0; i < partie->hauteur; i++) {
+        int prev = 0;
+        int consecutive = 1;
+        for(int j = 0; j < partie->largeur; j++) {
+            if(i == j) {
+                if(partie->grille[i][j] == prev) {
+                    consecutive++;
+                    if (consecutive == 4) {
+                        return partie->grille[i][j];
+                    }
+                }
+                else {
+                    consecutive = 1;
+                }
+                prev = partie->grille[i][j];
+            }
+        }
+    }
+    
+    return 0;
+}
+
+void affichePartie(P4 *partie) {
+    if (partie->num_coup % 2 == 0) {
+        printf("%s à toi de jouer.", partie->joueur1);
+    }
+    else {
+        printf("%s à toi de jouer.", partie->joueur2);
+    }
+
+    printf("\nChoisis une colonne où poser ta pièce: ");
+    afficheGrille(partie);
+}
+
+int sauvegarder(P4 *partie, char *chemin) {
+    FILE *fp = fopen(chemin, "w");
+    if (fp == NULL) {
+        return -1;
+    }
+
+    fprintf(fp, "%d\n%d\n", partie->hauteur, partie->largeur);
+    fprintf(fp, "%s\n%s\n", partie->joueur1, partie->joueur2);
+    fprintf(fp, "%lu\n%lu\n", strlen(partie->joueur1), strlen(partie->joueur2));
+    fprintf(fp, "%d\n", partie->num_coup);
+
+    for(int i = 0; i < partie->hauteur; i++) {
+        for(int j = 0; j < partie->largeur; j++) {
+            fprintf(fp, "%d", partie->grille[i][j]);
+        }
+        fputc('\n', fp);
+    }
+
+    fclose(fp);
+    return 1;
+}

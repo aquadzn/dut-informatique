@@ -10,3 +10,6 @@ typedef struct puissance4 {
 P4 initialiserPartie(int l, int h, char *j1, char *j2);
 int poserPiece(P4 *partie, int col);
 void afficheGrille(P4 *partie);
+int verifieGagne(P4 *partie);
+void affichePartie(P4 *partie);
+int sauvegarder(P4 *partie, char *fichier);

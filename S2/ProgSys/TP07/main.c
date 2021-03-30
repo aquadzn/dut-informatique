@@ -16,5 +16,7 @@ int main() {
 
     afficheGrille(ptr);
 
+    sauvegarder(ptr, "jeu.txt");
+
     return 0;
 }
