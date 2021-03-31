@@ -12,4 +12,5 @@ int poserPiece(P4 *partie, int col);
 void afficheGrille(P4 *partie);
 int verifieGagne(P4 *partie);
 void affichePartie(P4 *partie);
-int sauvegarder(P4 *partie, char *fichier);
+int sauvegarder(P4 *partie, char *chemin);
+int charger(P4 *partie, char *chemin);

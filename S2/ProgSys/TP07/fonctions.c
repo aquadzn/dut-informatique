@@ -150,8 +150,8 @@ int sauvegarder(P4 *partie, char *chemin) {
     }
 
     fprintf(fp, "%d\n%d\n", partie->hauteur, partie->largeur);
-    fprintf(fp, "%s\n%s\n", partie->joueur1, partie->joueur2);
     fprintf(fp, "%lu\n%lu\n", strlen(partie->joueur1), strlen(partie->joueur2));
+    fprintf(fp, "%s\n%s\n", partie->joueur1, partie->joueur2);
     fprintf(fp, "%d\n", partie->num_coup);
 
     for(int i = 0; i < partie->hauteur; i++) {
@@ -163,4 +163,50 @@ int sauvegarder(P4 *partie, char *chemin) {
 
     fclose(fp);
     return 1;
+}
+
+int charger(P4 *partie, char *chemin) {
+    FILE *fp = fopen(chemin, "r");
+    if (fp == NULL) {
+        return -1;
+    }
+
+    // strlen
+    int l_j1, l_j2;
+    fscanf(
+        fp,
+        "%d%d%d%d",
+        &(partie->hauteur),
+        &(partie->largeur),
+        &l_j1,
+        &l_j2
+    );
+
+    char *j1 = malloc(l_j1 + 1 * sizeof(char));
+    char *j2 = malloc(l_j2 + 1 * sizeof(char));
+
+    fscanf(
+        fp,
+        "%s%s%d",
+        j1,
+        j2,
+        &(partie->num_coup)
+    );
+
+    partie->joueur1 = j1;
+    partie->joueur2 = j2;
+
+    fseek(fp, 1, SEEK_CUR);
+
+    int **grille = malloc(partie->hauteur * sizeof(int *));
+    for(int i = 0; i < partie->hauteur; i++) {
+        grille[i] = malloc(partie->largeur * sizeof(int));
+        for(int j = 0; j <= partie->largeur; j++) {
+            printf("%c", fgetc(fp));
+        }
+    }
+
+    partie->grille = grille;
+
+    fclose(fp);
 }
