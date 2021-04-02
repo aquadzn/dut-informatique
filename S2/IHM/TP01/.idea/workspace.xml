@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="df54991d-d23b-41e7-8f46-01794b949910" name="Default Changelist" comment="" />
+    <list default="true" id="df54991d-d23b-41e7-8f46-01794b949910" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/src/applicationV1/controler/Controler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/applicationV1/controler/Controler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/applicationV1/vue/vue1.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/applicationV1/vue/vue1.fxml" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -13,55 +16,7 @@
     <option name="isMigrated" value="true" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/applicationV1/Main.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="15" column="13" lean-forward="true" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#683#684#0" expanded="true" />
-                <element signature="e#711#712#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/applicationV1/vue/vue1.fxml">
-          <provider editor-type-id="text-editor">
-            <state relative-caret-position="108">
-              <caret line="14" column="301" selection-start-line="14" selection-start-column="301" selection-end-line="14" selection-end-column="301" />
-            </state>
-          </provider>
-          <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/applicationV1/controler/Controler.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="42" column="27" selection-start-line="42" selection-start-column="27" selection-end-line="42" selection-end-column="27" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1642#1643#0" expanded="true" />
-                <element signature="e#1778#1779#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/applicationV1/modele/Environnement.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="59" column="8" selection-start-line="59" selection-start-column="8" selection-end-line="59" selection-end-column="8" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -75,6 +30,10 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>controler</find>
+      <find>gettex</find>
+      <find>set</find>
+      <find>settext</find>
+      <find>println</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -206,9 +165,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="960" height="1053" extended-state="4" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.26258206" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26258206" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -217,7 +175,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32975295" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.38990334" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -225,7 +183,7 @@
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Messages" order="10" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.32975295" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -237,13 +195,6 @@
     </layout>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/applicationV1/modele/Acteur.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="460">
-          <caret line="20" column="29" lean-forward="true" selection-start-line="20" selection-start-column="29" selection-end-line="20" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/applicationV1/vue/dark.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="414">
@@ -251,13 +202,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/applicationV1/test.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/applicationV1/test.java" />
     <entry file="jar:///usr/lib/jvm/java-8-oracle/javafx-src.zip!/javafx/fxml/Initializable.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="46">
@@ -268,10 +213,31 @@
     <entry file="file://$PROJECT_DIR$/TP01.iml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="jar:///usr/lib/jvm/java-8-oracle/jre/lib/rt.jar!/sun/reflect/UnsafeObjectFieldAccessorImpl.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="58" selection-start-line="58" selection-end-line="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///usr/lib/jvm/java-8-oracle/jre/lib/rt.jar!/sun/reflect/UnsafeFieldAccessorImpl.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="142" column="13" selection-start-line="142" selection-start-column="13" selection-end-line="142" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/applicationV1/modele/Environnement.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1035">
+          <caret line="59" column="8" selection-start-line="59" selection-start-column="8" selection-end-line="59" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/applicationV1/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="15" column="13" lean-forward="true" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+        <state relative-caret-position="368">
+          <caret line="16" column="41" selection-start-line="16" selection-start-column="41" selection-end-line="16" selection-end-column="41" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#683#684#0" expanded="true" />
@@ -280,35 +246,43 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/applicationV1/modele/Mouton.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="46">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/applicationV1/modele/Environnement.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="59" column="8" selection-start-line="59" selection-start-column="8" selection-end-line="59" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/applicationV1/vue/vue1.fxml">
       <provider editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="14" column="301" selection-start-line="14" selection-start-column="301" selection-end-line="14" selection-end-column="301" />
+        <state relative-caret-position="131">
+          <caret line="27" column="46" selection-start-line="27" selection-start-column="46" selection-end-line="27" selection-end-column="46" />
         </state>
       </provider>
       <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/applicationV1/modele/Mouton.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="18" column="38" selection-start-line="18" selection-start-column="23" selection-end-line="18" selection-end-column="38" />
+          <folding>
+            <element signature="e#404#405#0" expanded="true" />
+            <element signature="e#429#430#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/applicationV1/modele/Acteur.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="20" column="20" lean-forward="true" selection-start-line="20" selection-start-column="20" selection-end-line="20" selection-end-column="20" />
+          <folding>
+            <element signature="e#1168#1169#0" expanded="true" />
+            <element signature="e#1191#1192#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/applicationV1/controler/Controler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="42" column="27" selection-start-line="42" selection-start-column="27" selection-end-line="42" selection-end-column="27" />
+        <state relative-caret-position="126">
+          <caret line="112" column="25" selection-start-line="112" selection-start-column="16" selection-end-line="112" selection-end-column="25" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1642#1643#0" expanded="true" />
+            <element signature="e#1726#1727#0" expanded="true" />
             <element signature="e#1778#1779#0" expanded="true" />
           </folding>
         </state>

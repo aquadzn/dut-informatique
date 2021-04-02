@@ -7,9 +7,7 @@ import applicationV1.modele.Mouton;
 import javafx.fxml.FXML;
 import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
-import javafx.scene.control.RadioButton;
-import javafx.scene.control.TextField;
-import javafx.scene.control.ToggleGroup;
+import javafx.scene.control.*;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
@@ -20,7 +18,9 @@ import java.util.ResourceBundle;
 public class Controler implements Initializable {
 
     private Environnement e;
+    private static int count = 0;
 
+    // VBOX
     @FXML
     private ToggleGroup radioButtons;
     @FXML
@@ -29,25 +29,45 @@ public class Controler implements Initializable {
     private TextField nbTours;
     @FXML
     private Pane panneauJeu;
+    // HBOX
+    @FXML
+    private Label tourActuel;
+    @FXML
+    private Label nbVivants;
+    @FXML
+    private Label nbLoups;
+    @FXML
+    private Label nbMoutons;
+    @FXML
+    private Slider sliderLoup;
+    @FXML
+    private Slider sliderMouton;
 
     @FXML
     void ajouter(ActionEvent event) {
         RadioButton r = (RadioButton) this.radioButtons.getSelectedToggle();
         int nb = Integer.parseInt(this.nbAjout.getText());
 
-        System.out.println(r.getText());
-        System.out.println(nb);
+        Mouton.setReproduction(this.sliderMouton.getValue());
+        Loup.setReproduction(this.sliderLoup.getValue());
 
         if (r.getText().equals("Mouton")) {
-            for(int i = 0; i < nb; i++) {
-                Mouton m = new Mouton(this.e)
-                this.e.ajouter();
+            int i;
+            for(i = 0; i < nb; i++) {
+                Mouton m = new Mouton(this.e);
+                this.e.ajouter(m);
+                creerSprite(m);
             }
+            this.nbMoutons.setText(String.valueOf(Integer.parseInt(this.nbMoutons.getText()) + i));
         }
         else {
-            for(int i = 0; i < nb; i++) {
-                this.e.ajouter(new Loup(this.e));
+            int i;
+            for(i = 0; i < nb; i++) {
+                Loup l = new Loup(this.e);
+                this.e.ajouter(l);
+                creerSprite(l);
             }
+            this.nbLoups.setText(String.valueOf(Integer.parseInt(this.nbLoups.getText()) + i));
         }
     }
 
@@ -61,6 +81,9 @@ public class Controler implements Initializable {
     @FXML
     void unTour(ActionEvent event) {
         this.e.unTour();
+        raffraichirAffichage();
+        this.tourActuel.setText(String.valueOf(this.e.getNbTours()));
+        this.nbVivants.setText(String.valueOf(this.e.getActeurs().size()));
     }
 
     @Override
@@ -69,19 +92,41 @@ public class Controler implements Initializable {
     }
 
     public void creerSprite(Acteur a) {
+        Circle c;
         if (a instanceof Mouton) {
-            Circle c = new Circle(2);
+            c = new Circle(2);
             c.setFill(Color.WHITE);
-            c.setTranslateX(a.getX());
-            c.setTranslateY(a.getY());
-            this.panneauJeu.getChildren().add(c);
         }
         else {
-            Circle c = new Circle(3);
+            c = new Circle(3);
             c.setFill(Color.RED);
-            c.setTranslateX(a.getX());
-            c.setTranslateY(a.getY());
-            this.panneauJeu.getChildren().add(c);
+        }
+        c.setId(a.getId());
+        c.setTranslateX(a.getX());
+        c.setTranslateY(a.getY());
+        this.panneauJeu.getChildren().add(c);
+    }
+
+    public void raffraichirAffichage() {
+        for (Acteur a : this.e.getActeurs()) {
+            Circle c = (Circle) this.panneauJeu.lookup("#" + a.getId());
+            if (c == null) {
+                creerSprite(a);
+            }
+            else {
+                c.setTranslateX(a.getX());
+                c.setTranslateY(a.getY());
+                if (! a.estVivant()) {
+                    this.panneauJeu.getChildren().remove(c);
+                    if (a instanceof Mouton) {
+                        this.nbMoutons.setText(String.valueOf(Integer.parseInt(this.nbMoutons.getText()) - 1));
+                    }
+                    else {
+                        this.nbLoups.setText(String.valueOf(Integer.parseInt(this.nbLoups.getText()) - 1));
+                    }
+                }
+            }
+
         }
     }
 }
