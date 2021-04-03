@@ -18,7 +18,6 @@ import java.util.ResourceBundle;
 public class Controler implements Initializable {
 
     private Environnement e;
-    private static int count = 0;
 
     // VBOX
     @FXML
@@ -43,6 +42,35 @@ public class Controler implements Initializable {
     @FXML
     private Slider sliderMouton;
 
+    public void setTourActuel(int tourActuel) {
+        this.tourActuel.setText(String.valueOf(tourActuel));
+    }
+
+    public int getNbVivants() {
+        return Integer.parseInt(this.nbVivants.getText());
+    }
+
+    public void setNbVivants(int nbVivants) {
+        this.nbVivants.setText(String.valueOf(nbVivants));
+    }
+
+    public int getNbLoups() {
+        return Integer.parseInt(this.nbLoups.getText());
+    }
+
+    public void setNbLoups(int nbLoups) {
+        this.nbLoups.setText(String.valueOf(nbLoups));
+    }
+
+    public int getNbMoutons() {
+        return Integer.parseInt(this.nbMoutons.getText());
+    }
+
+    public void setNbMoutons(int nbMoutons) {
+        this.nbMoutons.setText(String.valueOf(nbMoutons));
+    }
+
+
     @FXML
     void ajouter(ActionEvent event) {
         RadioButton r = (RadioButton) this.radioButtons.getSelectedToggle();
@@ -58,7 +86,7 @@ public class Controler implements Initializable {
                 this.e.ajouter(m);
                 creerSprite(m);
             }
-            this.nbMoutons.setText(String.valueOf(Integer.parseInt(this.nbMoutons.getText()) + i));
+            setNbMoutons(getNbMoutons() + i);
         }
         else {
             int i;
@@ -67,8 +95,10 @@ public class Controler implements Initializable {
                 this.e.ajouter(l);
                 creerSprite(l);
             }
-            this.nbLoups.setText(String.valueOf(Integer.parseInt(this.nbLoups.getText()) + i));
+            setNbLoups(getNbLoups() + i);
         }
+
+        setNbVivants(getNbMoutons() + getNbLoups());
     }
 
     @FXML
@@ -82,8 +112,6 @@ public class Controler implements Initializable {
     void unTour(ActionEvent event) {
         this.e.unTour();
         raffraichirAffichage();
-        this.tourActuel.setText(String.valueOf(this.e.getNbTours()));
-        this.nbVivants.setText(String.valueOf(this.e.getActeurs().size()));
     }
 
     @Override
@@ -108,25 +136,34 @@ public class Controler implements Initializable {
     }
 
     public void raffraichirAffichage() {
-        for (Acteur a : this.e.getActeurs()) {
-            Circle c = (Circle) this.panneauJeu.lookup("#" + a.getId());
-            if (c == null) {
-                creerSprite(a);
+        for(int i = 0; i < this.panneauJeu.getChildren().size(); i++) {
+            Circle c = (Circle) this.panneauJeu.getChildren().get(i);
+            Acteur a = estDansActeurs(c.getId());
+            if (a == null) {
+                this.panneauJeu.getChildren().remove(c);
+                // Mouton
+                if (c.getFill() == Color.WHITE) {
+                    setNbMoutons(getNbMoutons() - 1);
+                }
+                else {
+                    setNbLoups(getNbLoups() - 1);
+                }
             }
             else {
                 c.setTranslateX(a.getX());
                 c.setTranslateY(a.getY());
-                if (! a.estVivant()) {
-                    this.panneauJeu.getChildren().remove(c);
-                    if (a instanceof Mouton) {
-                        this.nbMoutons.setText(String.valueOf(Integer.parseInt(this.nbMoutons.getText()) - 1));
-                    }
-                    else {
-                        this.nbLoups.setText(String.valueOf(Integer.parseInt(this.nbLoups.getText()) - 1));
-                    }
-                }
             }
-
         }
+        setTourActuel(this.e.getNbTours());
+        setNbVivants(this.e.getActeurs().size());
+    }
+
+    public Acteur estDansActeurs(String idCercle) {
+        for (Acteur a : this.e.getActeurs()) {
+            if (a.getId().equals(idCercle)) {
+                return a;
+            }
+        }
+        return null;
     }
 }

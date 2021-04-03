@@ -36,7 +36,11 @@ public abstract class Acteur {
 		compteur++;
 		this.tirerDirection();
 		//System.out.println("y" + y + "x" +x);
-	}	
+	}
+
+	public int getPv() {
+		return pv;
+	}
 
 	public  int getX() {
 		return x;
