@@ -1,7 +1,7 @@
 package applicationV1.modele;
 
 public class Mouton extends Acteur{
-	private static double pourcentageRepro =6;
+	public static double pourcentageRepro =6;
 	private int tourNaissance;
 
 

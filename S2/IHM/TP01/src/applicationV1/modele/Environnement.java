@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Environnement {
 
-	private int width,height;	
+	private int width,height;
 	private ArrayList<Acteur> acteurs;
 	private int nbTours;
 
@@ -16,11 +16,11 @@ public class Environnement {
 		this.acteurs= new ArrayList<>();
 	}
 
-	public  int getNbTours(){
-		return this.nbTours;	
+	public final int getNbTours(){
+		return this.nbTours;
 	}
 
-	public  void setNbTours(int n){
+	public final void setNbTours(int n){
 		this.nbTours=n;
 	}
 
@@ -55,11 +55,11 @@ public class Environnement {
 	}
 
 	public void unTour(){
-		// cela ne peut etre un foreach a cause des naissances 
+		// cela ne peut etre un foreach a cause des naissances
 		// modification de acteurs.
-		System.out.println("tour " + this.nbTours);
+		//System.out.println("tour " + this.nbTours);
 		for(int i=0;i<acteurs.size(); i++){
-			Acteur a = acteurs.get(i);			
+			Acteur a = acteurs.get(i);
 			a.agit();
 		}
 		for(int i=acteurs.size()-1; i>=0;i--){

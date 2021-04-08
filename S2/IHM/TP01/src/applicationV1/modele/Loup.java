@@ -48,8 +48,8 @@ public class Loup extends Acteur{
 		for(Acteur m : this.env.getActeurs()){
 			if(m instanceof Mouton){
 				if(		(this.getY()-5<= m.getY() && m.getY()<=this.getY()+5) &&
-						(this.getX()-5<= m.getX() && m.getX()<=this.getX()+5)  
-						){
+						(this.getX()-5<= m.getX() && m.getX()<=this.getX()+5)
+				){
 					return m;
 				}
 			}

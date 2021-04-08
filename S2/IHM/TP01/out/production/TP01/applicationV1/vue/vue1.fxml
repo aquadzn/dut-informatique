@@ -75,9 +75,9 @@
                <children>
                   <Label alignment="CENTER" styleClass="label-bright" text="Reproduction" />
                   <Label alignment="CENTER" contentDisplay="CENTER" styleClass="label-bright" text="Loups" />
-                  <Slider fx:id="sliderLoup" showTickMarks="true" />
+                  <Slider fx:id="sliderLoup" showTickMarks="true" value="3.0" />
                   <Label styleClass="label-bright" text="Moutons" />
-                  <Slider fx:id="sliderMouton" showTickMarks="true" />
+                  <Slider fx:id="sliderMouton" showTickMarks="true" value="6.0" />
                </children>
             </VBox>
             <VBox prefHeight="200.0" prefWidth="100.0" styleClass="encadre">

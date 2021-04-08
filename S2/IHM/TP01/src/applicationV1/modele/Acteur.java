@@ -17,7 +17,7 @@ public abstract class Acteur {
 		this.x=x;
 		this.y = y;
 		this.v = v;
-		this.env=env;	
+		this.env=env;
 		this.id="A"+compteur;
 		compteur++;
 		this.tirerDirection();
@@ -31,15 +31,11 @@ public abstract class Acteur {
 		this.x=x;
 		this.y = y;
 		this.v = v;
-		this.env=env;	
+		this.env=env;
 		this.id="A"+compteur;
 		compteur++;
 		this.tirerDirection();
 		//System.out.println("y" + y + "x" +x);
-	}
-
-	public int getPv() {
-		return pv;
 	}
 
 	public  int getX() {
@@ -61,12 +57,16 @@ public abstract class Acteur {
 		return id;
 	}
 
+	public int getPv() {
+		return pv;
+	}
+
 	public void decrementerPv(int n) {
-		this.pv-=n;	
+		this.pv-=n;
 	}
 
 	public void incrementerPv(int n) {
-		this.pv+=n;	
+		this.pv+=n;
 	}
 
 
@@ -98,7 +98,7 @@ public abstract class Acteur {
 			dy=random.nextInt(3)-1;
 		}
 	}
-	//permet de savoir si une action probabiliste se réalise 
+	//permet de savoir si une action probabiliste se réalise
 	public static boolean reussitProba(double pourcent){
 		double x= Math.random();
 		double pp=pourcent/100;
@@ -120,7 +120,7 @@ public abstract class Acteur {
 			nposY=this.getY()+(this.v*dy);
 		}
 		this.x=nposX;
-		this.y=nposY;		
+		this.y=nposY;
 	}
 
 
