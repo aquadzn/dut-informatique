@@ -4,7 +4,8 @@ import java.util.ArrayList;
 
 public class Environnement {
 
-	private int width,height;
+	private final int width;
+	private final int height;
 	private ArrayList<Acteur> acteurs;
 	private int nbTours;
 

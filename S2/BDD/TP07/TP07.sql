@@ -1,41 +1,40 @@
--- -- Ex 1
--- create view vueEtudS2 as
---     select *
---     from etudiant
---     where classe like 'S2';
+-- Ex 1
+create view vueEtudS2 as
+    select *
+    from etudiant
+    where classe like 'S2';
 
+-- 1.
+insert into etudiant values (100, 'Toto', null, 'S2');
+insert into etudiant values (101, 'Truc', null, 'S4');
 
--- -- 1.
--- insert into etudiant values (100, 'Toto', null, 'S2');
--- insert into etudiant values (101, 'Truc', null, 'S4');
+-- 2.
+insert into vueEtudS2 values (200, 'Fourcade', 'Martin', 'S4');
 
--- -- 2.
--- insert into vueEtudS2 values (200, 'Fourcade', 'Martin', 'S4');
+-- 3.
+select * from vueEtudS2 order by idetud;
+select * from etudiant order by idetud;
 
--- -- 3.
--- select * from vueEtudS2 order by idetud;
--- select * from etudiant order by idetud;
+-- 4.
+delete from vueEtudS2 where idetud = 200;
+drop view if exists vueEtudS2;
 
--- -- 4.
--- delete from vueEtudS2 where idetud = 200;
--- drop view if exists vueEtudS2;
+-- 5.
+create view vueEtudS2 as
+    select *
+    from etudiant
+    where classe like 'S2'
+    with check option;
 
--- -- 5.
--- create view vueEtudS2 as
---     select *
---     from etudiant
---     where classe like 'S2'
---     with check option;
+insert into vueEtudS2 values (200, 'Fourcade', 'Martin', 'S4');
+delete from etudiant where idetud = 101;
 
--- insert into vueEtudS2 values (200, 'Fourcade', 'Martin', 'S4');
--- delete from etudiant where idetud = 101;
-
--- -- 6.
--- select * from vueEtudS2 order by idetud;
--- select * from etudiant order by idetud;
--- -- permet de modifier les données cachées utilisées par une vue
--- delete from etudiant where idetud = 100;
--- delete from etudiant where idetud = 200;
+-- 6.
+select * from vueEtudS2 order by idetud;
+select * from etudiant order by idetud;
+-- permet de modifier les données cachées utilisées par une vue
+delete from etudiant where idetud = 100;
+delete from etudiant where idetud = 200;
 
 -- Ex 2
 
@@ -105,6 +104,23 @@ select * from personnel;
 delete from personnel where idpers in (100, 101, 102);
 
 -- 18.
-EXECUTE SELECT 'DROP VIEW ' || table_name || ';'
-    FROM information_schema.views
-    WHERE table_schema = 'public' AND table_name != 'vueEtudS2'; 
+select table_name from information_schema.views where table_schema = 'public';
+
+create or replace function retainView(viewNameToRetain varchar)
+returns void as $$
+declare
+    tblName varchar;
+begin
+    for tblName in
+        select table_name from information_schema.views 
+        where table_schema = 'public' and 
+        view_definition is not null and table_name <> viewNameToRetain
+    loop
+        execute 'DROP VIEW IF EXISTS ' || tblName || ' ;';
+    end loop;
+    return;
+end;
+$$ language plpgsql;
+
+select retainView('vueetuds2');
+select table_name from information_schema.views where table_schema = 'public';

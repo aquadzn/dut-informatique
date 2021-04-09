@@ -38,6 +38,10 @@ public abstract class Acteur {
 		//System.out.println("y" + y + "x" +x);
 	}
 
+	public int getPv() {
+		return pv;
+	}
+
 	public  int getX() {
 		return x;
 	}
@@ -55,10 +59,6 @@ public abstract class Acteur {
 
 	public String getId() {
 		return id;
-	}
-
-	public int getPv() {
-		return pv;
 	}
 
 	public void decrementerPv(int n) {

@@ -164,61 +164,37 @@ public class Controler implements Initializable {
     }
 
     public void raffraichirAffichage() {
-        for (Acteur a : this.e.getActeurs()) {
-            // Si l'acteur existe mais n'est pas encore dans les sprites
-            // alors naissance
-            if (this.panneauJeu.lookup("#" + a.getId()) == null) {
-                creerSprite(a);
-            }
-            // Si un sprite existe pour un acteur
-            else {
-                Node c = this.panneauJeu.lookup("#" + a.getId());
+       for(int i = 0; i < this.panneauJeu.getChildren().size(); i++) {
+           Node n = this.panneauJeu.getChildren().get(i);
+           Circle c = (Circle) n;
+           Acteur a = estDansActeurs(n.getId());
+           if (a == null) {
+               this.panneauJeu.getChildren().remove(n);
+               // Mouton
+               if (c.getFill() == Color.WHITE) {
+                   setNbMoutons(getNbMoutons() - 1);
+               }
+               else {
+                   setNbLoups(getNbLoups() - 1);
+               }
+           }
+           else {
+               c.setTranslateX(a.getX());
+               c.setTranslateY(a.getY());
 
-                // Si l'acteur n'existe plus mais est présent dans les sprites
-                if (c == null) {
-                    this.panneauJeu.getChildren().remove(c);
-                }
-                // Si l'acteur existe et est présent dans les sprites
-                else {
-                    c.setTranslateX(a.getX());
-                    c.setTranslateY(a.getY());
-                }
-            }
-        }
-        setTourActuel(this.e.getNbTours());
-        setNbVivants(this.e.getActeurs().size());
-    }
-
-//        for(int i = 0; i < this.panneauJeu.getChildren().size(); i++) {
-//            Circle c = (Circle) this.panneauJeu.getChildren().get(i);
-//            Acteur a = estDansActeurs(c.getId());
-//            if (a == null) {
-//                this.panneauJeu.getChildren().remove(c);
-//                // Mouton
-//                if (c.getFill() == Color.WHITE) {
-//                    setNbMoutons(getNbMoutons() - 1);
-//                }
-//                else {
-//                    setNbLoups(getNbLoups() - 1);
-//                }
-//            }
-//            else {
-//                c.setTranslateX(a.getX());
-//                c.setTranslateY(a.getY());
-//
-//                Tooltip t = new Tooltip(a.getId() + " - " + a.getPv() + " pv - x:"  + c.getTranslateX() + ", y:" + c.getTranslateY());
-//                if (c.getFill() == Color.WHITE) {
-//                    t.setStyle("-fx-background-color: white; -fx-text-fill: black;");
-//                }
-//                else {
-//                    t.setStyle("-fx-background-color: red; -fx-text-fill: white;");
-//                }
-//                Tooltip.install(c, t);
-//            }
-//        }
-//        setTourActuel(this.e.getNbTours());
-//        setNbVivants(this.e.getActeurs().size());
-//    }
+               Tooltip t = new Tooltip(a.getId() + " - " + a.getPv() + " pv - x:"  + c.getTranslateX() + ", y:" + c.getTranslateY());
+               if (c.getFill() == Color.WHITE) {
+                   t.setStyle("-fx-background-color: white; -fx-text-fill: black;");
+               }
+               else {
+                   t.setStyle("-fx-background-color: red; -fx-text-fill: white;");
+               }
+               Tooltip.install(c, t);
+           }
+       }
+       setTourActuel(this.e.getNbTours());
+       setNbVivants(this.e.getActeurs().size());
+   }
 
     public Acteur estDansActeurs(String idCercle) {
         for (Acteur a : this.e.getActeurs()) {
