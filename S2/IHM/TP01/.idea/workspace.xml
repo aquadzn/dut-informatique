@@ -1,26 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="df54991d-d23b-41e7-8f46-01794b949910" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TP01.iml" beforeDir="false" afterPath="$PROJECT_DIR$/TP01.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TP01/applicationV1/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TP01/applicationV1/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TP01/applicationV1/controler/Controler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TP01/applicationV1/controler/Controler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TP01/applicationV1/modele/Acteur.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TP01/applicationV1/modele/Acteur.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TP01/applicationV1/modele/Environnement.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TP01/applicationV1/modele/Environnement.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TP01/applicationV1/modele/Lancement.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TP01/applicationV1/modele/Lancement.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TP01/applicationV1/modele/Loup.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TP01/applicationV1/modele/Loup.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TP01/applicationV1/modele/Mouton.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TP01/applicationV1/modele/Mouton.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TP01/applicationV1/modele/SaisieEntierException.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TP01/applicationV1/modele/SaisieEntierException.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TP01/applicationV1/modele/UtilSaisie.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TP01/applicationV1/modele/UtilSaisie.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TP01/applicationV1/modele/VueConsole.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TP01/applicationV1/modele/VueConsole.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/applicationV1/controler/Controler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/applicationV1/controler/Controler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/applicationV1/modele/Acteur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/applicationV1/modele/Acteur.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/applicationV1/modele/Environnement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/applicationV1/modele/Environnement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/applicationV1/modele/Loup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/applicationV1/modele/Loup.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/applicationV1/modele/Mouton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/applicationV1/modele/Mouton.java" afterDir="false" />
-    </list>
+    <list default="true" id="df54991d-d23b-41e7-8f46-01794b949910" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -166,17 +147,6 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
