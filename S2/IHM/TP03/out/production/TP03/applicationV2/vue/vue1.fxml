@@ -18,6 +18,9 @@
          <padding>
             <Insets bottom="10.0" top="10.0" />
          </padding>
+         <graphic>
+            <Label fx:id="jourNuit" alignment="CENTER" contentDisplay="CENTER" prefHeight="8.0" prefWidth="141.0" text="jour" textAlignment="CENTER" />
+         </graphic>
       </Label>
    </top>
    <center>

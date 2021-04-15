@@ -7,6 +7,8 @@ import applicationV2.modele.Loup;
 import applicationV2.modele.Mouton;
 import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.SimpleIntegerProperty;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -22,6 +24,7 @@ public class Controleur implements Initializable{
 	private IntegerProperty nbVivantsProperty;
 	private IntegerProperty nbLoupsProperty;
 	private IntegerProperty nbMoutonsProperty;
+	private StringProperty jourNuitProperty;
 
 
 	// VBOX
@@ -93,6 +96,7 @@ public class Controleur implements Initializable{
 		//System.out.println("clic unTour");
 		this.env.unTour();
 		this.nbToursProperty.setValue(this.env.getNbTours());
+		this.jourNuitProperty.setValue(this.env.getJourNuit());
 		// this.rafraichirPanneauJeu();
 	}
 
@@ -153,13 +157,17 @@ public class Controleur implements Initializable{
 		this.nbLoupsProperty = new SimpleIntegerProperty(0);
 		this.nbMoutonsProperty = new SimpleIntegerProperty(0);
 
+		this.jourNuitProperty = new SimpleStringProperty("jour");
+
 		this.nbToursProperty.addListener((obs, old, nouv) -> this.nbTours.setText(nouv.toString()));
 		this.nbVivantsProperty.addListener((obs, old, nouv) -> this.nbVivants.setText(nouv.toString()));
 		this.nbLoupsProperty.addListener((obs, old, nouv) -> this.nbLoups.setText(nouv.toString()));
 		this.nbMoutonsProperty.addListener((obs, old, nouv) -> this.nbMoutons.setText(nouv.toString()));
 
-		this.sliderLoups.valueProperty().addListener((obs,old,nouv)-> Loup.setReproduction((double)nouv));
-		this.sliderMoutons.valueProperty().addListener((obs,old,nouv)-> Mouton.setReproduction((double)nouv));
+		this.sliderLoups.valueProperty().addListener((obs,old,nouv) -> Loup.setReproduction((double)nouv));
+		this.sliderMoutons.valueProperty().addListener((obs,old,nouv) -> Mouton.setReproduction((double)nouv));
+
+		this.jourNuitProperty.addListener((obs, old, nouv) -> this.jourNuit.setText(nouv));
 
 		// ecoute de la liste des acteurs pour prendre en compte les morts et les vivants
 		// this.env.getActeurs().addListener(new MonObservateurActeurs(this.panneauJeu, this.labelVivants, this.labelnbLoups,this.labelnbMoutons));

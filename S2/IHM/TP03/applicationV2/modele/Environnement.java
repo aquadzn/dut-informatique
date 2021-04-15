@@ -7,6 +7,7 @@ public class Environnement {
 	private int width,height;	
 	private ArrayList<Acteur> acteurs;
 	private int nbTours;
+	private String jourNuit;
 
 	public Environnement(int width, int height) {
 		super();
@@ -14,10 +15,15 @@ public class Environnement {
 		this.height = height;
 		this.nbTours = 0;
 		this.acteurs= new ArrayList<>();
+		this.jourNuit = "jour";
 	}
 
 	public final int getNbTours(){
 		return this.nbTours;	
+	}
+
+	public final String getJourNuit () {
+		return this.jourNuit;
 	}
 
 	public final void setNbTours(int n){
@@ -70,6 +76,15 @@ public class Environnement {
 			}
 		}
 		this.nbTours++;
+
+		if (this.nbTours % 12 == 0) {
+			if (this.jourNuit.equals("jour")) {
+				this.jourNuit = "nuit";
+			}
+			else {
+				this.jourNuit = "jour";
+			}
+		}
 	}
 
 
