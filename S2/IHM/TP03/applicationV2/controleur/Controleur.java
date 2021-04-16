@@ -9,6 +9,7 @@ import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
+import javafx.collections.ListChangeListener;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -25,7 +26,6 @@ public class Controleur implements Initializable{
 	private IntegerProperty nbLoupsProperty;
 	private IntegerProperty nbMoutonsProperty;
 	private StringProperty jourNuitProperty;
-
 
 	// VBOX
 	@FXML
@@ -58,6 +58,14 @@ public class Controleur implements Initializable{
 	private Label nbLoups;
 
 	@FXML
+	void reset(ActionEvent event) {
+		this.env.getActeurs().clear();
+		this.panneauJeu.getChildren().clear();
+		this.env.setNbTours(0);
+
+	}
+
+	@FXML
 	void ajouter(ActionEvent event) {
 		//System.out.println("clic ajouter");
 		RadioButton selectedToggleButton =(RadioButton) groupeRadio.getSelectedToggle();
@@ -67,14 +75,12 @@ public class Controleur implements Initializable{
 			for(int i=0; i<nb;i++){
 				a=new Loup(this.env);
 				this.env.ajouter(a);
-				creerSprite(a);
 			}
 		}
 		else{
 			for(int i=0; i<nb;i++){
 				a=new Mouton(this.env);
 				this.env.ajouter(a);
-				creerSprite(a);
 			}
 		}
 
@@ -103,15 +109,20 @@ public class Controleur implements Initializable{
 	private void creerSprite(Acteur a) {
 		//System.out.println("ajouter sprite");
 		Circle r;
+		Tooltip t = new Tooltip();
 		if( a instanceof Loup){
 			r= new Circle(3);
 			r.setFill(Color.RED);
 			this.nbLoupsProperty.setValue(this.nbLoupsProperty.getValue() + 1);
+			t.setText("Loup - ");
+			t.setStyle("-fx-background-color: red; -fx-text-fill: white;");
 		}
 		else{
 			r= new Circle(2);
 			r.setFill(Color.WHITE);
 			this.nbMoutonsProperty.setValue(this.nbMoutonsProperty.getValue() + 1);
+			t.setText("Mouton - ");
+			t.setStyle("-fx-background-color: white; -fx-text-fill: black;");
 		}
 		// ils ont le meme identifiant
 		r.setId(a.getId());
@@ -119,6 +130,9 @@ public class Controleur implements Initializable{
 
 		r.translateXProperty().bind(a.xProperty());
 		r.translateYProperty().bind(a.yProperty());
+
+		t.setText(t.getText() + "x: " + r.getTranslateX() + "y: " + r.getTranslateY());
+		Tooltip.install(r, t);
 
 		panneauJeu.getChildren().add(r);
 		this.nbVivantsProperty.setValue(this.nbVivantsProperty.getValue() + 1);
@@ -151,6 +165,19 @@ public class Controleur implements Initializable{
 		this.env = new Environnement(300,300);
 		this.panneauJeu.setMaxWidth(305); // 5== largeur de l'image ou du rectangle.
 		this.panneauJeu.setMaxHeight(305);
+
+		// Naissances et morts
+		this.env.getActeurs().addListener((ListChangeListener<Acteur>) c -> {
+			while (c.next()) {
+				for(Acteur a : c.getAddedSubList()) {
+					creerSprite(a);
+				}
+				for(Acteur a : c.getRemoved()) {
+					Node n = panneauJeu.lookup("#" + a.getId());
+					panneauJeu.getChildren().remove(n);
+				}
+			}
+		});
 
 		this.nbToursProperty = new SimpleIntegerProperty(0);
 		this.nbVivantsProperty = new SimpleIntegerProperty(0);

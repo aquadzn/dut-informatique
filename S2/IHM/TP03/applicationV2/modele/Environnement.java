@@ -1,11 +1,14 @@
 package applicationV2.modele;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+
 import java.util.ArrayList;
 
 public class Environnement {
 
 	private int width,height;	
-	private ArrayList<Acteur> acteurs;
+	private ObservableList<Acteur> acteurs;
 	private int nbTours;
 	private String jourNuit;
 
@@ -14,7 +17,7 @@ public class Environnement {
 		this.width = width;
 		this.height = height;
 		this.nbTours = 0;
-		this.acteurs= new ArrayList<>();
+		this.acteurs = FXCollections.observableArrayList();
 		this.jourNuit = "jour";
 	}
 
@@ -38,7 +41,7 @@ public class Environnement {
 		return height;
 	}
 
-	public ArrayList<Acteur> getActeurs() {
+	public ObservableList<Acteur> getActeurs() {
 		return acteurs;
 	}
 
