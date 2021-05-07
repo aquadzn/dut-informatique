@@ -1,0 +1,33 @@
+deb11:
+	eth0
+deb12:
+	eth0
+deb31:
+	eth0
+	eth1
+deb41:
+	eth0
+	eth1
+
+
+pin11:
+	eth0
+	eth1
+pin21:
+	eth0
+	eth1
+pin31:
+	eth0
+	eth1
+pin51:
+	eth0
+
+
+S1
+	3FFE:0:0:1::/64
+S2
+	3FFE:0:0:2::/64
+S3
+	3FFE:0:0:3::/64
+S4
+	3FFE:0:0:4::/64
