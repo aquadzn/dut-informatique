@@ -4,6 +4,8 @@
 -- sujet: TD04
 */
 
+set search_path to public;
+
 -- Ex 1
 
 -- 2.
@@ -93,21 +95,53 @@ delete from enseignant1 where idens = 7;
 -- Ex 2
 
 -- pas accès au script bookbay
--- set search_path to bookbay;
+set search_path to bookbay;
 
--- -- 1.
--- drop function verifDateEditPublie() cascade;
+-- 1.
+drop function verifDateEditPublie() cascade;
 
--- create function verifDateEditPublie() returns trigger as $$
+create function verifDateEditPublie() returns trigger as $$
+    begin
+        perform e.date_creation from editions e
+            inner join collections c on e.code_editions = c.code_editions
+            inner join livres l on c.code_collection = l.code_collection
+            where e.date_creation < NEW.depot_legal;
+
+        if (NOT FOUND) then
+            raise exception 'date dépot avant date de création maison dedition';
+        end if;
+        return new;
+    end;
+$$ language plpgsql;
+
+create TRIGGER trig_verifDateEditPublie
+    before insert or update of depot_legal on livres
+    for each row
+    execute procedure verifDateEditPublie();
+
+-- -- 2
+-- drop function VerifCreaPrixLivre() cascade;
+
+-- create function VerifCreaPrixLivre() returns trigger as $$
 --     begin
---         if (NEW.depot_legal > select date_creation from editions where date_creation = NEW.) then
---             raise exception 'clé étrangère inexistante';
+--         if (TG_TABLE_NAME = 'distinctions;') then
+--             if (exists (select l.depot_legal from livres l inner join recompense_par r on l.isbn = r.isbn where l.depot_legal > r.annee))
 --         end if;
---         return new;        
+
+--         if (TG_TABLE_NAME = 'recompense_par') then
+
+--         end if;
+
+--         return new;
 --     end;
 -- $$ language plpgsql;
 
--- create TRIGGER trig_verifDateEditPublie
---     before insert or update of depot_legal on module1
+-- create TRIGGER trig_VerifCreaPrixLivreDistinctions
+--     before update of annee_creation on distinctions
 --     for each row
---     execute procedure verifDateEditPublie();
+--     execute procedure VerifCreaPrixLivre();
+
+-- create TRIGGER trig_VerifCreaPrixLivreRecompensePar
+--     before update of annee on recompense_par;
+--     for each row
+--     execute procedure VerifCreaPrixLivre();
