@@ -56,6 +56,8 @@ void accesFichiers(char *chemin) {
         exit(0);
     }
 
+    fclose(fp);
+
     for(i = 6; i < 10; i++) {
         fprintf(fp, "%d", i);
     }

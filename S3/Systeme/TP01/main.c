@@ -8,10 +8,12 @@ int main() {
     // creationProcessus();
     // // affiche le processus fils et 2 fois les printf après le if
 
-    tracesExecution();
+    // tracesExecution();
     // 1. 
     // 2. 
     // 3. 2^n 
+
+    accesFichiers("nombres.txt");
 
     return 0;
 }
