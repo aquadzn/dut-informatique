@@ -1,8 +1,8 @@
 public class Personne {
 
-	private int anneeNaissance;
+	private final int anneeNaissance;
 	private int anneeMort;
-	private String nom;
+	private final String nom;
 
 	public Personne(String nom, int naissance) {
 		this.nom = nom;

@@ -3,12 +3,24 @@ import java.util.ArrayList;
 
 public class EtatCivil {
 
-	private ArrayList<Personne> registre;
+	private final ArrayList<Personne> registre;
 
 	public EtatCivil(ArrayList<Personne> l) {
 		registre = l;
 	}
-	
+
+	public int nombreDeMort() {
+		int c = 0;
+		for(Personne p : this.registre) {
+			try {
+				p.getAnneeMort();
+				c++;
+			} catch (PasMort ignored) {
+			}
+		}
+		return c;
+	}
+
 	public int nombreDeVivant() {
 		int c = 0;
 		for(Personne p : this.registre) {
@@ -47,6 +59,20 @@ public class EtatCivil {
 		}
 
 		return mort;
+	}
+
+	public boolean tousVivant() {
+		boolean vivant = true;
+
+		for(Personne p : this.registre) {
+			try {
+				p.getAnneeMort();
+				vivant = false;
+			} catch (PasMort ignored) {
+			}
+		}
+
+		return vivant;
 	}
 
 	public boolean auMoinsUnVivant() {
@@ -93,26 +119,39 @@ public class EtatCivil {
 	}
 
 	public Personne chercherDernierMort() throws AucunMort {
-		int i = 0;
+		int i = -1;
 		for(Personne p : this.registre) {
 			try {
 				p.getAnneeMort();
 				i++;
-			} catch (PasMort pasMort) {
+			} catch (PasMort ignored) {
 			}
 		}
 
-		if (i == 0) {
+		if (i == -1) {
 			throw new AucunMort();
 		}
+		// Cas où le dernier mort est la première personne du registre
+		if (i == 0) {
+			i--;
+		}
 
-		return this.registre.get(i);
+		return this.registre.get(i + 1);
 	}
 
 	public Personne chercherPersonne(String nom) throws PersonneInconnue {
 		for(Personne p : this.registre) {
-			p.getNom().equals(nom);
+			if (p.getNom().equals(nom)) {
+				return p;
+			}
 		}
+
+		throw new PersonneInconnue();
+	}
+
+	public void enregistrerMort(String nom, int anneeMort) throws PersonneInconnue, DeJaMort {
+		Personne p = chercherPersonne(nom);
+		p.meurt(anneeMort);
 	}
 
 	@Override

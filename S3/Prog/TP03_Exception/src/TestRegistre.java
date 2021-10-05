@@ -22,17 +22,17 @@ class TestRegistre {
 		p4 = new Personne("DD", 1960);
 		p2.meurt(1951);
 		p3.meurt(2013);
-		ArrayList<Personne> l = new ArrayList<Personne>();
+		ArrayList<Personne> l = new ArrayList<>();
 		l.add(p1);
 		l.add(p2);
 		l.add(p3);
 		l.add(p4);
 		etatCivilNormal = new EtatCivil(l);	
-		ArrayList<Personne> lMort = new ArrayList<Personne>();
+		ArrayList<Personne> lMort = new ArrayList<>();
 		lMort.add(p2);
 		lMort.add(p3);
 		etatCivilTousMorts = new EtatCivil(lMort);
-		ArrayList<Personne> lVivant = new ArrayList<Personne>();
+		ArrayList<Personne> lVivant = new ArrayList<>();
 		lVivant.add(p1);
 		lVivant.add(p4);
 		etatCivilTousVivants = new EtatCivil(lVivant);
@@ -68,25 +68,25 @@ class TestRegistre {
 		assertTrue(etatCivilTousVivants.auMoinsUnVivant());
 	}
 
-//	@Test
-//	public void testTousVivant() {
-//		assertFalse(etatCivilNormal.tousVivant());
-//		assertFalse(etatCivilTousMorts.tousVivant());
-//		assertTrue(etatCivilTousVivants.tousVivant());
-//	}
-//
-//	@Test
-//	public void testnbreDeMorts() {
-//		assertEquals(2, etatCivilNormal.nombreDeMort());
-//	}
-//
+	@Test
+	public void testTousVivant() {
+		assertFalse(etatCivilNormal.tousVivant());
+		assertFalse(etatCivilTousMorts.tousVivant());
+		assertTrue(etatCivilTousVivants.tousVivant());
+	}
+
+	@Test
+	public void testnbreDeMorts() {
+		assertEquals(2, etatCivilNormal.nombreDeMort());
+	}
+
 	@Test
 	public void testchercherVivant() throws AucunVivant {
 		assertEquals(p1, etatCivilNormal.chercherPremierVivant());
 	}
 
 	@Test
-	public void testchercherVivant2() throws AucunVivant {
+	public void testchercherVivant2() {
 		assertThrows(AucunVivant.class,()->etatCivilTousMorts.chercherPremierVivant());
 	}
 
@@ -96,7 +96,33 @@ class TestRegistre {
 	}
 
 	@Test
-	public void testchercherMort2() throws AucunMort {
+	public void testchercherMort2() {
 		assertThrows(AucunMort.class,()->etatCivilTousVivants.chercherDernierMort());
+	}
+
+	@Test
+	public void testChercherPersonne1() throws PersonneInconnue {
+		assertEquals(p2, etatCivilNormal.chercherPersonne("BB"));
+	}
+
+	@Test
+	public void testChercherPersonne2() {
+		assertThrows(PersonneInconnue.class,()->etatCivilTousVivants.chercherPersonne("AAAHAHAA"));
+	}
+
+	@Test
+	public void testEnregistrerMortInexistant() {
+		assertThrows(PersonneInconnue.class,() -> etatCivilNormal.enregistrerMort("AAHAHZAHHHZ", 2021));
+	}
+
+	@Test
+	public void testEnregistrerMortVivant() throws PersonneInconnue, PasMort {
+		assertDoesNotThrow(() -> etatCivilNormal.enregistrerMort("AA", 2021));
+		assertEquals(2021, etatCivilNormal.chercherPersonne("AA").getAnneeMort());
+	}
+
+	@Test
+	public void testEnregistrerMortDejaMort() {
+		assertThrows(DeJaMort.class,()->etatCivilNormal.enregistrerMort("CC", 2021));
 	}
 }
