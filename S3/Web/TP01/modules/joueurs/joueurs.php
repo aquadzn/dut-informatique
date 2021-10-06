@@ -3,13 +3,16 @@ if (!defined('CONST_INCLUDE')) {
     die('Accès interdit');
 }
 include_once "cont_joueurs.php";
+include_once "vue_joueurs.php";
 
 class Joueurs
 {
+    public $vue;
 
     public function __construct()
     {
         $controleur_joueur = new ContJoueurs();
+        $this->vue = $controleur_joueur->vue;
 
         $action = isset($_GET['action']) ? $_GET['action'] : '';
 

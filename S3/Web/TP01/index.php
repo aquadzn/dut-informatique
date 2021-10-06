@@ -1,5 +1,15 @@
 <?php
 session_start();
+
+define('CONST_INCLUDE', NULL);
+include_once "connexion.php";
+include_once "modules/joueurs/vue_joueurs.php";
+
+Connexion::initConnexion();
+
+include_once "modules/joueurs/joueurs.php";
+$controleur = new Joueurs();
+$tampon = $controleur->vue->getAffichage();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -13,7 +23,7 @@ session_start();
 </head>
 
 <body>
-    <section class="hero is-white is-fullheight">
+    <section class="hero is-light is-fullheight">
 
         <div class="hero-head">
             <header class="navbar">
@@ -21,9 +31,6 @@ session_start();
                     <div class="navbar-brand">
                         <a href="index.php" class="navbar-item">
                             <p>Accueil</p>
-                        </a>
-                        <a href="index.php?module=joueurs&action=form_inscription" class="navbar-item">
-                            <p>Inscription</p>
                         </a>
                         <?php
                         if (isset($_SESSION['id']) and isset($_SESSION['pseudo'])) {
@@ -34,6 +41,9 @@ session_start();
                             ';
                         } else {
                             echo '
+                            <a href="index.php?module=joueurs&action=form_inscription" class="navbar-item">
+                                <p>Inscription</p>
+                            </a>
                             <a href="index.php?module=joueurs&action=form_connexion" class="navbar-item">
                                 <p>Connexion</p>
                             </a>
@@ -54,31 +64,10 @@ session_start();
 
         <div class="hero-body">
             <div class="container has-text-centered">
-                <?php
-                define('CONST_INCLUDE', NULL);
-                include_once "connexion.php";
-
-                Connexion::initConnexion();
-
-                $action = isset($_GET['module']) ? $_GET['module'] : 'default';
-
-                switch ($action) {
-                    case 'joueurs':
-                        include_once "modules/joueurs/joueurs.php";
-                        $controleur = new Joueurs();
-                        break;
-                    case 'equipes':
-                        include_once "modules/equipes/equipes.php";
-                        $controleur = new Equipes();
-                        break;
-                    default:
-                        break;
-                }
-
-                ?>
-
                 <br></br>
-
+                <?php
+                echo $tampon;
+                ?>
                 <div>
                 </div>
             </div>

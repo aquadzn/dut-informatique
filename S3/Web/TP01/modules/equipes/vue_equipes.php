@@ -2,11 +2,13 @@
 if (!defined('CONST_INCLUDE')) {
     die('Accès interdit');
 }
+include_once "vue_generique.php";
 
-class VueEquipes
+class VueEquipes extends VueGenerique
 {
     public function __construct()
     {
+        parent::__construct();
     }
 
     public function affiche_liste($tab)

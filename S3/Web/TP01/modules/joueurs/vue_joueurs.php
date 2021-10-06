@@ -2,11 +2,13 @@
 if (!defined('CONST_INCLUDE')) {
     die('Accès interdit');
 }
+include_once "vue_generique.php";
 
-class VueJoueurs
+class VueJoueurs extends VueGenerique
 {
     public function __construct()
     {
+        parent::__construct();
     }
 
     public function form_inscription()

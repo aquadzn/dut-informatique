@@ -13,7 +13,7 @@ class ContJoueurs
 {
 
     private $modele;
-    private $vue;
+    public $vue;
 
     public function __construct()
     {
