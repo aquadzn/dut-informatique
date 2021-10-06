@@ -1,7 +1,4 @@
 <?php
-if (!isset($_SESSION)) {
-    session_start();
-}
 
 if (!defined('CONST_INCLUDE')) {
     die('Accès interdit');
@@ -89,8 +86,6 @@ class ContJoueurs
     {
         $pseudo = $_POST['pseudo'];
         $mdp = $_POST['mdp'];
-
-        // if (!empty($nom) && !empty($desc))
 
         $this->vue->inscription(
             $this->modele->inscription($pseudo, password_hash($mdp, PASSWORD_DEFAULT))
