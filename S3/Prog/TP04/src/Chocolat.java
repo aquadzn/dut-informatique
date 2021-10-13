@@ -8,11 +8,11 @@ public class Chocolat extends DessertAvecSupplement {
 
     @Override
     public double prix() {
-        return 0;
+        return 0.5 + super.getDessert().prix();
     }
 
     @Override
     public String nom() {
-        return null;
+        return super.getDessert().nom() + " avec chocolat";
     }
 }

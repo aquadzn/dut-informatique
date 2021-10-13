@@ -6,14 +6,13 @@ public class Chantilly extends DessertAvecSupplement {
         super(dessert);
     }
 
-
     @Override
     public double prix() {
-        return 0;
+        return 0.8 + super.getDessert().prix();
     }
 
     @Override
     public String nom() {
-        return null;
+        return super.getDessert().nom() + " avec chantilly";
     }
 }

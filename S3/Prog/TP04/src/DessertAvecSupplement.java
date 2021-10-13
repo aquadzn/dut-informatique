@@ -5,6 +5,8 @@ public abstract class DessertAvecSupplement extends Dessert {
         this.dessert = dessert;
     }
 
-    public abstract double prix();
-    public abstract String nom();
+    public Dessert getDessert() {
+        return dessert;
+    }
+
 }
