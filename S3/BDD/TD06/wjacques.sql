@@ -1,3 +1,4 @@
+set search_path to zoo;
 -- Ex 0
 
 -- on update la table et rollback va faire revenir au début
@@ -37,7 +38,36 @@ insert into animal values('30', 'Akela', 'Loup', 't', now(), 'Russie', 3);
 -- 8) non pas changé car pas commit, xmax a pris la valeur de la transaction de t3
 -- 9) les insert de t1 ne sont pas dans t2, ils apparaissent seulement après les commit
 -- 11) la mouette disparait de t1
--- 12) la mouette est toujours là mais xmax a cahngé de 0 à txid_current() de t1
+-- 12) la mouette est toujours là mais xmax a changé de 0 à txid_current() de t1
 -- 13) pas de différence?
 
 -- Ex 4
+begin transaction isolation level serializable;
+select * from cage where nbmaxanimal > 40 for share;
+-- 3) Pas de réponse, T2 se bloque
+
+-- Ex 5
+-- C3 a bloqué T1 car soucis de cohérence entre C2 et C3
+-- en exécutant C4 dans T2, T1 est débloqué et C3 s'exécute
+-- DÉTAIL : Process 24328 waits for ShareLock on transaction 5726382; blocked by process 23930.
+-- Process 23930 waits for ShareLock on transaction 5726391; blocked by process 24328.
+-- ASTUCE : See server log for query details.
+-- CONTEXTE : while updating tuple (0,1) in relation "cage"
+
+-- Ex 6
+-- 1)
+alter table animal drop constraint fk_animal_cage ;
+alter table animal add foreign key (numcage) references cage(numcage) DEFERRABLE INITIALLY deferred;
+begin;
+set constraints animal_numcage_fkey deferred ;
+end;
+
+-- 2)
+begin;
+insert into animal values (100, 'Gringalas', 'Licorne', null, null, null, 999);
+select * from animal;
+insert into cage values (999, 'Imaginaire', 'féérique', null);
+end;
+-- NON car la contrainte de clé étrangère n'aurait pas été respectée
+
+-- 3) set constraints all deferred?
