@@ -110,7 +110,11 @@ public class Salle {
 	return seances.size();
     }
 
-    public void setSeances(List<Seance> anciennesSeances) {
+	public void setCapacite(int capacite) {
+		this.capacite = capacite;
+	}
+
+	public void setSeances(List<Seance> anciennesSeances) {
 	this.seances = anciennesSeances;
     }
 

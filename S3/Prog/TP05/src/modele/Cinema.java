@@ -60,38 +60,11 @@ public class Cinema {
 	return salles;
     }
 
-    public void acheter(int nbBillets, int numSalle)
-	    throws ErreurSalle, NombrePlacesErreur, ErreurSeanceEnCours {
-	Salle s = this.getSalle(numSalle);
-	s.acheterSeanceEnCours(nbBillets);
-    }
-
     public void cloturerSeanceEnCours(int numSalle)
 	    throws ErreurSeanceEnCours, ErreurSalle {
 	this.getSalle(numSalle).finirSeance();
     }
 
-    public void demarrerJournee() throws ErreurSeanceEnCours {
-	// si une salle n'est pas a -1, il ne faut toucher aucune salle :
-	// rare cas ou on ne peut programmer offensivement.
-	if (this.journeeFinie()) {
-	    for (int i = 0; i < this.getNbSalles(); i++) {
-		try {
-		    Salle salle = this.getSalle(i);
-		    salle.demarrerSalle();
-
-		} catch (ErreurSeanceEnCours e) {
-		    System.out
-			    .println("erreur impossible dans DemarrerJournee");
-		} catch (ErreurSalle e) {
-		    System.out
-			    .println("erreur impossible dans DemarrerJournee");
-		}
-	    }
-	} else
-	    throw new ErreurSeanceEnCours(
-		    "une des salles n'a pas termine sa journee");
-    }
 
     public void CreerProgramme(List<List<Film>> lesFilms)
 	    throws ErreurSeanceEnCours, ErreurSalle {
