@@ -13,7 +13,7 @@ int main() {
     */
 
 
-    exec2();
+    // exec2();
     /*
     Père: a crée processus 17810
     Le fils va éxécuter execv
@@ -24,6 +24,13 @@ int main() {
     ./exec2: paramètre 2=titi
     Père: a reçu term. fils
     */
+
+   char *params[] = {
+        "./multiprocessus",
+        "3"
+    };
+
+    multiprocessus(2, params);
 
     return 0;
 }

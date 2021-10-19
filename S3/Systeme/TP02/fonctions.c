@@ -39,8 +39,10 @@ void exec1() {
 void exec2() {
     char *path = "./exec2";
     char *argval[] = {
-        "exec2", "toto",
-        "titi", NULL
+        "exec2",
+        "nombres.txt",
+        "5",
+        NULL
     };
     pid_t retour;
 
@@ -49,12 +51,46 @@ void exec2() {
             perror("Erreur fork");
             exit(1);
         case 0:
-            printf("Le fils va éxécuter execv\n");
+            printf("Le fils va éxécuter execv %d\n", getpid());
             execv(path, argval);
             // inatteignable
         default:
             printf("Père: a crée processus %d\n", retour);
             wait(NULL);
+
+            FILE *fp = fopen(argval[1], "a");
+            int n = atoi(argval[2]);
+
+            for (int i = n + 1; i <= 2 * n; i++) {
+                fprintf(fp, "%d", i);
+                if (i != 2 * n) {
+                    fputc('\n', fp);
+                }
+            }
+
+
+            fclose(fp);
+
             printf("Père: a reçu term. fils\n");
+    }
+}
+
+void multiprocessus(int argc, char *argv[]) {
+    if (argc > 1) {
+        int n = atoi(argv[1]);
+        
+        for (int i = 0; i < n; i++) {
+            if (fork() == 0) {
+                printf("Fils %d\n", getpid());
+                exit(0);
+            }
+        }
+
+        for (int i = 0; i < n; i++) {
+            wait(NULL);
+            printf("Parent: fils terminé\n");
+        }
+
+        
     }
 }
