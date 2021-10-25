@@ -25,8 +25,6 @@ public class CreerProgrammation extends Requete {
 
     @Override
     public void annuler() {
-        getCinema().getSalles().forEach(salle -> {
-            salle.getSeances().clear();
-        });
+        getCinema().getSalles().forEach(salle -> salle.getSeances().clear());
     }
 }

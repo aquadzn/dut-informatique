@@ -33,7 +33,7 @@ public class DemarrerJournee extends Requete {
         getCinema().getSalles().forEach(salle -> {
             try {
                 salle.setSeanceEnCours(-1);
-                salle.setCapacite(0);
+                salle.getSeances().forEach(seance -> seance.setPlacesDisponible(salle.getCapacite()));
             } catch (ErreurSeanceEnCours erreurSeanceEnCours) {
                 erreurSeanceEnCours.printStackTrace();
             }

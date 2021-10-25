@@ -1,12 +1,15 @@
 import java.util.ArrayList;
 
+import CinemaExceptions.ErreurSalle;
+import CinemaExceptions.ErreurSeanceEnCours;
+import CinemaExceptions.NombrePlacesErreur;
 import modele.Cinema;
 import modele.Film;
 import vue.VueCinema;
 
 public class Lancement {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ErreurSeanceEnCours, ErreurSalle, NombrePlacesErreur {
 	Cinema melies = new Cinema();
 	try {
 	    ArrayList<Integer> l = new ArrayList<>();

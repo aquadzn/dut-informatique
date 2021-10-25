@@ -11,31 +11,38 @@ import java.util.stream.Stream;
 import modele.Cinema;
 import modele.Film;
 
+import modele.Logs;
 import modele.Salle;
 import CinemaExceptions.ErreurSalle;
 import CinemaExceptions.ErreurSeanceEnCours;
 
 import CinemaExceptions.NombrePlacesErreur;
 import CinemaExceptions.SaisieEntierException;
+import modele.requete.*;
 
 public class VueCinema {
     private Cinema leCinema;
+    private Logs logs;
 
     public VueCinema(Cinema bib) {
 	this.leCinema = bib;
+	this.logs = new Logs();
     }
 
     public int menuEtSaisie() {
 	int rep = 0;
 	try {
-	    System.out.println("1: creer la programmation");
-	    System.out.println("2 : demarrer la journee ");
-	    System.out.println("3 :cloturer la seance courante d'une salle ");
-	    System.out.println("4:acheter des billets");
-	    System.out.println("5 : afficher le cinema");
-	    System.out.println("6 : quitter");
-	    System.out.println("   Entrez votre choix: ");
-	    rep = UtilSaisie.lireEntierPositifInferieurA(8);
+	    System.out.println("1:	creer la programmation");
+	    System.out.println("2:	demarrer la journee ");
+	    System.out.println("3:	cloturer la seance courante d'une salle ");
+		System.out.println("4:	acheter des billets");
+		System.out.println("5:	préacheter billets");
+	    System.out.println("6:	afficher le cinema");
+		System.out.println("7:	annuler dernier choix");
+		System.out.println("8:	retablir derniere annulation");
+		System.out.println("9:	quitter");
+	    System.out.println("Entrez votre choix: ");
+	    rep = UtilSaisie.lireEntierPositifInferieurA(10);
 	} catch (SaisieEntierException e) {
 	    System.out.println(e.getMessage());
 	    menuEtSaisie();
@@ -43,7 +50,7 @@ public class VueCinema {
 	return rep;
     }
 
-    public void go() {
+    public void go() throws ErreurSeanceEnCours, ErreurSalle, NombrePlacesErreur {
 
 	boolean encore = true;
 	while (encore) {
@@ -66,15 +73,22 @@ public class VueCinema {
 		break;
 	    }
 	    case (5): {
-		System.out.println(leCinema);
+		preacheter();
 		break;
 	    }
-	    //	    case (6): {
-	    //		invocateur.undo();
-	    //		break;
-	    //	    }
-
-	    case (6): {
+		case (6): {
+			System.out.println(leCinema);
+			break;
+		}
+		case (7): {
+		this.logs.annulerDerniereRequete();
+		break;
+		}
+		case (8): {
+			this.logs.retablir();
+			break;
+		}
+	    case (9): {
 		System.out.println("au revoir");
 		encore = false;
 		break;
@@ -84,6 +98,24 @@ public class VueCinema {
 
     }
 
+    private void preacheter() {
+		int numSalle = UtilSaisie
+				.lireEntierPositifEnBoucle("entrer un numero de salle ");
+		System.out.println(numSalle);
+		int numSeance = UtilSaisie
+				.lireEntierPositifEnBoucle("entrer un numéro de seance ");
+		System.out.println(numSeance);
+		int nbBillets = UtilSaisie
+				.lireEntierPositifEnBoucle("entrer un nombre de billets ");
+		System.out.println(nbBillets);
+
+		try {
+			this.logs.enregistrer(new PreAcheter(this.leCinema, nbBillets, numSalle, numSeance));
+		} catch (ErreurSalle | NombrePlacesErreur | ErreurSeanceEnCours ignored) {
+			System.out.println("mauvais choix");
+		}
+	}
+
     private void acheter() {
 	int numSalle = UtilSaisie
 		.lireEntierPositifEnBoucle("entrer un numero de salle");
@@ -92,7 +124,7 @@ public class VueCinema {
 		.lireEntierPositifEnBoucle("entrer un nombre de billets  ");
 	System.out.println(nbBillets);
 	try {
-	    leCinema.acheter(nbBillets, numSalle);
+		this.logs.enregistrer(new AcheterBillet(this.leCinema, nbBillets, numSalle));
 	    System.out.println("achat effectue ");
 	} catch (ErreurSalle e) {
 	    System.out.println(e.getMessage());
@@ -115,7 +147,7 @@ public class VueCinema {
 		.lireEntierPositifEnBoucle("entrer un numero de salle");
 	System.out.println(numSalle);
 	try {
-	    leCinema.cloturerSeanceEnCours(numSalle);
+		this.logs.enregistrer(new ClotureSeance(this.leCinema, numSalle));
 	    System.out.println("la seance a bien etet cloturee");
 	} catch (ErreurSalle e) {
 	    System.out.println(e.getMessage());
@@ -131,7 +163,7 @@ public class VueCinema {
 
     private void demarrerJournee() {
 	try {
-	    leCinema.demarrerJournee();
+	    this.logs.enregistrer(new DemarrerJournee(this.leCinema));
 	    System.out.println("journee demarree");
 	} catch (ErreurSeanceEnCours e) {
 	    System.out.println(e.getMessage());
@@ -146,10 +178,10 @@ public class VueCinema {
 	if (leCinema.journeeFinie()) {
 	    List<List<Film>> lesFilms = Stream.iterate(0, n -> n + 1)
 		    .limit(leCinema.getNbSalles())
-		    .map(i -> UtilSaisie.saisirFilmDeSalle(i))
+		    .map(UtilSaisie::saisirFilmDeSalle)
 		    .collect(Collectors.toList());
 	    try {
-		leCinema.CreerProgramme(lesFilms);
+			this.logs.enregistrer(new CreerProgrammation(this.leCinema, lesFilms));
 	    } catch (ErreurSeanceEnCours e) {
 		System.out.println("erreur impossible dans faireProgrammation");
 	    } catch (Exception e) {

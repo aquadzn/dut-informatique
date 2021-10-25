@@ -56,6 +56,12 @@ public class Salle {
 		    "on ne peut demarer une salle dont toutes les seances ne sont pas achevees");
     }
 
+    public void preacheter(int nbBillets, int numSeance) throws NombrePlacesErreur {
+		if ((numSeance >= 0 && numSeance < this.getNbSeance()) && getIndiceSeanceEnCours() != -1) {
+			getSeance(numSeance).acheter(nbBillets);
+		}
+	}
+
     // **** propagation des erreurs de acheter(prob de billets) et
     // de getSeanceenCours(programmation terminee) 
     public void acheterSeanceEnCours(int nbBillets)

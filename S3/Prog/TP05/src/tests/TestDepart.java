@@ -4,6 +4,8 @@ import static org.junit.Assert.*;
 
 import java.util.ArrayList;
 
+import modele.requete.AcheterBillet;
+import modele.requete.ClotureSeance;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -45,54 +47,53 @@ public class TestDepart {
 
     @Test
     public void testCloturer1() throws ErreurSalle, ErreurSeanceEnCours {
-	melies.cloturerSeanceEnCours(0);
+	new ClotureSeance(melies, 0).executer();
 	assertEquals(-1, melies.getSalle(0).getIndiceSeanceEnCours());
     }
 
     @Test(expected = ErreurSeanceEnCours.class)
     public void testCloturer2() throws ErreurSalle, ErreurSeanceEnCours {
-	melies.cloturerSeanceEnCours(1);
+	new ClotureSeance(melies, 1).executer();
     }
 
     @Test(expected = ErreurSalle.class)
     public void testCloturer3() throws ErreurSalle, ErreurSeanceEnCours {
-	melies.cloturerSeanceEnCours(4);
-    }
+	new ClotureSeance(melies, 4).executer();
+	}
 
     @Test
     public void testCloturer4() throws ErreurSalle, ErreurSeanceEnCours {
-	melies.getSalle(0).setSeanceEnCours(0);
-	melies.cloturerSeanceEnCours(0);
-	assertEquals(1, melies.getSalle(0).getIndiceSeanceEnCours());
+		melies.getSalle(0).setSeanceEnCours(0);
+		new ClotureSeance(melies, 0).executer();
+		assertEquals(1, melies.getSalle(0).getIndiceSeanceEnCours());
     }
 
     @Test
     public void testAcheter1()
 	    throws ErreurSalle, NombrePlacesErreur, ErreurSeanceEnCours {
-	melies.acheter(3, 0);
-	assertEquals(1,
-		melies.getSalle(0).getSeanceEnCours().getNbPlacesDispo());
+		new AcheterBillet(melies, 3, 0).executer();
+		assertEquals(1, melies.getSalle(0).getSeanceEnCours().getNbPlacesDispo());
     }
 
     @Test(expected = NombrePlacesErreur.class)
     // System.out.println(melies);
     public void testAcheter2()
 	    throws ErreurSalle, NombrePlacesErreur, ErreurSeanceEnCours {
-	melies.acheter(5, 0);
+	new AcheterBillet(melies, 5, 0).executer();
     }
 
     @Test(expected = ErreurSalle.class)
     // System.out.println(melies);
     public void testAcheter3()
 	    throws ErreurSalle, NombrePlacesErreur, ErreurSeanceEnCours {
-	melies.acheter(1, 8);
-    }
+	new AcheterBillet(melies, 1, 8).executer();
+	}
 
     @Test(expected = ErreurSeanceEnCours.class)
     // System.out.println(melies);
     public void testAcheter4()
 	    throws ErreurSalle, NombrePlacesErreur, ErreurSeanceEnCours {
-	melies.acheter(1, 1);
+	new AcheterBillet(melies, 1, 1).executer();
     }
 
 }

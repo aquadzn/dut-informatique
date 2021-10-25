@@ -60,18 +60,4 @@ public class Cinema {
 	return salles;
     }
 
-    public void cloturerSeanceEnCours(int numSalle)
-	    throws ErreurSeanceEnCours, ErreurSalle {
-	this.getSalle(numSalle).finirSeance();
-    }
-
-
-    public void CreerProgramme(List<List<Film>> lesFilms)
-	    throws ErreurSeanceEnCours, ErreurSalle {
-	for (int i = 0; i < this.getNbSalles(); i++) {
-	    this.getSalle(i).creerProgrammation(lesFilms.get(i));
-	}
-
-    }
-
 }
