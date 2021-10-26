@@ -27,7 +27,7 @@ int main() {
 
    char *params[] = {
         "./multiprocessus",
-        "3"
+        "5"
     };
 
     multiprocessus(2, params);

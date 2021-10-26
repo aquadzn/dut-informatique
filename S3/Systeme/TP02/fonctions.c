@@ -76,21 +76,22 @@ void exec2() {
 }
 
 void multiprocessus(int argc, char *argv[]) {
-    if (argc > 1) {
-        int n = atoi(argv[1]);
-        
-        for (int i = 0; i < n; i++) {
-            if (fork() == 0) {
-                printf("Fils %d\n", getpid());
-                exit(0);
-            }
-        }
-
-        for (int i = 0; i < n; i++) {
-            wait(NULL);
-            printf("Parent: fils terminé\n");
-        }
-
-        
+    if (argc < 2) {
+        exit(1);
     }
+
+    int n = atoi(argv[1]);
+    
+    for (int i = 0; i < n; i++) {
+        if (fork() == 0) {
+            printf("Fils %d\n", getpid());
+            exit(i);
+        }
+    }
+
+    for (int i = 0; i < n; i++) {
+        int p = wait(NULL);
+        printf("Parent: fils %d terminé\n", p);
+    }
+
 }
