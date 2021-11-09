@@ -19,6 +19,10 @@ public class Telecommande {
         return this.boutons;
     }
 
+    public void assignerBouton(int i, Action action) {
+        this.boutons.get(i).setAction(action);
+    }
+
     public void presserBouton(int i) {
         this.boutons.get(i).appuyer();
     }
