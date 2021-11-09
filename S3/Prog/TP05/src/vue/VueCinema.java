@@ -111,8 +111,8 @@ public class VueCinema {
 
 		try {
 			this.logs.enregistrer(new PreAcheter(this.leCinema, nbBillets, numSalle, numSeance));
-		} catch (ErreurSalle | NombrePlacesErreur | ErreurSeanceEnCours ignored) {
-			System.out.println("mauvais choix");
+		} catch (ErreurSalle | NombrePlacesErreur | ErreurSeanceEnCours e) {
+			System.out.println(e.getMessage());
 		}
 	}
 

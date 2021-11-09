@@ -25,7 +25,7 @@ public class PreAcheter extends Requete {
     }
 
     @Override
-    public void annuler() throws ErreurSalle, ErreurSeanceEnCours {
+    public void annuler() throws ErreurSalle {
         Seance s = getCinema().getSalle(numSalle).getSeance(numSeance);
         s.setPlacesDisponible(s.getNbPlacesDispo() + nbBillets);
     }

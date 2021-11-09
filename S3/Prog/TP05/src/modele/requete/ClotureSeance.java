@@ -2,7 +2,6 @@ package modele.requete;
 
 import CinemaExceptions.ErreurSalle;
 import CinemaExceptions.ErreurSeanceEnCours;
-import CinemaExceptions.NombrePlacesErreur;
 import modele.Cinema;
 import modele.Salle;
 
