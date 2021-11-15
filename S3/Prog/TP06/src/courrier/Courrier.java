@@ -3,7 +3,6 @@ package courrier;
 public abstract class Courrier {
 	private String destinataire;
 	
-	
 	public Courrier(String destinataire) {
 		this.destinataire = destinataire;
 	}
@@ -11,7 +10,7 @@ public abstract class Courrier {
 	public abstract double coutAffranchissement();
 	
 	public boolean auxNormes() {
-		return this.destinataire !=null;
+		return this.destinataire != null;
 	}
 
 	public String getDestinataire() {
