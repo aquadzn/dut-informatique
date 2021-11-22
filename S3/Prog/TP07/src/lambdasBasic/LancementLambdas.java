@@ -1,6 +1,9 @@
 package lambdasBasic;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Set;
 import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
@@ -14,6 +17,12 @@ public class LancementLambdas {
         }
 
         return gens;
+    }
+
+    public static List<Integer> m1(List<Integer> l) {
+        return l.stream()
+                .map(i -> i * 2)
+                .collect(Collectors.toList());
     }
 
     public static void main(String[] args) {
@@ -122,5 +131,86 @@ public class LancementLambdas {
 
         Function<Gens, Gens> majNom = gens -> new Gens(gens.getNom().toUpperCase(), gens.getAge());
         System.out.println(appliquerAChacun(lesGens, majNom));
+
+        // EX STREAM
+        // 1.1
+        System.out.println("\nSTREAM\n------\n");
+        ArrayList<Integer> l = new ArrayList<>();
+        l.add(2);
+        l.add(4);
+        l.add(7);
+        l.add(8);
+
+        System.out.println(
+                l.stream()
+                        .filter(i -> i % 2 == 0)
+                        .count()
+        );
+
+        // 2.1
+        ArrayList<Integer> lpair = l.stream()
+                .filter(i -> i % 2 == 0)
+                .collect(Collectors.toCollection(ArrayList::new));
+
+        System.out.println(lpair);
+
+        // 2.2
+        Set<String> strings = Arrays.stream(new String[]{"toto", "bidule", "truc"})
+                .filter(s -> s.length() == 4)
+                .collect(Collectors.toSet());
+        System.out.println(strings);
+
+        // 3.1
+        System.out.println(
+                lesGens.stream()
+                        .map(Gens::getAge)
+                        .collect(Collectors.toCollection(ArrayList::new)).toString()
+        );
+
+        // 3.2
+        System.out.println(
+                lesGens.stream()
+                        .map(gens -> gens.getNom().length())
+                        .collect(Collectors.toCollection(ArrayList::new)).toString()
+        );
+
+        // 3.4
+        System.out.println(
+                m1(lpair)
+        );
+
+        // 4.1
+        System.out.println(
+                lesGens.stream()
+                        .map(Gens::getNom)
+                        .filter(s -> s.toLowerCase().charAt(0) == 'l')
+                        .collect(Collectors.toList())
+        );
+
+        // 4.2
+        System.out.println(
+                lesGens.stream()
+                        .filter(gens -> gens.getAge() == 20)
+                        .map(Gens::getNom)
+                        .collect(Collectors.toList())
+        );
+
+        // 4.3
+        ArrayList<String> lesGens20Ans = new ArrayList<>();
+        for(Gens g : lesGens) {
+            if (g.getAge() == 20) {
+                lesGens20Ans.add(g.getNom());
+            }
+        }
+        System.out.println(lesGens20Ans);
+
+        // 4.4
+        System.out.println(
+                lesGens.stream()
+                        .map(gens -> gens.getNom().length())
+                        .filter(longueurNom -> longueurNom > 3)
+                        .collect(Collectors.toList())
+        );
     }
+
 }
