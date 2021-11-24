@@ -126,7 +126,7 @@ public class LancementLambdas {
         lesGens.add(c);
         lesGens.add(d);
 
-        Function<Gens, Gens> augAge = gens -> new Gens(gens.getNom(), gens.getAge() * 2);
+        Function<Gens, Gens> augAge = gens -> new Gens(gens.getNom(), f11.apply(gens.getAge()));
         System.out.println(appliquerAChacun(lesGens, augAge));
 
         Function<Gens, Gens> majNom = gens -> new Gens(gens.getNom().toUpperCase(), gens.getAge());
