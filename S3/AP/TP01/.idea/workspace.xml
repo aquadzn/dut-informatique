@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3aac8314-602a-4e03-b931-534540e53f6f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../../Prog/TP07/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Prog/TP07/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Prog/TP07/out/production/TP07/lambdasBasic/LancementLambdas.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Prog/TP07/out/production/TP07/lambdasBasic/LancementLambdas.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Prog/TP07/src/lambdasBasic/LancementLambdas.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Prog/TP07/src/lambdasBasic/LancementLambdas.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Systeme/TP04/fonctions.c" beforeDir="false" afterPath="$PROJECT_DIR$/../../Systeme/TP04/fonctions.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Systeme/TP04/fonctions.h" beforeDir="false" afterPath="$PROJECT_DIR$/../../Systeme/TP04/fonctions.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Systeme/TP04/main" beforeDir="false" afterPath="$PROJECT_DIR$/../../Systeme/TP04/main" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Systeme/TP04/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/../../Systeme/TP04/main.c" afterDir="false" />
-    </list>
+    <list default="true" id="3aac8314-602a-4e03-b931-534540e53f6f" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -25,21 +17,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Arbre.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="113" column="7" lean-forward="true" selection-start-line="113" selection-start-column="7" selection-end-line="113" selection-end-column="7" />
+            <state relative-caret-position="2392">
+              <caret line="113" column="7" selection-start-line="113" selection-start-column="7" selection-end-line="113" selection-end-column="7" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#551#552#0" expanded="true" />
-                <element signature="e#580#581#0" expanded="true" />
-                <element signature="e#687#688#0" expanded="true" />
-                <element signature="e#739#740#0" expanded="true" />
-                <element signature="e#816#817#0" expanded="true" />
-                <element signature="e#894#895#0" expanded="true" />
-                <element signature="e#1150#1151#0" expanded="true" />
-                <element signature="e#1182#1183#0" expanded="true" />
-                <element signature="e#3292#3293#0" expanded="true" />
-                <element signature="e#3347#3348#0" expanded="true" />
-                <element signature="e#3399#3400#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -60,7 +41,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ArbreTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="655">
+            <state relative-caret-position="1403">
               <caret line="66" column="5" selection-start-line="66" selection-start-column="5" selection-end-line="66" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -234,7 +215,7 @@
     <frame x="960" y="27" width="960" height="1053" extended-state="4" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25657895" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -277,33 +258,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ArbreTest.java">
+    <entry file="file://$PROJECT_DIR$/src/Arbre.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="655">
-          <caret line="66" column="5" selection-start-line="66" selection-start-column="5" selection-end-line="66" selection-end-column="5" />
+        <state relative-caret-position="2392">
+          <caret line="113" column="7" selection-start-line="113" selection-start-column="7" selection-end-line="113" selection-end-column="7" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Arbre.java">
+    <entry file="file://$PROJECT_DIR$/src/ArbreTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="113" column="7" lean-forward="true" selection-start-line="113" selection-start-column="7" selection-end-line="113" selection-end-column="7" />
+        <state relative-caret-position="1403">
+          <caret line="66" column="5" selection-start-line="66" selection-start-column="5" selection-end-line="66" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#551#552#0" expanded="true" />
-            <element signature="e#580#581#0" expanded="true" />
-            <element signature="e#687#688#0" expanded="true" />
-            <element signature="e#739#740#0" expanded="true" />
-            <element signature="e#816#817#0" expanded="true" />
-            <element signature="e#894#895#0" expanded="true" />
-            <element signature="e#1150#1151#0" expanded="true" />
-            <element signature="e#1182#1183#0" expanded="true" />
-            <element signature="e#3292#3293#0" expanded="true" />
-            <element signature="e#3347#3348#0" expanded="true" />
-            <element signature="e#3399#3400#0" expanded="true" />
           </folding>
         </state>
       </provider>
