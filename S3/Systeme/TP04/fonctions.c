@@ -7,33 +7,35 @@ int TOUR = 0;
 
 void *afficheTab(void *t)
 {
-    T *t_unpack = (T *)t;
+    T *args = (T *)t;
+    for(int i = 0; i < args->taille; i++) {
+       
+        while(TOUR != args->id) {
+            sleep(3);
+        }
 
-    printf("tid: %ld - tour: %d\n", t_unpack->tid, TOUR);
+        if(i % 2 == args->id) {
+            printf("%d", args->tab[i]);
+            fflush(stdout);
+            TOUR = (args->id + 1) % 2;
+        }
+    }
 
-    // for (int i = 0; i < t_unpack->taille; i++)
-    // {
-    //     if (TOUR == t_unpack->tid)
-    //     {
-    //         printf("%d ", t_unpack->tab[TOUR]);
-    //     }
-    //     else
-    //     {
-    //         sleep(1);
-    //     }
-    // }
-    TOUR++;
+    pthread_exit(NULL);
 }
 
 void affichageDansOrdre(int *tab, int taille)
 {
     pthread_t tids[2];
+    T ts[2];
 
-    for (int i = 0; i < 2; i++)
-    {
-        T Tstruct = {tab, taille, tids[i]};
-        pthread_create(&tids[i], NULL, afficheTab, &Tstruct);
+    for(int i = 0; i < 2; i++) {
+        ts[i].tab = tab;
+        ts[i].taille = taille;
+        ts[i].id = i;
+        pthread_create(&tids[i], NULL, afficheTab, &ts[i]);
     }
-
-    pthread_exit(NULL);
+    
+    pthread_join(tids[0], NULL);
+    pthread_join(tids[1], NULL);
 }

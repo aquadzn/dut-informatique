@@ -1,16 +1,13 @@
 package lambdasBasic;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 public class LancementLambdas {
 
-    public static ArrayList<Gens> appliquerAChacun(ArrayList<Gens> l, Function<Gens, Gens> f) {
+    private static ArrayList<Gens> appliquerAChacun(ArrayList<Gens> l, Function<Gens, Gens> f) {
         ArrayList<Gens> gens = new ArrayList<>();
         for(Gens g : l) {
             gens.add(f.apply(g));
@@ -19,7 +16,7 @@ public class LancementLambdas {
         return gens;
     }
 
-    public static List<Integer> m1(List<Integer> l) {
+    private static List<Integer> m1(List<Integer> l) {
         return l.stream()
                 .map(i -> i * 2)
                 .collect(Collectors.toList());
@@ -132,9 +129,9 @@ public class LancementLambdas {
         Function<Gens, Gens> majNom = gens -> new Gens(gens.getNom().toUpperCase(), gens.getAge());
         System.out.println(appliquerAChacun(lesGens, majNom));
 
-        // EX STREAM
+        // EX STREAM (1)
+        System.out.println("\nSTREAM (1)\n------\n");
         // 1.1
-        System.out.println("\nSTREAM\n------\n");
         ArrayList<Integer> l = new ArrayList<>();
         l.add(2);
         l.add(4);
@@ -211,6 +208,131 @@ public class LancementLambdas {
                         .filter(longueurNom -> longueurNom > 3)
                         .collect(Collectors.toList())
         );
+
+        // EX STREAM (2)
+        System.out.println("\nSTREAM (1)\n------\n");
+
+        // 1.1
+        System.out.println(
+            lesGens.stream()
+                .map(Gens::getAge)
+                .anyMatch(age -> age < 20)
+        );
+
+        // 1.2
+        System.out.println(
+            lesGens.stream()
+                .map(Gens::getAge)
+                .anyMatch(age -> age < 15)
+        );
+
+        // 1.3
+        System.out.println(
+            lesGens.stream()
+                .allMatch(gens -> gens.getAge() >= 18)
+        );
+        System.out.println(
+            lesGens.stream()
+                .noneMatch(gens -> gens.getAge() < 18)
+        );
+
+        // 2.1
+        int[] entiers = new int[] {2, 5, 7, 4, 12, 3, 8, 3};
+        System.out.println(
+            Arrays.stream(entiers)
+                .filter(i -> i % 3 == 0)
+                .findFirst()
+        );
+
+        // 2.2
+        System.out.println(listePasVide(lesGens));
+
+        // 2.3
+        System.out.println(listePasVideException(lesGens));
+
+        // 2.4
+        ArrayList<Gens> gensVide = new ArrayList<>();
+        afficheListePasVide(gensVide);
+
+        // 2.5
+        System.out.println(gensCommenceParT(lesGens));
+
+        // 2.6
+        System.out.println(nomGensMajeur(lesGens));
+
+        // 3.1
+        entiers = new int[] {2, 5, 7, 4, 3, 8, 3};
+
+        System.out.println(
+            Arrays.stream(entiers)
+                .reduce(0, (total, element) -> total + element)
+        );
+
+        // 3.2
+        System.out.println(
+            Arrays.stream(entiers)
+                .reduce((total, element) -> total + element)
+        );
+
+        // 3.3
+        // parce qu'on part de x = 4 et qu'on ajoute 1 pour chaque
+        // element restant à compter
+        // 4 + (7 - 1)
+
+        // 3.4
+        System.out.println(
+            Arrays.stream(entiers)
+                .reduce(1, (total, element) -> total * element)
+        );
+
+        // 3.5
+        System.out.println(
+            prenomsGens20Ans(lesGens)
+        );
     }
 
+    private static Optional<Gens> listePasVide(Collection<Gens> gens) {
+        return gens.stream()
+            .findAny();
+    }
+
+    private static Gens listePasVideException(Collection<Gens> gens) {
+        return gens.stream()
+            .findAny()
+            .get();
+    }
+
+    private static void afficheListePasVide(Collection<Gens> gens) {
+        Optional<Gens> g = gens.stream().findAny();
+        if (g.isPresent()) {
+            System.out.println(g.get());
+        }
+        else {
+            System.out.println("impossible");
+        }
+    }
+
+    private static Gens gensCommenceParT(Collection<Gens> gens) {
+        return gens.stream()
+            .filter(g -> g.getNom().charAt(0) == 't')
+            .findAny()
+            .get();
+    }
+
+    private static String nomGensMajeur(Collection<Gens> gens) {
+        return gens.stream()
+            .filter(g -> g.getAge() >= 18)
+            .map(Gens::getNom)
+            .findAny()
+            .get();
+    }
+
+    private static String prenomsGens20Ans(Collection<Gens> gens) {
+        String s = gens.stream()
+            .filter(g -> g.getAge() == 20)
+            .map(Gens::getNom)
+            .reduce("", (total, element) -> total + element + ",");
+
+        return s.substring(0, s.length() - 1);
+    }
 }

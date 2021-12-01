@@ -115,13 +115,13 @@ public class Arbre<E> {
 	public void parcoursInfixe() {
 		if (! this.estVide()) {
 			if (! this.filsG.estVide()) {
-				this.filsG.parcoursPrefixe();
+				this.filsG.parcoursInfixe();
 			}
 
 			System.out.println(this.contenu);
 
 			if (! this.filsD.estVide()) {
-				this.filsD.parcoursPrefixe();
+				this.filsD.parcoursInfixe();
 			}
 		}
 	}
@@ -132,11 +132,11 @@ public class Arbre<E> {
 	public void parcoursPostfixe() {
 		if (! this.estVide()) {
 			if (! this.filsG.estVide()) {
-				this.filsG.parcoursPrefixe();
+				this.filsG.parcoursPostfixe();
 			}
 
 			if (! this.filsD.estVide()) {
-				this.filsD.parcoursPrefixe();
+				this.filsD.parcoursPostfixe();
 			}
 
 			System.out.println(this.contenu);

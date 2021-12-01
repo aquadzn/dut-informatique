@@ -20,10 +20,14 @@ public class ArbreApplication extends Application {
 		ArbreInt a = new ArbreInt(gche, 4, drt);
 		dessin = new Dessin<>(a);
 
-//		a.parcoursLargeur();
-//		a.parcoursPrefixe();
-//		a.parcoursPostfixe();
-//		a.parcoursInfixe();
+		System.out.println("Largeur");
+		a.parcoursLargeur();
+		System.out.println("Préfixe");
+		a.parcoursPrefixe();
+		System.out.println("Postfixe");
+		a.parcoursPostfixe();
+		System.out.println("Infixe");
+		a.parcoursInfixe();
 	}
 
 	@Override

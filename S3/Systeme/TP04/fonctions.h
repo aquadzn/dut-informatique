@@ -3,7 +3,7 @@
 struct t {
     int *tab;
     int taille;
-    pthread_t tid;
+    int id;
 } typedef T;
 
 void *afficheTab(void *t);
