@@ -45,5 +45,10 @@ public class Promo {
             .max(Comparator.comparingInt(e -> e.moyenne(Niveau.S1)))
             .map(Etudiant::getNom)
             .get();
+
+//        return this.etudiants.stream()
+//            .reduce(e -> Math.max(e.moyenne(Niveau.S1), e.moyenne(Niveau.S1)))
+//            .get().getNom()
+//            ;
     }
 }
