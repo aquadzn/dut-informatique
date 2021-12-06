@@ -13,7 +13,6 @@ public class ClientTCP {
         Socket socket = null;
         BufferedReader input;
         PrintWriter output;
-        Scanner sc = new Scanner(System.in);
 
         try {
             socket = new Socket("localhost", 32546);
@@ -30,22 +29,25 @@ public class ClientTCP {
             }
             System.out.println(RED + "[SERVEUR] - " + response + RESET);
 
+            Scanner sc = new Scanner(System.in);
             String msg;
+
             do {
                 System.out.print("[CLIENT] - ");
                 msg = sc.nextLine();
+
                 // envoi au server
                 output.println(msg);
+                output.flush();
+
                 // recupere la reponse du server
                 response = input.readLine();
                 System.out.println(RED + "[SERVEUR] - " + response + RESET);
-            } while (! msg.equals("EXIT"));
+            } while (! msg.equalsIgnoreCase("EXIT"));
 
-            input.close();
-            output.close();
-            socket.close();
+            sc.close();
         } catch (IOException e) {
-            System.out.println(e);
+            e.printStackTrace();
             System.exit(1);
         }
     }

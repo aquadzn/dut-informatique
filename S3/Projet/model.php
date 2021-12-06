@@ -38,7 +38,7 @@ class Model extends Database
         );
     }
 
-    public function get_reservations()
+    public function reservations()
     {
         $req = self::$db->prepare('SELECT * from reservations');
         $req->execute();
@@ -46,15 +46,15 @@ class Model extends Database
         return $req->fetchAll();
     }
 
-    public function get_salles()
+    public function rooms()
     {
-        $req = self::$db->prepare('SELECT * from salles');
+        $req = self::$db->prepare('SELECT * from rooms');
         $req->execute();
 
         return $req->fetchAll();
     }
 
-    public function get_messages()
+    public function messages()
     {
         $req = self::$db->prepare('SELECT * from messages');
         $req->execute();
@@ -62,7 +62,7 @@ class Model extends Database
         return $req->fetchAll();
     }
 
-    public function get_reservations_per_user($username)
+    public function reservations_per_user($username)
     {
         $req = self::$db->prepare('SELECT * from reservations where reserve_par = :reserve_par');
         $req->execute(array('reserve_par' => $username));
@@ -70,18 +70,31 @@ class Model extends Database
         return $req->fetchAll();
     }
 
-    public function get_appareils_per_salle($id_room)
+    public function default_devices_per_room($id_room)
     {
-        $req = self::$db->prepare('SELECT * from appareils where id_salle = :id_salle');
-        $req->execute(array('id_salle' => $id_room));
+        $req = self::$db->prepare('SELECT * from defaultdevices where id_room = :id_room');
+        $req->execute(array('id_room' => $id_room));
 
         return $req->fetchAll();
     }
 
-    public function get_appareil_attributes($name)
+    public function reservation_devices($id_reservation)
     {
-        $req = self::$db->prepare('SELECT * from appareils where id_salle = :id_salle');
-        $req->execute(array('id_salle' => $id_room));
+        $req = self::$db->prepare('SELECT * from reservationdevices where id_reservation = :id_reservation');
+        $req->execute(array('id_reservation' => $id_reservation));
+
+        return $req->fetchAll();
+    }
+    
+    public function reservation_devices_per_user($id_reservation, $username)
+    {
+        $req = self::$db->prepare(
+            'SELECT r.* from reservationdevices r
+             INNER JOIN groupes on r.id_groupe = r.id
+             INNER JOIN users on g.id = u.
+             where r.id_reservation = :id_reservation'
+        );
+        $req->execute(array('id_reservation' => $id_reservation));
 
         return $req->fetchAll();
     }

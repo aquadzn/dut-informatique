@@ -1,3 +1,4 @@
+/*
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -39,6 +40,41 @@ public class ServeurTCP {
 
                 clients.add(client);
                 thread.start();
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+}
+*/
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
+import java.net.ServerSocket;
+import java.net.Socket;
+import java.util.ArrayList;
+
+public class ServeurTCP {
+    public static void main(String[] args) throws IOException {
+        ServerSocket serverSocket = new ServerSocket(32546);
+        System.out.println("Démarrage du serveur sur le port 32546");
+
+        while (true) {
+            try {
+                Socket client = serverSocket.accept();
+                System.out.println("Nouveau client: " + client);
+
+                BufferedReader input = new BufferedReader(new InputStreamReader(client.getInputStream()));
+                PrintWriter output = new PrintWriter(client.getOutputStream(), true);
+
+                output.println("HELLO");
+                new Thread(
+                    new ClientHandler(client)
+                ).start();
+
+                System.out.println(input.readLine());
 
             } catch (IOException e) {
                 e.printStackTrace();
