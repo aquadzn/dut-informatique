@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a36531fa-371d-4195-b130-356057ec22de" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../../Prog/TP08/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Prog/TP08/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Prog/TP08/out/production/TP08/Etudiant.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Prog/TP08/out/production/TP08/Etudiant.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Projet/model.php" beforeDir="false" afterPath="$PROJECT_DIR$/../../Projet/model.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ClientHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ClientHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ClientTCP.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ClientTCP.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ServeurTCP.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ServeurTCP.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Modelisation/TP04.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/../../Modelisation/TP04.ipynb" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -20,14 +15,13 @@
     <option name="isMigrated" value="true" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ServeurTCP.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="333">
-              <caret line="65" column="54" lean-forward="true" selection-start-line="65" selection-start-column="54" selection-end-line="65" selection-end-column="54" />
+            <state relative-caret-position="230">
+              <caret line="65" column="54" selection-start-line="65" selection-start-column="54" selection-end-line="65" selection-end-column="54" />
               <folding>
-                <element signature="e#0#1615#0" expanded="true" />
                 <element signature="imports" expanded="true" />
               </folding>
             </state>
@@ -37,8 +31,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ClientTCP.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="161">
-              <caret line="22" column="69" lean-forward="true" selection-start-line="22" selection-start-column="69" selection-end-line="22" selection-end-column="69" />
+            <state relative-caret-position="391">
+              <caret line="22" column="69" selection-start-line="22" selection-start-column="69" selection-end-line="22" selection-end-column="69" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -49,12 +43,10 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ClientHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="828">
-              <caret line="36" column="36" selection-start-line="36" selection-start-column="16" selection-end-line="36" selection-end-column="36" />
+            <state relative-caret-position="621">
+              <caret line="29" column="35" selection-start-line="29" selection-start-column="35" selection-end-line="29" selection-end-column="35" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#153#154#0" expanded="true" />
-                <element signature="e#185#186#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -105,26 +97,7 @@
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="TP03" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TP03" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TP03" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TP03" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
-    </panes>
+    <panes />
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
@@ -242,22 +215,21 @@
     </layout-to-restore>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/ClientTCP.java">
+    <entry file="file://$PROJECT_DIR$/src/ServeurTCP.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="22" column="69" lean-forward="true" selection-start-line="22" selection-start-column="69" selection-end-line="22" selection-end-column="69" />
+        <state relative-caret-position="230">
+          <caret line="65" column="54" selection-start-line="65" selection-start-column="54" selection-end-line="65" selection-end-column="54" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ServeurTCP.java">
+    <entry file="file://$PROJECT_DIR$/src/ClientTCP.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="333">
-          <caret line="65" column="54" lean-forward="true" selection-start-line="65" selection-start-column="54" selection-end-line="65" selection-end-column="54" />
+        <state relative-caret-position="391">
+          <caret line="22" column="69" selection-start-line="22" selection-start-column="69" selection-end-line="22" selection-end-column="69" />
           <folding>
-            <element signature="e#0#1615#0" expanded="true" />
             <element signature="imports" expanded="true" />
           </folding>
         </state>
@@ -265,12 +237,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ClientHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="828">
-          <caret line="36" column="36" selection-start-line="36" selection-start-column="16" selection-end-line="36" selection-end-column="36" />
+        <state relative-caret-position="621">
+          <caret line="29" column="35" selection-start-line="29" selection-start-column="35" selection-end-line="29" selection-end-column="35" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#153#154#0" expanded="true" />
-            <element signature="e#185#186#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -17,10 +17,5 @@ public class ABRInt extends ABR<Integer> {
 	}
 
 	public static void main(String[] args) {
-		ABRInt ABRQcq = new ABRInt(new ABRInt(new ABRInt(), 6, new ABRInt(11)), 15,
-			new ABRInt(new ABRInt(16), 18, new ABRInt(
-				new ABRInt(new ABRInt(19), 19, new ABRInt()), 20, new ABRInt())));
-
-		ABRQcq.parcoursInfixe();
 	}
 }

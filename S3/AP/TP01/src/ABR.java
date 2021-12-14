@@ -63,44 +63,93 @@ public class ABR<E extends Comparable<E>> extends Arbre<E> {
 	 * Retourne vrai si val est dans l'ABR courant
 	 */
 	public boolean recherche(E val) {
-		if (val.compareTo(this.contenu) <= 0) {
-			if (! filsG.estVide()) {
-				if (val.compareTo(filsG.contenu) == 0) {
-					return true;
-				}
-			}
-			((ABR<E>) filsG).recherche(val);
+		if (estVide()) {
+			return false;
 		}
 		else {
-			if (! filsD.estVide()) {
-				if (val.compareTo(filsD.contenu) == 0) {
-					return true;
-				}
+			if (val.compareTo(contenu) == 0) {
+				return true;
 			}
-			((ABR<E>) filsD).recherche(val);
+			else if (val.compareTo(contenu) > 0) {
+				return ((ABR<E>) filsD).recherche(val);
+			}
+			else {
+				return ((ABR<E>) filsG).recherche(val);
+			}
 		}
-
-		return false;
 	}
 
 	/**
 	 * Insère val dans l'ABR courant
 	 */
 	public void insertion(E val) {
-		//TODO
+		if (estVide()) {
+			this.contenu = val;
+			this.filsG = new ABR<>();
+			this.filsD = new ABR<>();
+		}
+/*
+		else if (estFeuille()) {
+			if (val.compareTo(contenu) <= 0) {
+				this.filsG = new ABR<>(val);
+			}
+			else {
+				this.filsD = new ABR<>(val);
+			}
+		}
+*/
+		else {
+			if (val.compareTo(contenu) <= 0) {
+				((ABR<E>) filsG).insertion(val);
+			}
+			else {
+				((ABR<E>) filsD).insertion(val);
+			}
+		}
 	}
 
 	/**
 	 * Supprime le contenu val de l'ABR courant s'il est présent
 	 */
 	public void supprime(E val) {
-		//TODO
+		if (! estVide()) {
+			if (recherche(val)) {
+				if (val.compareTo(contenu) == 0) {
+					supprimeRacine();
+				}
+				else if (val.compareTo(contenu) > 0) {
+					((ABR<E>) filsD).supprime(val);
+				}
+				else {
+					((ABR<E>) filsG).supprime(val);
+				}
+			}
+		}
 	}
 
 	/**
 	 * Supprime le contenu de la racine de l'ABR courant
 	 */
 	private void supprimeRacine() {
-		//TODO
+		if (estFeuille()) {
+			contenu = null;
+			filsG = null;
+			filsD = null;
+		}
+		else if (!filsG.estVide() && filsD.estVide()) {
+			contenu = filsG.contenu;
+			filsD = filsG.filsD;
+			filsG = filsG.filsG;
+		}
+		else if (filsG.estVide() && !filsD.estVide()) {
+			contenu = filsD.contenu;
+			filsG = filsD.filsG;
+			filsD = filsD.filsD;
+		}
+		else {
+			E max = ((ABR<E>) filsG).max();
+			supprime(max);
+			contenu = max;
+		}
 	}
 }

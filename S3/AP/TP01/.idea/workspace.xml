@@ -3,15 +3,14 @@
   <component name="ChangeListManager">
     <list default="true" id="3aac8314-602a-4e03-b931-534540e53f6f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TP01/Arbre.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TP01/Arbre.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TP01/ABR.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TP01/ABR.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TP01/ABRInt.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TP01/ABRInt.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/TP01/ArbreApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TP01/ArbreApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Arbre.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Arbre.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ABR.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ABR.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ABRInt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ABRInt.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ArbreApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ArbreApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Prog/TP07/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Prog/TP07/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Prog/TP07/out/production/TP07/lambdasBasic/LancementLambdas.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Prog/TP07/out/production/TP07/lambdasBasic/LancementLambdas.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Prog/TP07/src/lambdasBasic/LancementLambdas.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Prog/TP07/src/lambdasBasic/LancementLambdas.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Prog/TP08/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Prog/TP08/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Prog/TP08/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Prog/TP08/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Modelisation/TP04.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/../../Modelisation/TP04.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Reseaux/TP03/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Reseaux/TP03/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Systeme/TP04/fonctions.c" beforeDir="false" afterPath="$PROJECT_DIR$/../../Systeme/TP04/fonctions.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Systeme/TP04/fonctions.h" beforeDir="false" afterPath="$PROJECT_DIR$/../../Systeme/TP04/fonctions.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Systeme/TP04/main" beforeDir="false" afterPath="$PROJECT_DIR$/../../Systeme/TP04/main" afterDir="false" />
@@ -29,23 +28,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Arbre.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2967">
-              <caret line="138" column="43" selection-start-line="138" selection-start-column="43" selection-end-line="138" selection-end-column="43" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ABR.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="489">
-              <caret line="46" column="7" lean-forward="true" selection-start-line="46" selection-start-column="7" selection-end-line="46" selection-end-column="7" />
+            <state relative-caret-position="23">
+              <caret line="113" column="10" selection-start-line="113" selection-start-column="10" selection-end-line="113" selection-end-column="10" />
               <folding>
                 <element signature="e#305#306#0" expanded="true" />
                 <element signature="e#326#327#0" expanded="true" />
@@ -59,19 +46,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ABRInt.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="23" column="29" selection-start-line="23" selection-start-column="15" selection-end-line="23" selection-end-column="29" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ABRTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1104">
-              <caret line="55" selection-start-line="55" selection-end-line="55" />
+            <state relative-caret-position="2967">
+              <caret line="136" column="28" selection-start-line="136" selection-start-column="16" selection-end-line="136" selection-end-column="28" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#907#908#0" expanded="true" />
@@ -87,6 +65,9 @@
     <findStrings>
       <find>tostr</find>
       <find>testmin</find>
+      <find>suppression1</find>
+      <find>ABRFeuille1</find>
+      <find>ABRFeuille2</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -96,10 +77,10 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/ArbreTest.java" />
-        <option value="$PROJECT_DIR$/src/ArbreApplication.java" />
         <option value="$PROJECT_DIR$/src/Arbre.java" />
-        <option value="$PROJECT_DIR$/src/ABRInt.java" />
         <option value="$PROJECT_DIR$/src/ABRTest.java" />
+        <option value="$PROJECT_DIR$/src/ABRInt.java" />
+        <option value="$PROJECT_DIR$/src/ArbreApplication.java" />
         <option value="$PROJECT_DIR$/src/ABR.java" />
       </list>
     </option>
@@ -121,7 +102,26 @@
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes />
+    <panes>
+      <pane id="PackagesPane" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="TP01" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TP01" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TP01" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TP01" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
@@ -148,13 +148,6 @@
     </option>
   </component>
   <component name="RunManager" selected="JUnit.ABRTest">
-    <configuration name="ABRInt" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ABRInt" />
-      <module name="TP01" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="ArbreApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ArbreApplication" />
       <module name="TP01" />
@@ -171,6 +164,26 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ABRTest.testSuppressionABRFeuille" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="TP01" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="ABRTest" />
+      <option name="METHOD_NAME" value="testSuppressionABRFeuille" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ABRTest.testSuppressionABRVide" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="TP01" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="ABRTest" />
+      <option name="METHOD_NAME" value="testSuppressionABRVide" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ArbreTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="TP01" />
       <option name="PACKAGE_NAME" value="" />
@@ -180,23 +193,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ArbreTest.testHauteur" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="TP01" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="ArbreTest" />
-      <option name="METHOD_NAME" value="testHauteur" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.ABRTest" />
-        <item itemvalue="Application.ABRInt" />
-        <item itemvalue="Application.ArbreApplication" />
         <item itemvalue="JUnit.ArbreTest" />
-        <item itemvalue="JUnit.ArbreTest.testHauteur" />
+        <item itemvalue="JUnit.ABRTest.testSuppressionABRFeuille" />
+        <item itemvalue="JUnit.ABRTest.testSuppressionABRVide" />
+        <item itemvalue="Application.ArbreApplication" />
       </list>
     </recent_temporary>
   </component>
@@ -214,34 +217,34 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="ABRTest - 2021.11.30 at 10h 25m 42s.xml">
+    <history-entry file="ABRTest - 2021.12.13 at 10h 34m 04s.xml">
       <configuration name="ABRTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ABRTest - 2021.11.30 at 10h 26m 01s.xml">
+    <history-entry file="ABRTest - 2021.12.13 at 10h 34m 16s.xml">
       <configuration name="ABRTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ABRTest - 2021.11.30 at 10h 26m 21s.xml">
+    <history-entry file="ABRTest - 2021.12.13 at 10h 34m 54s.xml">
       <configuration name="ABRTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ABRTest - 2021.11.30 at 10h 27m 23s.xml">
+    <history-entry file="ABRTest - 2021.12.13 at 10h 35m 08s.xml">
       <configuration name="ABRTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ABRTest - 2021.11.30 at 10h 27m 29s.xml">
+    <history-entry file="ABRTest - 2021.12.13 at 10h 35m 28s.xml">
       <configuration name="ABRTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ABRTest - 2021.11.30 at 10h 34m 42s.xml">
+    <history-entry file="ABRTest - 2021.12.13 at 10h 35m 36s.xml">
       <configuration name="ABRTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ABRTest - 2021.11.30 at 10h 38m 26s.xml">
+    <history-entry file="ABRTest - 2021.12.13 at 10h 36m 46s.xml">
       <configuration name="ABRTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ABRTest - 2021.11.30 at 10h 42m 07s.xml">
+    <history-entry file="ABRTest - 2021.12.13 at 10h 37m 43s.xml">
       <configuration name="ABRTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ABRTest - 2021.11.30 at 10h 43m 16s.xml">
+    <history-entry file="ABRTest - 2021.12.13 at 10h 38m 04s.xml">
       <configuration name="ABRTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ABRTest - 2021.11.30 at 10h 43m 40s.xml">
+    <history-entry file="ABRTest - 2021.12.13 at 10h 38m 55s.xml">
       <configuration name="ABRTest" configurationId="JUnit" />
     </history-entry>
   </component>
@@ -249,7 +252,7 @@
     <frame x="0" y="27" width="960" height="1053" extended-state="4" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.2598684" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.27631578" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -292,20 +295,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ArbreTest.java">
+    <entry file="jar:///usr/lib/jvm/java-8-oracle/src.zip!/java/lang/Comparable.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="700">
-          <caret line="66" column="5" selection-start-line="66" selection-start-column="5" selection-end-line="66" selection-end-column="5" />
+        <state relative-caret-position="807">
+          <caret line="135" column="15" selection-start-line="135" selection-start-column="15" selection-end-line="135" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ABRInt.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="19" selection-start-line="19" selection-end-line="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ArbreApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="15" column="23" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="23" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ArbreApplication.java">
+    <entry file="file://$PROJECT_DIR$/src/ArbreTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="448">
-          <caret line="28" column="34" selection-start-line="28" selection-start-column="34" selection-end-line="28" selection-end-column="34" />
+        <state relative-caret-position="363">
+          <caret line="66" column="5" selection-start-line="66" selection-start-column="5" selection-end-line="66" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -314,37 +331,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Arbre.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2967">
-          <caret line="138" column="43" selection-start-line="138" selection-start-column="43" selection-end-line="138" selection-end-column="43" />
+        <state relative-caret-position="416">
+          <caret line="185" selection-start-line="185" selection-end-line="185" />
           <folding>
             <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ABRInt.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" column="29" selection-start-line="23" selection-start-column="15" selection-end-line="23" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ABRTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1104">
-          <caret line="55" selection-start-line="55" selection-end-line="55" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#907#908#0" expanded="true" />
-            <element signature="e#927#928#0" expanded="true" />
+            <element signature="e#870#871#0" expanded="true" />
+            <element signature="e#948#949#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ABR.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="489">
-          <caret line="46" column="7" lean-forward="true" selection-start-line="46" selection-start-column="7" selection-end-line="46" selection-end-column="7" />
+        <state relative-caret-position="23">
+          <caret line="113" column="10" selection-start-line="113" selection-start-column="10" selection-end-line="113" selection-end-column="10" />
           <folding>
             <element signature="e#305#306#0" expanded="true" />
             <element signature="e#326#327#0" expanded="true" />
@@ -352,6 +352,18 @@
             <element signature="e#410#411#0" expanded="true" />
             <element signature="e#471#472#0" expanded="true" />
             <element signature="e#511#512#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ABRTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2967">
+          <caret line="136" column="28" selection-start-line="136" selection-start-column="16" selection-end-line="136" selection-end-column="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#907#908#0" expanded="true" />
+            <element signature="e#927#928#0" expanded="true" />
           </folding>
         </state>
       </provider>
