@@ -2,22 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3aac8314-602a-4e03-b931-534540e53f6f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/TP01/ABR.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TP01/ABR.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/TP01/ABRInt.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TP01/ABRInt.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TP01/ArbreApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TP01/ArbreApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ABR.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ABR.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ABRInt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ABRInt.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TP01/ABRTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TP01/ABRTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TP01/Arbre.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TP01/Arbre.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TP01/ArbreApplication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TP01/ArbreInt.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TP01/ArbreInt.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TP01/ArbreTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TP01/ArbreTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TP01/Dessin.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AVL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AVL.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ArbreApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ArbreApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Modelisation/TP04.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/../../Modelisation/TP04.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Reseaux/TP03/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Reseaux/TP03/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Systeme/TP04/fonctions.c" beforeDir="false" afterPath="$PROJECT_DIR$/../../Systeme/TP04/fonctions.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Systeme/TP04/fonctions.h" beforeDir="false" afterPath="$PROJECT_DIR$/../../Systeme/TP04/fonctions.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Systeme/TP04/main" beforeDir="false" afterPath="$PROJECT_DIR$/../../Systeme/TP04/main" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Systeme/TP04/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/../../Systeme/TP04/main.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Dessin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Dessin.java" afterDir="false" />
     </list>
-    <ignored path="$PROJECT_DIR$/out/" />
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -26,40 +24,12 @@
   <component name="DefaultGradleProjectSettings">
     <option name="isMigrated" value="true" />
   </component>
-  <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/ABR.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="23">
-              <caret line="113" column="10" selection-start-line="113" selection-start-column="10" selection-end-line="113" selection-end-column="10" />
-              <folding>
-                <element signature="e#305#306#0" expanded="true" />
-                <element signature="e#326#327#0" expanded="true" />
-                <element signature="e#381#382#0" expanded="true" />
-                <element signature="e#410#411#0" expanded="true" />
-                <element signature="e#471#472#0" expanded="true" />
-                <element signature="e#511#512#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ABRTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2967">
-              <caret line="136" column="28" selection-start-line="136" selection-start-column="16" selection-end-line="136" selection-end-column="28" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#907#908#0" expanded="true" />
-                <element signature="e#927#928#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -97,6 +67,7 @@
     <option name="width" value="960" />
     <option name="height" value="1053" />
   </component>
+  <component name="ProjectId" id="23E8lhwVz7SAuXz2buCAZsgowIk" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -123,6 +94,10 @@
       <pane id="Scope" />
     </panes>
   </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="Downloaded.Files.Path.Enabled" value="false" />
@@ -130,31 +105,19 @@
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="huffman" />
+    </key>
   </component>
-  <component name="RunManager" selected="JUnit.ABRTest">
-    <configuration name="ArbreApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ArbreApplication" />
-      <module name="TP01" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.AVLTest.testRotationDroite">
     <configuration name="ABRTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="TP01" />
       <option name="PACKAGE_NAME" value="" />
@@ -184,6 +147,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="AVLTest.testRotationDroite" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="TP01" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="AVLTest" />
+      <option name="METHOD_NAME" value="testRotationDroite" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ArbreTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="TP01" />
       <option name="PACKAGE_NAME" value="" />
@@ -195,14 +168,15 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.AVLTest.testRotationDroite" />
         <item itemvalue="JUnit.ABRTest" />
         <item itemvalue="JUnit.ArbreTest" />
         <item itemvalue="JUnit.ABRTest.testSuppressionABRFeuille" />
         <item itemvalue="JUnit.ABRTest.testSuppressionABRVide" />
-        <item itemvalue="Application.ArbreApplication" />
       </list>
     </recent_temporary>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -213,6 +187,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1637654883294</updated>
+      <workItem from="1641288040918" duration="3243000" />
     </task>
     <servers />
   </component>
@@ -279,6 +254,20 @@
       <window_info anchor="right" id="Capture Analysis" order="6" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
     </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/ArbreInt.java">

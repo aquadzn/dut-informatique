@@ -28,7 +28,12 @@ public class AVL<E extends Comparable<E>> extends ABR<E> implements Cloneable {
 	 * Effectue une rotation droite autour de la racine de l'AVL courant si cela est possible
 	 */
 	public void rotationDroite() {
-		//TODO
+		if (!estVide()) {
+			filsD = this;
+			contenu = filsG.contenu;
+			filsD.filsG = filsG.filsD;
+			filsG = filsG.filsG;
+		}
 	}
 
 	/**
