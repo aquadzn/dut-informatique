@@ -1,0 +1,9 @@
+Cela semble etrange. Pourriez-vous decrire ce probleme plus precisement ?
+Aucun autre client ne s'est jamais plaint de cela. Quelle est votre configuration systeme ?
+Cela est interessant. Dites-m'en plus...
+J'ai besoin d'un peu plus d'informations a ce sujet
+Avez-vous verife que vous n'avez pas de conflit de dll ?
+Ceci est explique dans le manuel. Avez-vous lu le manuel ?
+Votre description est un peu confuse. Y a-t-il un expert pres de vous qui pourrait decrire ceci plus precisement ?
+Ce n'est pas un bogue, c'est une fonctionnalite !
+Pourriez-vous preciser ?

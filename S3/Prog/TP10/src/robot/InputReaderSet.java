@@ -9,10 +9,8 @@ public class InputReaderSet implements InputReader {
     @Override
     public Collection<String> getInput() {
         System.out.print("> ");
-        String r = scanner.nextLine().trim();
-        for (String s : r.split(" ")) {
-            this.strings.add(s);
-        }
+        String r = scanner.nextLine().trim().toLowerCase();
+        Collections.addAll(this.strings, r.split("\\W+"));
 
         return this.strings;
     }

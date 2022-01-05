@@ -1,6 +1,11 @@
 package robot;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
 public class ResponderSynonyme implements Responder {
@@ -10,15 +15,21 @@ public class ResponderSynonyme implements Responder {
     private final Map<String, String> synonymes;
     private final Random r = new Random();
 
-    public ResponderSynonyme() {
+    public ResponderSynonyme() throws Exception {
         this.responseMap = new HashMap<>();
-        this.fillResponseMap();
+        this.fillResponseMap("keyword_responses.txt");
         this.defaultResponses = new ArrayList<>();
-        this.fillDefaultResponses();
+        this.fillDefaultResponses("default_responses.txt");
         this.synonymes = new HashMap<>();
         this.fillSynonymes();
 
-        System.out.println("Vérification contraintes: " + representantsSontDansResponseMap() + " - " + synonymesAbsentsDeResponseMap() + "\n");
+        if (! representantsSontDansResponseMap()) {
+            throw new Exception("Contrainte representantsSontDansResponseMap pas respectée");
+        }
+        if (! synonymesAbsentsDeResponseMap()) {
+            throw new Exception("Contrainte synonymesAbsentsDeResponseMap pas respectée");
+        }
+        System.out.println("Contraintes: OK");
     }
 
     public void fillResponseMap() {
@@ -35,6 +46,37 @@ public class ResponderSynonyme implements Responder {
         this.responseMap.put("eclipse", "Ceci est un bogue connu d'Eclipse. Vous devriez faire une mise a jour.");
     }
 
+    public void fillResponseMap(String filename) {
+        BufferedReader reader;
+        try {
+            reader = new BufferedReader(new FileReader("keyword_responses.txt"));
+            Pattern p = Pattern.compile("\"([^\"]*)\"");
+            Matcher m;
+
+            String line;
+            while((line = reader.readLine()) != null) {
+                String key = "";
+                String value = "";
+
+                m = p.matcher(line);
+                while (m.find()) {
+                    key = m.group(1);
+                }
+
+                m = p.matcher(reader.readLine());
+                while (m.find()) {
+                    value = m.group(1);
+                }
+
+                this.responseMap.put(key, value);
+
+                reader.readLine();
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
     public void fillDefaultResponses() {
         this.defaultResponses.add("Cela semble etrange. Pourriez-vous decrire ce probleme plus precisement ?");
         this.defaultResponses.add("Aucun autre client ne s'est jamais plaint de cela. Quelle est votre configuration systeme ?");
@@ -45,6 +87,20 @@ public class ResponderSynonyme implements Responder {
         this.defaultResponses.add("Votre description est un peu confuse. Y a-t-il un expert pres de vous qui pourrait decrire ceci plus precisement ?");
         this.defaultResponses.add("Ce n'est pas un bogue, c'est une fonctionnalite !");
         this.defaultResponses.add("Pourriez-vous preciser ?");
+    }
+
+    public void fillDefaultResponses(String filename) {
+        BufferedReader reader;
+        try {
+            reader = new BufferedReader(new FileReader(filename));
+            String line;
+            while ((line = reader.readLine()) != null) {
+                if (!line.isEmpty())
+                    this.defaultResponses.add(line);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public void fillSynonymes() {
