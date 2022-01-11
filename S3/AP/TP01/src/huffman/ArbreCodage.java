@@ -34,7 +34,7 @@ public class ArbreCodage extends Arbre<Character> implements Comparable<ArbreCod
      *            l'ensemble des caractères
      *                */
     public Map<Character, String> codage(Set<Character> caracteres) {
-        Map<Character, String> codes = new HashMap<Character, String>();
+        Map<Character, String> codes = new HashMap<>();
         for (Character c : caracteres) {
             String code = codageParCar(c);
             codes.put(c, code);
@@ -49,8 +49,6 @@ public class ArbreCodage extends Arbre<Character> implements Comparable<ArbreCod
         return null;
         // ToDO
     }
-
-
 
     /**
      * Relation d'ordre sur les arbres par comparaison de leur poids.
