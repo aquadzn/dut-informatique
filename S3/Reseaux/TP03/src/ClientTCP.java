@@ -15,7 +15,7 @@ public class ClientTCP {
         PrintWriter output;
 
         try {
-            socket = new Socket("localhost", 32546);
+            socket = new Socket("localhost", 8000);
 
             input = new BufferedReader(
                 new InputStreamReader(socket.getInputStream())
@@ -23,7 +23,7 @@ public class ClientTCP {
             output = new PrintWriter(socket.getOutputStream(), true);
 
             String response = input.readLine();
-            if (! response.equals("HELLO")) {
+            if (! response.equals("coucou\0")) {
                 // PAS DE CONNEXION
                 System.exit(1);
             }
