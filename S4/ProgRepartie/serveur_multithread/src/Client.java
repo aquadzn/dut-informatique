@@ -1,5 +1,4 @@
 import java.io.*;
-import java.net.ServerSocket;
 import java.net.Socket;
 
 public class Client {
@@ -7,7 +6,7 @@ public class Client {
     private PrintWriter writer;
     private BufferedReader reader;
     private Socket clientSocket;
-    private String downloadFolder;
+    private final String downloadFolder;
 
     public Client(String downloadFolder) {
         this.downloadFolder = downloadFolder;
@@ -46,9 +45,9 @@ public class Client {
             os = new FileOutputStream(this.downloadFolder + outputFile);
             byte[] buffer = new byte[8192];
 
-            int c;
-            while ((c = is.read(buffer, 0, buffer.length)) > 0) {
-                os.write(buffer, 0, c);
+            int len;
+            while ((len = is.read(buffer, 0, buffer.length)) > 0) {
+                os.write(buffer, 0, len);
                 os.flush();
             }
 
@@ -64,10 +63,10 @@ public class Client {
             BufferedInputStream bis = new BufferedInputStream(new FileInputStream(fileToUpload));
             BufferedOutputStream bos = new BufferedOutputStream(this.clientSocket.getOutputStream());
 
-            byte[] b = new byte[1024 * 8];
+            byte[] buffer = new byte[8192];
             int len;
-            while ((len = bis.read(b)) != -1) {
-                bos.write(b, 0, len);
+            while ((len = bis.read(buffer)) != -1) {
+                bos.write(buffer, 0, len);
                 bos.flush();
             }
 
@@ -90,8 +89,8 @@ public class Client {
 
         getMessage();
 
-        Query q = new Query(2, "test.txt");
-//        Query q = new Query(1, "files/downloaded/projet.pdf");
+//        Query q = new Query(2, "test.txt");
+        Query q = new Query(1, "files/downloaded/hello.txt");
         sendMessage(q.toString());
 
         switch (q.getCode()) {
@@ -100,7 +99,13 @@ public class Client {
             default -> System.out.println("mauvais choix");
         }
 
-
+        try {
+            this.reader.close();
+            this.writer.close();
+            this.clientSocket.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public static void main(String[] args) {

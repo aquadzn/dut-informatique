@@ -3,19 +3,48 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.Arrays;
 
-public class FileServer extends Thread {
+public class FileServer implements Runnable {
 
-    private int port;
     private PrintWriter writer;
     private BufferedReader reader;
-    private ServerSocket serverSocket;
+    private Socket clientSocket;
     private String uploadFolder;
     private String[] filesAvailable;
 
-    public FileServer(int port, String uploadFolder) {
-        this.port = port;
+    public FileServer(Socket clientSocket, String uploadFolder) {
+        this.clientSocket = clientSocket;
+        try {
+            this.initReader(this.clientSocket.getInputStream());
+            this.initWriter(this.clientSocket.getOutputStream());
+        } catch (IOException e) {
+            System.out.println("problème initialisation des buffers");
+        }
+
         this.uploadFolder = uploadFolder;
         this.filesAvailable = new File(this.uploadFolder).list();
+    }
+
+    @Override
+    public void run() {
+        sendMessage("[SERVEUR] Fichiers disponibles : " + Arrays.toString(this.filesAvailable));
+
+        Query q = new Query(getMessage());
+
+        try {
+            switch (q.getCode()) {
+                case 1 -> uploadFile(clientSocket.getInputStream(), q.getFilename());
+                case 2 -> downloadFile(clientSocket.getOutputStream(), q.getFilename());
+                default -> System.out.println("mauvais choix");
+            }
+        } catch (IOException e) {
+            System.out.println("erreur opération run du thread");
+        }
+
+        try {
+            this.clientSocket.close();
+        } catch (IOException e) {
+            System.out.println("erreur fermeture buffers et connection socket");
+        }
     }
 
     private void initWriter(OutputStream outputStream) {
@@ -42,9 +71,9 @@ public class FileServer extends Thread {
         return null;
     }
 
-    private void getFile(InputStream inputStream, String fileToUpload) throws IOException {
+    private void uploadFile(InputStream inputStream, String fileToUpload) throws IOException {
         BufferedInputStream bis = new BufferedInputStream(inputStream);
-        BufferedOutputStream bos = new BufferedOutputStream(new FileOutputStream("files/uploaded/" + new File(fileToUpload).getName()));
+        BufferedOutputStream bos = new BufferedOutputStream(new FileOutputStream(this.uploadFolder + new File(fileToUpload).getName()));
 
         byte[] bytes = new byte[8192];
         int len;
@@ -57,7 +86,7 @@ public class FileServer extends Thread {
         System.out.println("* fichier reçu");
     }
 
-    private void sendFile(OutputStream outputStream, String fileToSend) {
+    private void downloadFile(OutputStream outputStream, String fileToSend) {
 
         FileInputStream fis;
         BufferedInputStream bis;
@@ -78,31 +107,6 @@ public class FileServer extends Thread {
             bis.close();
         } catch (IOException e) {
             e.printStackTrace();
-        }
-    }
-
-    @Override
-    public void run() {
-        try {
-            this.serverSocket = new ServerSocket(this.port);
-
-            while (true) {
-                Socket clientSocket = this.serverSocket.accept();
-                this.initReader(clientSocket.getInputStream());
-                this.initWriter(clientSocket.getOutputStream());
-
-                sendMessage("[SERVEUR] Fichiers disponibles : " + Arrays.toString(this.filesAvailable));
-
-                Query q = new Query(getMessage());
-
-                switch (q.getCode()) {
-                    case 1 -> getFile(clientSocket.getInputStream(), q.getFilename());
-                    case 2 -> sendFile(clientSocket.getOutputStream(), q.getFilename());
-                    default -> System.out.println("mauvais choix");
-                }
-            }
-        } catch (IOException e) {
-            System.out.println("Impossible de créer un serveur sur le port " + port);
         }
     }
 }
