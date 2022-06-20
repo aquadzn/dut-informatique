@@ -26,4 +26,5 @@ public class Query {
     public String toString() {
         return code + " - " + filename;
     }
+
 }

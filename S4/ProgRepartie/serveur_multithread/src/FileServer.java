@@ -1,21 +1,22 @@
 import java.io.*;
-import java.net.ServerSocket;
 import java.net.Socket;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.Arrays;
 
 public class FileServer implements Runnable {
 
-    private PrintWriter writer;
-    private BufferedReader reader;
+    private DataInputStream input;
+    private DataOutputStream output;
     private Socket clientSocket;
-    private String uploadFolder;
-    private String[] filesAvailable;
+    private final String uploadFolder;
+    private final String[] filesAvailable;
 
     public FileServer(Socket clientSocket, String uploadFolder) {
         this.clientSocket = clientSocket;
         try {
-            this.initReader(this.clientSocket.getInputStream());
-            this.initWriter(this.clientSocket.getOutputStream());
+            this.initInputStream(this.clientSocket.getInputStream());
+            this.initOutputStream(this.clientSocket.getOutputStream());
         } catch (IOException e) {
             System.out.println("problème initialisation des buffers");
         }
@@ -28,16 +29,19 @@ public class FileServer implements Runnable {
     public void run() {
         sendMessage("[SERVEUR] Fichiers disponibles : " + Arrays.toString(this.filesAvailable));
 
+        System.out.print("* demande de client" + this.clientSocket.getRemoteSocketAddress() + "-> ");
         Query q = new Query(getMessage());
 
-        try {
-            switch (q.getCode()) {
-                case 1 -> uploadFile(clientSocket.getInputStream(), q.getFilename());
-                case 2 -> downloadFile(clientSocket.getOutputStream(), q.getFilename());
-                default -> System.out.println("mauvais choix");
-            }
-        } catch (IOException e) {
-            System.out.println("erreur opération run du thread");
+        switch (q.getCode()) {
+            case 1:
+                uploadFile(this.input, q.getFilename());
+                break;
+            case 2:
+                downloadFile(this.output, q.getFilename());
+                break;
+            default:
+                System.out.println("mauvais choix");
+                break;
         }
 
         try {
@@ -47,22 +51,26 @@ public class FileServer implements Runnable {
         }
     }
 
-    private void initWriter(OutputStream outputStream) {
-        this.writer = new PrintWriter(outputStream);
+    private void initInputStream(InputStream inputStream) {
+        this.input = new DataInputStream(inputStream);
     }
 
-    private void initReader(InputStream inputStream) {
-        this.reader = new BufferedReader(new InputStreamReader(inputStream));
+    private void initOutputStream(OutputStream outputStream) {
+        this.output = new DataOutputStream(outputStream);
     }
 
     private void sendMessage(String message) {
-        this.writer.println(message);
-        this.writer.flush();
+        try {
+            this.output.writeUTF(message);
+            this.output.flush();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     private String getMessage() {
         try {
-            String resp = this.reader.readLine();
+            String resp = this.input.readUTF();
             System.out.println(resp);
             return resp;
         } catch (IOException e) {
@@ -71,42 +79,40 @@ public class FileServer implements Runnable {
         return null;
     }
 
-    private void uploadFile(InputStream inputStream, String fileToUpload) throws IOException {
-        BufferedInputStream bis = new BufferedInputStream(inputStream);
-        BufferedOutputStream bos = new BufferedOutputStream(new FileOutputStream(this.uploadFolder + new File(fileToUpload).getName()));
-
-        byte[] bytes = new byte[8192];
-        int len;
-        while ((len = bis.read(bytes)) != -1) {
-            bos.write(bytes, 0, len);
-        }
-
-        bos.close();
-        bis.close();
-        System.out.println("* fichier reçu");
-    }
-
-    private void downloadFile(OutputStream outputStream, String fileToSend) {
-
-        FileInputStream fis;
-        BufferedInputStream bis;
-        BufferedOutputStream bos;
+    private void uploadFile(DataInputStream input, String fileToUpload) {
         try {
-            fis = new FileInputStream(this.uploadFolder + fileToSend);
-            bis = new BufferedInputStream(fis);
-            bos = new BufferedOutputStream(outputStream);
+            int fileSize = Integer.parseInt(input.readUTF());
+            byte[] fileContent = new byte[fileSize];
+            input.readFully(fileContent, 0, fileContent.length);
 
-            byte[] bytes = new byte[8192];
-            int len;
+            String path = this.uploadFolder + new File(fileToUpload).getName();
+            File file = new File(path);
 
-            while ((len = bis.read(bytes)) != -1) {
-                bos.write(bytes, 0, len);
+            if (!file.exists() && !file.isDirectory()) {
+                Files.write(Paths.get(path), fileContent);
+            } else {
+                System.out.println("le fichier existe déjà sur le serveur");
             }
 
-            bos.close();
-            bis.close();
+            sendMessage(new Response(0).toString());
         } catch (IOException e) {
-            e.printStackTrace();
+            System.out.println("erreur upload sur serveur");
+            sendMessage(new Response(1).toString());
+        }
+    }
+
+    private void downloadFile(DataOutputStream output, String fileToSend) {
+        try {
+            String path = this.uploadFolder + fileToSend;
+            byte[] fileContent = Files.readAllBytes(Paths.get(path));
+            output.writeInt(fileContent.length);
+            output.write(fileContent);
+            output.flush();
+
+            sendMessage(new Response(0).toString());
+        } catch (IOException e) {
+            System.out.println("le fichier" + fileToSend + "n'existe pas dans le dossier upload");
+            sendMessage(new Response(1).toString());
         }
     }
 }
